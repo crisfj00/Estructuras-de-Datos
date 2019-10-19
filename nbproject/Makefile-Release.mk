@@ -35,9 +35,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/Ingredientes.o \
-	${OBJECTDIR}/ingrediente.o \
-	${OBJECTDIR}/prueba\ vector.o
+	${OBJECTDIR}/src/Ingredientes.o \
+	${OBJECTDIR}/src/ingrediente.o \
+	${OBJECTDIR}/src/prueba\ vector.o \
+	${OBJECTDIR}/src/vector_dinamico.o
 
 
 # C Compiler Flags
@@ -64,21 +65,26 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ingrediente: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ingrediente ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/Ingredientes.o: Ingredientes.cpp
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/Ingredientes.o: src/Ingredientes.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Ingredientes.o Ingredientes.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Ingredientes.o src/Ingredientes.cpp
 
-${OBJECTDIR}/ingrediente.o: ingrediente.cpp
-	${MKDIR} -p ${OBJECTDIR}
+${OBJECTDIR}/src/ingrediente.o: src/ingrediente.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/ingrediente.o ingrediente.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ingrediente.o src/ingrediente.cpp
 
-.NO_PARALLEL:${OBJECTDIR}/prueba\ vector.o
-${OBJECTDIR}/prueba\ vector.o: prueba\ vector.cpp
-	${MKDIR} -p ${OBJECTDIR}
+.NO_PARALLEL:${OBJECTDIR}/src/prueba\ vector.o
+${OBJECTDIR}/src/prueba\ vector.o: src/prueba\ vector.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/prueba\ vector.o prueba\ vector.cpp
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/prueba\ vector.o src/prueba\ vector.cpp
+
+${OBJECTDIR}/src/vector_dinamico.o: src/vector_dinamico.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/vector_dinamico.o src/vector_dinamico.cpp
 
 # Subprojects
 .build-subprojects:

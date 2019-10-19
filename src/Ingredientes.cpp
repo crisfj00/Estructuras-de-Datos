@@ -20,7 +20,7 @@
     }
    
     
-    INgredientes::~Ingredientes(){
+    Ingredientes::~Ingredientes(){
         delete [] v;
     }
 
