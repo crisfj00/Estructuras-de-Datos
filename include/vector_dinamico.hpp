@@ -30,6 +30,7 @@ class vector_dinamico {
         void set(int i, T v);
         void resize(int n);
         vector_dinamico & operator=(const vector_dinamico& original);
+        T& obtener(int i);
 };
 
 

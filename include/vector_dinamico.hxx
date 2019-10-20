@@ -47,6 +47,12 @@ template <typename T>
    T vector_dinamico<T>::get(int i) const{
        return datos[i];
    }
+
+template <typename T>
+
+T& vector_dinamico<T>::obtener(int i){
+    return datos[i];
+}
 template <typename T>
        
    void vector_dinamico<T>::set(int i, T v){

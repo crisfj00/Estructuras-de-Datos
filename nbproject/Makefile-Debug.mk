@@ -37,8 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/src/Ingredientes.o \
 	${OBJECTDIR}/src/ingrediente.o \
-	${OBJECTDIR}/src/prueba\ vector.o \
-	${OBJECTDIR}/src/vector_dinamico.o
+	${OBJECTDIR}/src/prueba\ vector.o
 
 
 # C Compiler Flags
@@ -68,23 +67,18 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ingrediente: ${OBJECTFILES}
 ${OBJECTDIR}/src/Ingredientes.o: src/Ingredientes.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/vector_dinamico.h -include include/vector_dinamico.hpp -include include/vector_dinamico.hxx -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Ingredientes.o src/Ingredientes.cpp
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/vector_dinamico.h -include include/vector_dinamico.hpp -include include/vector_dinamico.hxx -include include/ingredientes.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Ingredientes.o src/Ingredientes.cpp
 
 ${OBJECTDIR}/src/ingrediente.o: src/ingrediente.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/vector_dinamico.h -include include/vector_dinamico.hpp -include include/vector_dinamico.hxx -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ingrediente.o src/ingrediente.cpp
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/vector_dinamico.h -include include/vector_dinamico.hpp -include include/vector_dinamico.hxx -include include/ingredientes.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ingrediente.o src/ingrediente.cpp
 
 .NO_PARALLEL:${OBJECTDIR}/src/prueba\ vector.o
 ${OBJECTDIR}/src/prueba\ vector.o: src/prueba\ vector.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/vector_dinamico.h -include include/vector_dinamico.hpp -include include/vector_dinamico.hxx -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/prueba\ vector.o src/prueba\ vector.cpp
-
-${OBJECTDIR}/src/vector_dinamico.o: src/vector_dinamico.cpp
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/vector_dinamico.h -include include/vector_dinamico.hpp -include include/vector_dinamico.hxx -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/vector_dinamico.o src/vector_dinamico.cpp
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/vector_dinamico.h -include include/vector_dinamico.hpp -include include/vector_dinamico.hxx -include include/ingredientes.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/prueba\ vector.o src/prueba\ vector.cpp
 
 # Subprojects
 .build-subprojects:

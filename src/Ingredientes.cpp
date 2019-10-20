@@ -21,15 +21,15 @@
    
     
     Ingredientes::~Ingredientes(){
-        delete [] v;
+        datos.~vector_dinamico();
     }
 
-    int Ingredientes::getUtil() const{
-        return util;
+    int Ingredientes::getNumElementos() const{
+        return datos.size();
     }
     
     Ingrediente& Ingredientes::get(int pos) const{
-        return v[pos];
+        return datos.get(pos);
     }
 
 
@@ -80,8 +80,8 @@
         aniadir(p);
     }
     
-    Pelota& Pelotas::obtener(int pos){
-        return v[pos];
+    Ingrediente& Ingredientes::obtener(int pos){
+        return datos.obtener(pos);
     }
 
 
@@ -99,7 +99,7 @@
 
     std::ostream& operator<<(std::ostream& os, const Ingredientes& p) {
         
-        for (int i=0; i<p.getUtil();i++)
+        for (int i=0; i<p.size();i++)
             os << p.get(i);
             return os;
         }

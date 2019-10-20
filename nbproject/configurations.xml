@@ -5,7 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>include/ingrediente.h</itemPath>
-      <itemPath>ingredientes.h</itemPath>
+      <itemPath>include/ingredientes.h</itemPath>
       <itemPath>include/vector_dinamico.hpp</itemPath>
       <itemPath>include/vector_dinamico.hxx</itemPath>
     </logicalFolder>
@@ -19,7 +19,6 @@
       <itemPath>src/Ingredientes.cpp</itemPath>
       <itemPath>src/ingrediente.cpp</itemPath>
       <itemPath>src/prueba vector.cpp</itemPath>
-      <itemPath>src/vector_dinamico.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -52,24 +51,23 @@
             <pElem>include/vector_dinamico.h</pElem>
             <pElem>include/vector_dinamico.hpp</pElem>
             <pElem>include/vector_dinamico.hxx</pElem>
+            <pElem>include/ingredientes.h</pElem>
           </incFile>
         </ccTool>
       </compileType>
       <item path="include/ingrediente.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/ingredientes.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/vector_dinamico.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/vector_dinamico.hxx" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ingredientes.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Ingredientes.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/ingrediente.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/prueba vector.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/vector_dinamico.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -94,19 +92,17 @@
       </compileType>
       <item path="include/ingrediente.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="include/ingredientes.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/vector_dinamico.hpp" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/vector_dinamico.hxx" ex="false" tool="3" flavor2="0">
-      </item>
-      <item path="ingredientes.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Ingredientes.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/ingrediente.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/prueba vector.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/vector_dinamico.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>
