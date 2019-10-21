@@ -14,7 +14,6 @@
 #include <cstdlib>
 #include <iostream>
 #include "vector_dinamico.hpp"
-#include "vector_dinamico.hxx"
 
 using namespace std;
 
@@ -22,18 +21,15 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
-    vector_dinamico<int> vectorint(3);
-    vector_dinamico<double> vectordouble(3);
+    vector_dinamico<int> vectorint(7);
+    vector_dinamico<double> vectordouble(5);
     vector_dinamico<int> vector;
     
     
-    vectorint.set(0,2);
-    vectorint.set(1,3);
-    vectorint.set(2,5);
+    vectorint.aniadir(1);
+    vectorint.aniadir(2);
     
-    vectordouble.set(0,2.54);
-    vectordouble.set(1,3.12);
-    vectordouble.set(2,-1.45);
+    vectordouble.aniadir(3.4);
     
     
     for(int i=0; i<vectorint.size(); i++)
@@ -51,6 +47,8 @@ int main(int argc, char** argv) {
         
     for(int i=0; i<vector.size();i++)
         cout << vector.get(i) << " ";
+    
+    cout<<"\n util es: " << vectorint.getUtil() << " " << vectordouble.getUtil() << " " << vector.getUtil()<< endl;
 
     return 0;
 }

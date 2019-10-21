@@ -19,6 +19,7 @@ class vector_dinamico {
     private:
         T *datos;
         int reservados=0;
+        int util=0;
         
     public:
         
@@ -26,10 +27,12 @@ class vector_dinamico {
         vector_dinamico(const vector_dinamico& original);
         ~vector_dinamico();
         int size() const;
+        int getUtil() const;
         T get(int i) const;
         void set(int i, T v);
         void resize(int n);
         vector_dinamico & operator=(const vector_dinamico& original);
+        void aniadir(T otro);
         T& obtener(int i);
 };
 

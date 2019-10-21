@@ -13,6 +13,7 @@
 
 #include <iostream>
 #include "vector_dinamico.h"
+#include "vector_dinamico.hpp"
 #include <cassert>
 template <typename T>
 
@@ -21,20 +22,23 @@ vector_dinamico<T>::vector_dinamico(int n){
     if(n>0)
         datos= new T[n];
     reservados=n;
+    util=0;
 }
 template <typename T>
 
    vector_dinamico<T>::vector_dinamico(const vector_dinamico& original){
        datos= new T[original.size()];
        reservados=original.size();
-       for(int i=0; i<reservados; i++)
+       for(int i=0; i<original.getUtil(); i++)
            datos[i]=original.get(i);
+       util=original.getUtil();
    }
 template <typename T>
 
    vector_dinamico<T>::~vector_dinamico(){
        delete [] datos;
        reservados=0;
+       util=0;
    }
 
 template <typename T>
@@ -64,7 +68,7 @@ template <typename T>
        vector_dinamico<T> vectoraux(n);
        for(int i=0; i<this->reservados;i++)
            vectoraux.set(i,datos[i]);
-       ~vector_dinamico();
+       this->~vector_dinamico();
        datos= new T[vectoraux.size()];
        reservados=vectoraux.size();
        for(int i=0; i<reservados; i++)
@@ -76,10 +80,33 @@ template <typename T>
         
    vector_dinamico<T> & vector_dinamico<T>::operator=(const vector_dinamico& original){
        this->~vector_dinamico();
-       datos= new T[original.size()];
-       reservados=original.size();
+       datos= new T[original.getUtil()];
+       reservados=original.getUtil();
        for(int i=0; i<reservados; i++)
            datos[i]=original.get(i);
+       util=original.getUtil();
        return *this;
    }
+
+template <typename T>
+
+    int vector_dinamico<T>::getUtil() const{
+        return util;
+    }
+
+template <typename T>
+
+    void vector_dinamico<T>::aniadir(T otro){
+    if(getUtil()==size()){
+        resize(1);
+        set(getUtil(),otro);
+        util++;
+    }
+    else{
+        set(getUtil(),otro);
+        util++;
+    }
+        
+    
+}
  
