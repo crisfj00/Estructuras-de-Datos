@@ -13,11 +13,12 @@
 
 /**
   * @file Ingredientes.h
-  * @brief Fichero cabecera del TDA Ingredientes
+  * @brief Fichero cabecera del TDA ingredientes
   *
   */
 
 #include "ingrediente.h"
+#include "vector_dinamico.h"
 #include <iostream>
 
 
@@ -26,9 +27,9 @@
 #define INGREDIENTES_H
 
   /**
-  *  @brief T.D.A. Ingredientes
+  *  @brief T.D.A. ingredientes
   *
-  * Representa un vector dinamico de @e Ingrediente(s). Tiene dos ordenaciones posibles:
+  * Representa un vector dinamico de @e ingrediente(s). Tiene dos ordenaciones posibles:
   * 
   *  - Ordenacion por el nombre del ingrediente
   *  - Ordenacion por el tipo de alimento
@@ -38,11 +39,11 @@
   * @author Cristian Fernandez
   * @date Marzo 2008
   */
-class Ingredientes{
+class ingredientes{
 private:
 
   /**
-  * @page repConjunto Rep del TDA Ingredientes
+  * @page repConjunto Rep del TDA ingredientes
   *
   * @section invConjunto Invariante de la representacion
   *
@@ -51,26 +52,37 @@ private:
   *
   * @section faConjunto Funcion de abstraccion
   *
-  * Un objeto valido @e rep del TDA Ingrediente se representa igual que @e Ingrediente ya que es un vector de estos:
+  * Un objeto valido @e rep del TDA ingrediente se representa igual que @e Ingrediente ya que es un vector de estos:
   *
   * Alimento;Calorias;Hidratos de Carb;Proteinas;Grasas;Fibra;Tipo
   *
   */
-    vector_dinamico<Ingrediente> datos;
+    vector_dinamico<ingrediente> datos;
+    
+    vector_dinamico<int> indices;
     
 public:
+    
+    ingredientes();
+
+    ingredientes(const ingredientes& original);
+    
+    
     /**
    * @brief Sobrecarga del operador =
    * @param original vector de ingredientes
    * @return Asigna al objeto implícito el vector de ingredientes
    */
-    void operator=(const Ingredientes &original);
+    void operator=(const ingredientes &original);
     
     /**
    * @brief Destructor del vector
    */
-    ~Ingredientes();
-
+    ~ingredientes();
+    
+    int size();
+    
+    
     /**
    * @brief Consultor del numero de elementos del vector
    * @return Devuelve el numero de elementos del vector
@@ -80,48 +92,34 @@ public:
     /**
    * @brief Consultor del atributo de esa posicion
    * @param pos Posicion que queremos obtener
-   * @return Devuelve el Ingrediente que esta en la posicon pasada como parametro
+   * @return Devuelve el ingrediente que esta en la posicon pasada como parametro
    */
-    Ingrediente& get(int pos) const;
+    ingrediente get(int pos) const;
 
     /**
-   * @brief Metodo para borrar un Ingrediente de la posicion pasada como parametro
+   * @brief Metodo para borrar un ingrediente de la posicion pasada como parametro
    * @param pos Posicion que queremos borrar del vector
    */
     void borrar(int pos);
 
      /**
-   * @brief Metodo para añadir un Ingrediente en el orden pedido (por nombre o por tipo)
-   * @param p Ingrediente que queremos añadir 
+   * @brief Metodo para añadir un ingrediente en el orden pedido (por nombre o por tipo)
+   * @param p ingrediente que queremos añadir 
    */
-    void aniadir(const Ingrediente &p);
+    bool insertar(const ingrediente &p);
 
    /**
    * @brief Sobrecarga del operador +=
-   * @param p Ingrediente a sumar con el objeto implícito
+   * @param p ingrediente a sumar con el objeto implícito
    */ 
-    void operator+=(const Ingrediente &p);
+    void operator+=(const ingrediente &p);
     
-    /**
-    * @brief Metodo para obtener el contenido de una posicion del vector (Permite modificar el elemento)
-    * @param pos Posicion en el vector a devolver
-    * @return Devuelve un ingrediente de la posicion pasada como parametro
-    */
-    Ingrediente& obtener(int pos);
-
-    /**
-    * @brief  Sobrecarga del operador [] (Permite modificar el elemento)
-    * @param i Posicion en el vector a devolver
-    * @return Devuelve un ingrediente de la posicion pasada como parametro
-    */
-    Ingrediente& operator[] (int i);
-     
     /**
     * @brief  Sobrecarga del operador [] (No permite modificar)
     * @param i Posicion en el vector a devolver
     * @return Devuelve un ingrediente de la posicion pasada como parametro
     */
-    Ingrediente& operator[] (int i) const;
+    ingrediente operator[] (int i) const;
 
     /**
     * @brief Entrada de un vector ingredientes desde istream
@@ -129,7 +127,7 @@ public:
     * @param p Vector de Ingredientes que recibe el valor de ingredientes
     * @retval El vector de ingredientes leído en p
     */
-    friend std::istream & operator>>(std::istream &is , Ingredientes &p);
+    friend std::istream & operator>>(std::istream &is , ingredientes &p);
 
     /**
     * @brief Salida de un  a ostream
@@ -137,8 +135,19 @@ public:
     * @param p Ingrediente a escribir
     * @post Se obtiene en \a os la cadena de los diferentes ingredientes del vector con sus respetivos valores
     */
-    friend std::ostream & operator<<(std::ostream &os , const Ingrediente &p);
+    friend std::ostream & operator<<(std::ostream &os , const ingrediente &p);
+    
+    int buscar(const ingrediente &p);
+    
+    void ImprimirPorTipo(ostream& flujo);
+    
+    void ImprimirPorNombre(ostream& flujo);
+        
 
+    
+    bool incluidoIngrediente(const ingrediente &p);
+    
+    int buscarTipo(const ingrediente &p);
 };
 
 

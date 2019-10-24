@@ -13,7 +13,8 @@
 
 #include <cstdlib>
 #include <iostream>
-#include "vector_dinamico.hpp"
+#include "ingredientes.h"
+#include "../src/vector_dinamico.cpp"
 
 using namespace std;
 
@@ -21,6 +22,22 @@ using namespace std;
  * 
  */
 int main(int argc, char** argv) {
+    
+   ingredientes hola;
+   
+   ingrediente caca("pedo","cipote");
+   ingrediente mierda("cacatua","polla");
+   ingrediente punsa("aaa","eee");
+   ingrediente ultima("be","c");
+   
+   hola.insertar(caca);
+   hola.insertar(mierda);
+   hola.insertar(punsa);
+   hola.insertar(ultima);
+   hola.ImprimirPorNombre(cout);
+    
+   vector_dinamico<ingrediente> puta;
+    
     vector_dinamico<int> vectorint(7);
     vector_dinamico<double> vectordouble(5);
     vector_dinamico<int> vector;
@@ -32,12 +49,12 @@ int main(int argc, char** argv) {
     vectordouble.aniadir(3.4);
     
     
-    for(int i=0; i<vectorint.size(); i++)
+    for(int i=0; i<vectorint.getUtil(); i++)
     
         cout << vectorint.get(i) << " ";
     cout << endl;
     
-    for(int i=0; i<vectordouble.size();i++)
+    for(int i=0; i<vectordouble.getUtil();i++)
         cout << vectordouble.get(i) << " ";
     
     cout << endl;
@@ -50,6 +67,8 @@ int main(int argc, char** argv) {
     
     cout<<"\n util es: " << vectorint.getUtil() << " " << vectordouble.getUtil() << " " << vector.getUtil()<< endl;
 
+    cout << puta.get(0);
+    
     return 0;
 }
 

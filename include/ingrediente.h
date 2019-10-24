@@ -1,18 +1,20 @@
 /**
   * @file Ingrediente.h
-  * @brief Fichero cabecera del TDA Ingrediente
+  * @brief Fichero cabecera del TDA ingrediente
   *
   */
+#include<iostream>
+#include <string.h>
+
 
 #ifndef INGREDIENTE
 #define INGREDIENTE
 
-#include <iostream>
-
 using namespace std;
 
+
 /**
-  *  @brief T.D.A. Ingrediente
+  *  @brief T.D.A. ingrediente
   *
   * Representa un ingrediente alimenticio. Los atributos de un ingrediente
   * es el nombre (puede estar formado por varias palabras) y numero de calori­as que
@@ -30,11 +32,11 @@ using namespace std;
   * @date Marzo 2008
   */
 
-class Ingrediente {
+class ingrediente {
 
  private:
 /**
-  * @page repConjunto Rep del TDA Ingrediente
+  * @page repConjunto Rep del TDA ingrediente
   *
   * @section invConjunto Invariante de la representacion
   *
@@ -42,18 +44,18 @@ class Ingrediente {
   *
   * @section faConjunto Funcion de abstraccion
   *
-  * Un objeto valido @e rep del TDA Ingrediente representa 
+  * Un objeto valido @e rep del TDA ingrediente representa 
   *
   * Alimento ;Calorias ;Hidratos de Carb.;Proteinas;Grasas;Fibra;Tipo
   *
   */
 
   string nombre;
-  int calorias;
-  int hidratos;
-  int proteinas;
-  int grasas;
-  int fibra;
+  float calorias;
+  float hidratos;
+  float proteinas;
+  float grasas;
+  float fibra;
   string tipo;
 
  public:
@@ -62,7 +64,7 @@ class Ingrediente {
   * @brief Constructor por defecto de la clase. 
   * @return Inicializa el ingrediente a 0
   */
-  Ingrediente();
+  ingrediente();
   
   /**
   * @brief Constructor de la clase. Inicializa el ingrediente a 0 y pone su nombre y su tipo
@@ -70,7 +72,7 @@ class Ingrediente {
   * @param t tipo del ingrediente
   * @return Inicializa el ingrediente a 0 y pone su nombre y su tipo
   */
-  Ingrediente(string n, string t );
+  ingrediente(string n, string t );
 
   /**
   * @brief Constructor de la clase
@@ -84,7 +86,7 @@ class Ingrediente {
   * @return Crea el ingrediente
   * @pre calorias, hidratos, proteinas,grasas,fibras tiene que ser mayor o igual que 0
   */
-  Ingrediente(string n, int c, int hc, int p, int g, int f, string t);
+  ingrediente(string n, float c, float hc, float p, float g, float f, string t);
 
 
   /**
@@ -97,31 +99,31 @@ class Ingrediente {
   * @brief Consultor de la cantidad de calorias del ingrediente
   * @return devuelve la cantidad de calorias del ingrediente
   */
-  int getCalorias() const;
+  float getCalorias() const;
   
   /**
   * @brief Consultor de la cantidad de hidratos de carbono del ingrediente
   * @return devuelve la cantidad de hidratosd e carbono del ingrediente
   */
-  int getHc() const;
+  float getHc() const;
 
   /**
   * @brief Consultor de la cantidad de proteinas del ingrediente
   * @return devuelve la cantidad de proteinas del ingrediente
   */
-  int getProteinas() const;
+  float getProteinas() const;
   
   /**
   * @brief Consultor de la cantidad de grasas del ingrediente
   * @return devuelve la cantidad de grasas del ingrediente
   */
-  int getGrasas() const;
+  float getGrasas() const;
 
   /**
   * @brief Consultor de la cantidad de fibra del ingrediente
   * @return devuelve la cantidad de fibra del ingrediente
   */
-  int getFibra() const ;
+  float getFibra() const ;
 
   /**
   * @brief Consultor del tipo del ingrediente
@@ -147,7 +149,7 @@ class Ingrediente {
   * @param t tipo del ingrediente
   * @pre calorias, hidratos, proteinas,grasas,fibras tiene que ser mayor o igual que 0
   */
-  void setIngrediente(string n, int c, int h, int p, int g, int f, string t);
+  void setIngrediente(string n, float c, float h, float p, float g, float f, string t);
 
   /**
    * @brief Modificador del nombre del ingrediente
@@ -159,31 +161,31 @@ class Ingrediente {
    * @brief Modificador de las calorias del ingrediente
    * @param c cantidad de calorias del ingrediente
    */
-  void setCalorias(int c);
+  void setCalorias(float c);
 
   /**
    * @brief Modificador de las hidratos de carbono del ingrediente
    * @param hc cantidad de hidratos de carbono del ingrediente
    */
-  void setHidratos(int hc);
+  void setHidratos(float hc);
 
   /**
    * @brief Modificador de las proteinas del ingrediente
    * @param p cantidad de proteinas del ingrediente
    */
-  void setProteinas(int p);
+  void setProteinas(float p);
 
   /**
    * @brief Modificador de las grasas del ingrediente
    * @param g cantidad de grasas del ingrediente
    */
-  void setGrasas(int g);
+  void setGrasas(float g);
 
   /**
    * @brief Modificador de la fibra del ingrediente
    * @param f cantidad de fibra del ingrediente
    */
-  void setFibra(int f);
+  void setFibra(float f);
 
   /**
    * @brief Modificador del tipo del ingrediente
@@ -193,24 +195,27 @@ class Ingrediente {
 
   /**
    * @brief Sobrecarga del operador =
-   * @param P Ingrediente
+   * @param P ingrediente
    * @return Asigna al objeto implícito el ingrediente
    */
-  void operator=(const Ingrediente &P);
+  void operator=(const ingrediente &P);
 
  /**
   * @brief Entrada de un ingrediente desde istream
   * @param is stream de entrada
-  * @param p Ingrediente que recibe el valor
+  * @param p ingrediente que recibe el valor
   * @retval El ingrediente leído en p
   */
-  friend std::istream & operator>>(std::istream &is , Ingrediente &p);
+  friend std::istream & operator>>(std::istream &is , ingrediente &p);
 
   /**
   * @brief Salida de un  a ostream
   * @param os stream de salida
-  * @param p Ingrediente a escribir
+  * @param p ingrediente a escribir
   * @post Se obtiene en \a os la cadena del ingrediente con los valores
   *   del ingredeiente de \a p
   */
-  friend std::ostream & operator<<(std::ostream &os , const Ingrediente &p);
+  friend std::ostream & operator<<(std::ostream &os , const ingrediente &p);
+
+};
+#endif

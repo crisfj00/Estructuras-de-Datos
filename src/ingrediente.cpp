@@ -1,4 +1,5 @@
 /*
+ * 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -10,7 +11,7 @@
 using namespace std;
 
 //CONSTRUCTOR POR DEFECTO
-    Ingrediente::Ingrediente(){
+    ingrediente::ingrediente(){
         nombre="";
         calorias=0;
         hidratos=0;
@@ -20,14 +21,19 @@ using namespace std;
         tipo="DEFECTO";
     }
 
-    Ingrediente::Ingrediente(string n, string t){
-        Ingrediente();
+    ingrediente::ingrediente(string n, string t){
         nombre=n;
         tipo=t;
+        calorias=0;
+        hidratos=0;
+        proteinas=0;
+        grasas=0;
+        fibra=0;   
     }
 
-    Ingrediente::Ingrediente(string n, int c, int  h, int p, int g, int f,string t){
-        Ingrediente(n,t);
+    ingrediente::ingrediente(string n, float c, float  h, float p, float g, float f,string t){
+        nombre=n;
+        tipo=t;
         calorias=c;
         hidratos=h;
         proteinas=p;
@@ -36,39 +42,39 @@ using namespace std;
     }
     
 
-    string Ingrediente::getNombre() const{
+    string ingrediente::getNombre() const{
         return nombre;
     }
 
-    string Ingrediente::getTipo() const{
+    string ingrediente::getTipo() const{
         return tipo;
     }
 
-    int Ingrediente::getCalorias() const{
+    float ingrediente::getCalorias() const{
         return calorias;
     }
 
-    int Ingrediente::getHc() const{
+    float ingrediente::getHc() const{
         return hidratos;
     }
 
-    int Ingrediente::getGrasas() const{
+    float ingrediente::getGrasas() const{
         return grasas;
     }
 
-    int Ingrediente::getFibra() const{
+    float ingrediente::getFibra() const{
         return fibra;
     }
 
-    int Ingrediente::getProteinas() const{
+    float ingrediente::getProteinas() const{
         return proteinas;
     }
 
-    void Ingrediente::setIngrediente(string n, string t){
+    void ingrediente::setIngrediente(string n, string t){
         nombre=n;
         tipo=t;
     }
-    void Ingrediente::setIngrediente(string n, int c, int h, int p, int g, int f,string t){
+    void ingrediente::setIngrediente(string n, float c, float h, float p, float g, float f,string t){
         nombre=n;
         calorias=c;
         hidratos=h;
@@ -77,31 +83,31 @@ using namespace std;
         fibra=f;
         tipo=t;
     }
-    void Ingrediente::setNombre(string n){
+    void ingrediente::setNombre(string n){
         nombre=n;
     }
-    void Ingrediente::setCalorias(int c){
+    void ingrediente::setCalorias(float c){
         calorias=c;
     }
-    void Ingrediente::setHidratos(int h){
+    void ingrediente::setHidratos(float h){
         hidratos=h;
     }
-    void Ingrediente::setProteinas(int p){
+    void ingrediente::setProteinas(float p){
         proteinas=p;
     }
-    void Ingrediente::setGrasas(int g){
+    void ingrediente::setGrasas(float g){
         grasas=g;
     }
-    void Ingrediente::setFibra(int f){
+    void ingrediente::setFibra(float f){
         fibra=f;
     }
-    void Ingrediente::setTipo(string t){
+    void ingrediente::setTipo(string t){
         tipo=t;
     }
 
 
 
-    void Ingrediente::operator=(const Ingrediente &P){
+    void ingrediente::operator=(const ingrediente &P){
         nombre=P.getNombre();
         calorias=P.getCalorias();
         hidratos=P.getHc();
@@ -112,20 +118,35 @@ using namespace std;
     }
     
     
-    std::ostream& operator<<(std::ostream& os, const Ingrediente& p) {
+    std::ostream& operator<<(std::ostream& os, const ingrediente& p) {
 
         os << p.getNombre() << ";" << p.getCalorias() << ";" << p.getHc() << ";" << p.getProteinas() << ";" << p.getGrasas() << ";" << p.getFibra() << ";" << p.getTipo() << "\n";
 
         return os;
     }   
-/*
-    std::istream & operator>>(std::istream & is, Ingrediente & p){
-        getline(p.nombre,';');
-        is >> p.nombre;
-        is >> p.calorias >> p.hidratos >> p.proteinas >> p.grasas >> p.fibra;
-        is >> p.tipo;
+
+    std::istream & operator>>(std::istream & is, ingrediente & p){
+        char nombre[256], tipo[256];
+        char calorias[256], hidratos[256], grasas[256], proteinas[256], fibra[256];
+        
+        is.getline(nombre,256, ';');
+        is.getline(calorias,256, ';');
+        is.getline(hidratos,256, ';');
+        is.getline(proteinas,256, ';');
+        is.getline(grasas,256, ';');
+        is.getline(fibra,256, ';');
+        is.getline(tipo,256, '\n');
+        
+        p.setNombre(nombre);
+        p.setCalorias(stof(calorias));
+        p.setFibra(stof(fibra));
+        p.setGrasas(stof(grasas));
+        p.setHidratos(stof(hidratos));
+        p.setProteinas(stof(proteinas));
+        p.setTipo(tipo);
+        
         return is;
 
     }
-    */
+    
 
