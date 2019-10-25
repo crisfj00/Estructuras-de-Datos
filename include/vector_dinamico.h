@@ -27,17 +27,19 @@ class vector_dinamico {
         ~vector_dinamico();
         int size() const;
         int getUtil() const;
-        T get(int i) const;
+        const T& get(int i)const;
         void set(int i, T v);
         void resize(int n);
+        T &operator[](int i);
+        const T &operator[](int i) const;        
         vector_dinamico & operator=(const vector_dinamico& original);
         void aniadir(T otro);
         T& obtener(int i);
         void insertar(int i, T otro);
         void Liberar();
 };
+//#include "vector_dinamico.cpp"
 
-//#include "../src/vector_dinamico.cpp"
 #endif /* VECTOR_DINAMICO_H */
 
 

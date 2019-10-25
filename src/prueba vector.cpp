@@ -14,7 +14,8 @@
 #include <cstdlib>
 #include <iostream>
 #include "ingredientes.h"
-#include "../src/vector_dinamico.cpp"
+#include "vector_dinamico.cpp"
+
 
 using namespace std;
 
@@ -26,15 +27,18 @@ int main(int argc, char** argv) {
    ingredientes hola;
    
    ingrediente caca("pedo","cipote");
-   ingrediente mierda("cacatua","polla");
-   ingrediente punsa("aaa","eee");
+   ingrediente mierda("cacatua","c");
+   ingrediente punsa("aaa","c");
    ingrediente ultima("be","c");
+   ingrediente e("z","c");
    
    hola.insertar(caca);
    hola.insertar(mierda);
    hola.insertar(punsa);
+   hola.insertar(e);
    hola.insertar(ultima);
    hola.ImprimirPorNombre(cout);
+   //hola.ImprimirPorTipo(cout);
     
    vector_dinamico<ingrediente> puta;
     

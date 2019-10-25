@@ -3,12 +3,14 @@
   * @brief Fichero cabecera del TDA ingrediente
   *
   */
-#include<iostream>
-#include <string.h>
 
 
 #ifndef INGREDIENTE
 #define INGREDIENTE
+
+#include<iostream>
+#include <string.h>
+
 
 using namespace std;
 

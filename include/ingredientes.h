@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   ingredientes.h
  * Author: cristian
@@ -17,14 +11,12 @@
   *
   */
 
+#ifndef INGREDIENTES_H
+#define INGREDIENTES_H
+
 #include "ingrediente.h"
 #include "vector_dinamico.h"
 #include <iostream>
-
-
-
-#ifndef INGREDIENTES_H
-#define INGREDIENTES_H
 
   /**
   *  @brief T.D.A. ingredientes
@@ -94,7 +86,7 @@ public:
    * @param pos Posicion que queremos obtener
    * @return Devuelve el ingrediente que esta en la posicon pasada como parametro
    */
-    ingrediente get(int pos) const;
+    const ingrediente& get(int pos) const;
 
     /**
    * @brief Metodo para borrar un ingrediente de la posicion pasada como parametro
@@ -119,7 +111,7 @@ public:
     * @param i Posicion en el vector a devolver
     * @return Devuelve un ingrediente de la posicion pasada como parametro
     */
-    ingrediente operator[] (int i) const;
+    const ingrediente& operator[] (int i) const;
 
     /**
     * @brief Entrada de un vector ingredientes desde istream
@@ -148,6 +140,8 @@ public:
     bool incluidoIngrediente(const ingrediente &p);
     
     int buscarTipo(const ingrediente &p);
+    
+    ingrediente & operator[](int i);
 };
 
 

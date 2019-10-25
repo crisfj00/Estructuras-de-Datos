@@ -35,10 +35,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/include/vector_dinamico.o \
 	${OBJECTDIR}/src/Ingredientes.o \
 	${OBJECTDIR}/src/ingrediente.o \
-	${OBJECTDIR}/src/prueba\ vector.o \
-	${OBJECTDIR}/src/vector_dinamico.o
+	${OBJECTDIR}/src/prueba\ vector.o
 
 
 # C Compiler Flags
@@ -65,6 +65,11 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ingrediente: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ingrediente ${OBJECTFILES} ${LDLIBSOPTIONS}
 
+${OBJECTDIR}/include/vector_dinamico.o: include/vector_dinamico.cpp
+	${MKDIR} -p ${OBJECTDIR}/include
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/include/vector_dinamico.o include/vector_dinamico.cpp
+
 ${OBJECTDIR}/src/Ingredientes.o: src/Ingredientes.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
@@ -80,11 +85,6 @@ ${OBJECTDIR}/src/prueba\ vector.o: src/prueba\ vector.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/prueba\ vector.o src/prueba\ vector.cpp
-
-${OBJECTDIR}/src/vector_dinamico.o: src/vector_dinamico.cpp
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/vector_dinamico.o src/vector_dinamico.cpp
 
 # Subprojects
 .build-subprojects:

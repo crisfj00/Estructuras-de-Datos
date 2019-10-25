@@ -1,6 +1,7 @@
 
 #include "ingredientes.h"   
-#include "../src/vector_dinamico.cpp"
+#include "vector_dinamico.cpp"
+#include <iostream>
 #include <string.h>
 
 using namespace std;
@@ -36,7 +37,7 @@ ingredientes::ingredientes(){
         return datos.getUtil();
     }
     
-    ingrediente ingredientes::get(int pos) const{
+    const ingrediente& ingredientes::get(int pos) const{
         return datos.get(pos);
     }
 
@@ -138,8 +139,12 @@ ingredientes::ingredientes(){
     }
     
      
-    ingrediente ingredientes::operator[] (int i) const{ //NO PERMITE MODIFICAR
-       return get(i);
+    const ingrediente &ingredientes::operator[] (int i) const{ //NO PERMITE MODIFICAR
+       return datos[i];
+    }
+    
+    ingrediente & ingredientes::operator[](int i){
+        return datos[i];
     }
     
     
@@ -206,5 +211,6 @@ ingredientes::ingredientes(){
         }
         
         */
+        return insertado;
     }
     
