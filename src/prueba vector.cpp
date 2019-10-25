@@ -22,57 +22,47 @@ using namespace std;
 /*
  * 
  */
+/*
 int main(int argc, char** argv) {
     
    ingredientes hola;
    
-   ingrediente caca("pedo","cipote");
-   ingrediente mierda("cacatua","c");
-   ingrediente punsa("aaa","c");
-   ingrediente ultima("be","c");
-   ingrediente e("z","c");
+   ingrediente caca("coco","A");
+   ingrediente mierda("leche","B");
+   ingrediente punsa("sal","C");
+   ingrediente ultima("aceite","B");
+   ingrediente e("miel","A");
+   ingrediente ec("polla","h");
+   
+   
    
    hola.insertar(caca);
+   
+   
    hola.insertar(mierda);
+   
+   
    hola.insertar(punsa);
    hola.insertar(e);
    hola.insertar(ultima);
+   hola.insertar(ec);
    hola.ImprimirPorNombre(cout);
-   //hola.ImprimirPorTipo(cout);
-    
-   vector_dinamico<ingrediente> puta;
-    
-    vector_dinamico<int> vectorint(7);
-    vector_dinamico<double> vectordouble(5);
-    vector_dinamico<int> vector;
-    
-    
-    vectorint.aniadir(1);
-    vectorint.aniadir(2);
-    
-    vectordouble.aniadir(3.4);
-    
-    
-    for(int i=0; i<vectorint.getUtil(); i++)
-    
-        cout << vectorint.get(i) << " ";
-    cout << endl;
-    
-    for(int i=0; i<vectordouble.getUtil();i++)
-        cout << vectordouble.get(i) << " ";
-    
-    cout << endl;
-    
-    vector=vectorint;
-    
-        
-    for(int i=0; i<vector.size();i++)
-        cout << vector.get(i) << " ";
-    
-    cout<<"\n util es: " << vectorint.getUtil() << " " << vectordouble.getUtil() << " " << vector.getUtil()<< endl;
+   cout << endl;
+   hola.ImprimirPorTipo(cout);
+   
+   cout << endl;
+   
+   hola.borrar("leche");
+   hola.ImprimirPorNombre(cout);
 
-    cout << puta.get(0);
-    
+   cout << endl;
+   hola.ImprimirPorTipo(cout);
+   cout << endl;
+   
+   cout << hola;
+   
+
     return 0;
 }
 
+*/

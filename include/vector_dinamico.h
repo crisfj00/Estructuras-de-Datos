@@ -22,7 +22,7 @@ class vector_dinamico {
         int util=0;
         
     public:
-        vector_dinamico(int n=100);
+        vector_dinamico(int n=10);
         vector_dinamico(const vector_dinamico& original);
         ~vector_dinamico();
         int size() const;
@@ -37,6 +37,7 @@ class vector_dinamico {
         T& obtener(int i);
         void insertar(int i, T otro);
         void Liberar();
+        void borrar(int pos);
 };
 //#include "vector_dinamico.cpp"
 

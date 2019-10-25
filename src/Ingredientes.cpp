@@ -23,9 +23,7 @@ ingredientes::ingredientes(){
         indices=original.indices;
     }
     
-    int ingredientes::size(){
-        return datos.getUtil();
-    }
+
     
     
     ingredientes::~ingredientes(){
@@ -33,37 +31,39 @@ ingredientes::ingredientes(){
         indices.~vector_dinamico();
     }
 
-    int ingredientes::getNumElementos() const{
+    int ingredientes::size() const{
         return datos.getUtil();
     }
     
     const ingrediente& ingredientes::get(int pos) const{
-        return datos.get(pos);
+        return datos[pos];
     }
 
-/*
-    void Ingredientes::borrar(int pos){
-        
-        
-        Pelota *vnuevo = new Pelota[getCapacidad()];
-        
-        for(int i=0,j=0; i<getCapacidad();j++){
-            if(j!=pos){
-             vnuevo[i] = v[j];
-             i++;
-            }
+
+    void ingredientes::borrar(string n){
+        bool borrado1=false, borrado2=false;
+        for(int i=0; i<indices.getUtil() && !borrado1;i++){
+              if(datos[indices[i]].getNombre()==n){
+              int indice=indices[i];
+              indices.borrar(i);
+              borrado1=true;
+              for(int j=indices.getUtil()-1;j>=i;j--){
+                  if(indices[j]>indice)
+                  indices[j]--;
+              }
+          }
         }
-        
-        delete [] v;
-        
-        v=vnuevo;
-        
-        util--;
-        
-        
+      for(int i=0; i<datos.getUtil() &&!borrado2; i++){
+          if(datos[i].getNombre()==n){
+              datos.borrar(i);
+              borrado2=true;
+          }
+
+      }
     }
-*/
-    int ingredientes::buscar(const ingrediente &p){
+
+    
+    bool ingredientes::incluidoIngrediente(const ingrediente &p) const{
         
     int izda = 0;
     int dcha = datos.getUtil() - 1;
@@ -71,56 +71,7 @@ ingredientes::ingredientes(){
     int centro;
     while (izda <= dcha && !encontrado){
         centro = (izda + dcha) / 2;
-        if (datos.get(centro).getNombre() == p.getNombre())
-            encontrado = true;
-        else if (p.getNombre() > datos.get(centro).getNombre())
-                izda = centro + 1;
-            else
-                dcha=centro;
-    }
-    
-    if(encontrado)
-        return -1;
-    else     
-    return izda;
-    }
-    
-    int ingredientes::buscarTipo(const ingrediente &p){
-        
-    int izda = 0;
-    int dcha = indices.getUtil() - 1;
-    bool encontrado = false;
-    int centro;
-    while (izda <= dcha && !encontrado){
-        centro = (izda + dcha) / 2;
-        if(datos.get(indices.get(centro)).getNombre()==p.getNombre())
-            encontrado=true;
-        else if (p.getNombre() > datos.get(indices.get(centro)).getNombre())
-                izda = centro + 1;
-        else if (p.getNombre() == datos.get(indices.get(centro)).getNombre()){
-            if(datos.get(indices.get(centro)).getTipo() < p.getTipo())
-                izda=centro+1;
-            else
-                dcha=centro;
-        }
-                
-    }
-    
-    if(encontrado)
-        return -1;
-    else
-    return izda;
-    }
-    
-    bool ingredientes::incluidoIngrediente(const ingrediente &p){
-        
-    int izda = 0;
-    int dcha = datos.getUtil() - 1;
-    bool encontrado = false;
-    int centro;
-    while (izda <= dcha && !encontrado){
-        centro = (izda + dcha) / 2;
-        if (datos.get(centro).getNombre() == p.getNombre())
+        if (datos.get(centro) == p)
             encontrado = true;
         else if (p.getNombre() < datos.get(centro).getNombre())
                 dcha = centro - 1;
@@ -149,23 +100,26 @@ ingredientes::ingredientes(){
     
     
 
-    std::ostream& operator<<(std::ostream& os, const ingredientes& p) {
-        
-        for (int i=0; i<p.getNumElementos();i++)
-            os << p.get(i) << "\n" ;
+    ostream& operator<<(std::ostream& os, const ingredientes &p) {
+        os << "Alimento (100 gramos);Calorias (Kcal.);Hidratos de Carb.;Proteinas;Grasas;Fibra;Tipo\n";
+        for (int i=0; i<p.size();i++)
+            os << p[i] ;
             return os;
         }
     
-/*
-    std::istream & operator>>(std::istream & is, Ingredientes & p){
-        Ingrediente pl("defecto", "defecto");
-        for (int i=0; i<p.getNumElementos();i++){
+
+    istream & operator>>(std::istream & is, ingredientes & p){
+        char primera[256];
+        is.getline(primera,256, '\n' );
+        
+        ingrediente pl("defecto", "defecto");
+        for (int i=0; !is.eof();i++){
             is >> pl;
-            p.aniadir(pl);
+            p.insertar(pl);
         }
         return is;
     }
- */
+ 
     
     void ingredientes::ImprimirPorNombre(ostream& flujo){
         for(int i=0; i<size();i++)
@@ -173,13 +127,14 @@ ingredientes::ingredientes(){
     }
     
     void ingredientes::ImprimirPorTipo(ostream& flujo){
-        for(int i=0; i<size(); i++)
+        for(int i=0; i<indices.getUtil(); i++)
             flujo << datos.get(indices.get(i));
     }
     
     bool ingredientes::insertar(const ingrediente& otro){
-
+        
         bool insertado=false;
+        if(!incluidoIngrediente(otro)){
         int pos_d, pos_i;
         string nombre=otro.getNombre(), tipo=otro.getTipo();
         
@@ -196,21 +151,81 @@ ingredientes::ingredientes(){
             datos.insertar(datos.getUtil(),otro);
             pos_d=i;
         }
- 
-        /*
-        for(int i=0; i<indices.getUtil();i++){
-            pos_i=indices.get(i);
-            if(tipo.compare(datos.get(pos_i).getTipo())>0)
-                indices.insertar(i,pos_d);
-            else if(tipo.compare(datos.get(pos_i).getTipo()) == 0 && 
-                    nombre.compare(datos.get(pos_i).getNombre()) >0){
-                indices.insertar(i,pos_d);
+        
+        for(int i=0; i<indices.getUtil();i++)
+            if(indices[i]>=pos_d)
+                indices[i]++;
+        
+        insertado=false;
+        for(int i=0; i<indices.getUtil() && !insertado;i++){
+            if(tipo.compare(datos[indices[i]].getTipo())<0){
+                pos_i=i;
+                indices.insertar(pos_i,pos_d);
+                insertado=true;
+            }
+            else if(tipo.compare(datos[indices[i]].getTipo())==0){
+                if(nombre.compare(datos[indices[i]].getNombre())<0){
+                pos_i=i;
+                indices.insertar(pos_i,pos_d);
+                insertado=true;
                 }
-            else if(i==size())
-                indices.insertar(i,pos_d);
+            }
         }
         
-        */
+        if(!insertado){
+            int i=indices.getUtil();
+            indices.insertar(i,pos_d);
+            insertado=true;
+        }
+ 
+        }
+        
         return insertado;
     }
+    
+    vector_dinamico<string> ingredientes::getTipos(){
+        vector_dinamico<string> tipos;
+        assert(indices.getUtil()>=1);
+        tipos.aniadir(datos[indices[0]].getTipo());
+        for(int i=1; i<indices.getUtil();i++)
+            if(datos[indices[i]].getTipo().compare(datos[indices[i-1]].getTipo())!=0)
+                tipos.aniadir(datos[indices[i]].getTipo());
+        
+        return tipos;
+    }
+    
+    ingredientes ingredientes::getIngredienteTipo(string tipo){
+        ingredientes porTipo;
+        for(int i=0; i<indices.getUtil();i++)
+            if(datos[indices[i]].getTipo() == tipo)
+                porTipo.insertar(datos[indices[i]]);
+        return porTipo;
+            
+        
+    }
+    
+    const ingrediente& ingredientes::get(string n) const{
+        ingrediente aux(n,"defecto");
+        
+        assert(incluidoIngrediente(aux));
+        int izda = 0;
+        int centro;
+        int dcha = size() - 1;
+        bool encontrado = false;
+        while (izda <= dcha && !encontrado){
+        int centro = (izda + dcha) / 2;
+        if (datos[centro] == aux)
+            encontrado = true;
+        else if (aux.getNombre().compare(datos[centro].getNombre())<0)
+                dcha = centro - 1;
+            else
+                izda = centro + 1;
+        }
+        
+        return datos[centro];
+        
+    }
+
+        
+    
     

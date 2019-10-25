@@ -33,8 +33,16 @@ vector_dinamico<T>::vector_dinamico(int n){
 template <class T>
 
    vector_dinamico<T>::vector_dinamico(const vector_dinamico& original){
-        this=original; 
-   }
+    reservados = original.getUtil()+1;
+    util=original.getUtil();
+    if(reservados>0){
+        datos = new T[reservados];
+        for(int i=0; i<util; i++)
+        datos[i] = original[i];
+    }
+    else
+        reservados = 0;
+    }
 template <class T>
 
    vector_dinamico<T>::~vector_dinamico(){
@@ -83,6 +91,7 @@ template <class T>
 template <class T>
         
    vector_dinamico<T> & vector_dinamico<T>::operator=(const vector_dinamico& original){
+    
     if(reservados==original.size()){
         for(int i=0; i<original.getUtil();i++)
             set(i,original.get(i));
@@ -144,5 +153,15 @@ const T &vector_dinamico<T>::operator[](int i)const{
     assert(i>=0 && i<getUtil());
     return get(i);
 } 
+
+template <class T>
+void vector_dinamico<T>::borrar(int pos){
+    for(int i=pos;i<getUtil()-1;i++)
+        datos[i]=datos[i+1];
+    util--;
+    
+    if(getUtil()<(reservados/2))
+        resize(reservados/2);
+}
 
  

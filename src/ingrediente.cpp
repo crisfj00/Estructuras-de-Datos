@@ -135,7 +135,7 @@ using namespace std;
         is.getline(proteinas,256, ';');
         is.getline(grasas,256, ';');
         is.getline(fibra,256, ';');
-        is.getline(tipo,256, '\n');
+        is.getline(tipo,256, '\n'); //cambiar ultimo elemento de ingredientes.txt, eliminar ';'
         
         p.setNombre(nombre);
         p.setCalorias(stof(calorias));
@@ -148,5 +148,12 @@ using namespace std;
         return is;
 
     }
+    
+      bool ingrediente::operator==(const ingrediente &otro) const{
+      bool iguales=false;
+      if(nombre==otro.getNombre())
+          iguales=true;
+      return iguales;
+  }
     
 

@@ -218,6 +218,8 @@ class ingrediente {
   *   del ingredeiente de \a p
   */
   friend std::ostream & operator<<(std::ostream &os , const ingrediente &p);
+  
+  bool operator==(const ingrediente &otro) const;
 
 };
 #endif

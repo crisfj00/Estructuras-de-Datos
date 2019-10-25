@@ -49,8 +49,7 @@ private:
   * Alimento;Calorias;Hidratos de Carb;Proteinas;Grasas;Fibra;Tipo
   *
   */
-    vector_dinamico<ingrediente> datos;
-    
+    vector_dinamico<ingrediente> datos; 
     vector_dinamico<int> indices;
     
 public:
@@ -71,15 +70,14 @@ public:
    * @brief Destructor del vector
    */
     ~ingredientes();
-    
-    int size();
+
     
     
     /**
    * @brief Consultor del numero de elementos del vector
    * @return Devuelve el numero de elementos del vector
    */
-    int getNumElementos() const;
+    int size() const;
     
     /**
    * @brief Consultor del atributo de esa posicion
@@ -87,12 +85,14 @@ public:
    * @return Devuelve el ingrediente que esta en la posicon pasada como parametro
    */
     const ingrediente& get(int pos) const;
+    
+    const ingrediente& get(string n) const;
 
     /**
-   * @brief Metodo para borrar un ingrediente de la posicion pasada como parametro
-   * @param pos Posicion que queremos borrar del vector
+   * @brief Metodo para borrar el ingrediente de nombre n
+   * @param n Nombre del ingrediente que queremos borrar de ingredientes
    */
-    void borrar(int pos);
+    void borrar(string n);
 
      /**
    * @brief Metodo para añadir un ingrediente en el orden pedido (por nombre o por tipo)
@@ -127,7 +127,7 @@ public:
     * @param p Ingrediente a escribir
     * @post Se obtiene en \a os la cadena de los diferentes ingredientes del vector con sus respetivos valores
     */
-    friend std::ostream & operator<<(std::ostream &os , const ingrediente &p);
+    friend std::ostream & operator<<(std::ostream &os , const ingredientes &p);
     
     int buscar(const ingrediente &p);
     
@@ -137,11 +137,15 @@ public:
         
 
     
-    bool incluidoIngrediente(const ingrediente &p);
+    bool incluidoIngrediente(const ingrediente &p)const;
     
     int buscarTipo(const ingrediente &p);
     
     ingrediente & operator[](int i);
+    
+    vector_dinamico<string> getTipos();
+    
+    ingredientes getIngredienteTipo(string tipo);
 };
 
 
