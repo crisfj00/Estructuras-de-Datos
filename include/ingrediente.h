@@ -219,6 +219,11 @@ class ingrediente {
   */
   friend std::ostream & operator<<(std::ostream &os , const ingrediente &p);
   
+  /**
+   * @brief Sobrecarga del operador ==
+   * @param otro ingrediente a comparar
+   * @return devulte true si son iguales o false si no lo son
+   */
   bool operator==(const ingrediente &otro) const;
 
 };

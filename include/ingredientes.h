@@ -54,8 +54,14 @@ private:
     
 public:
     
+    /**
+     * @brief Constructor por defecto del vector ingredientes
+     */
     ingredientes();
 
+    /**
+     *@brief Contructor de copia de un vector de ingredientes
+     */
     ingredientes(const ingredientes& original);
     
     
@@ -86,17 +92,23 @@ public:
    */
     const ingrediente& get(int pos) const;
     
+    /**
+     * @brief Consultor del atributo segun el nombre en el vector
+     * @param n Nombre del ingredeinte 
+     * @return Devuelve los valores del ingrediente que tenga el nombre pasado como argumento
+     */
+    
     const ingrediente& get(string n) const;
 
     /**
    * @brief Metodo para borrar el ingrediente de nombre n
-   * @param n Nombre del ingrediente que queremos borrar de ingredientes
+   * @param n Nombre del ingrediente que queremos borrar del vector de ingredientes
    */
     void borrar(string n);
 
      /**
    * @brief Metodo para añadir un ingrediente en el orden pedido (por nombre o por tipo)
-   * @param p ingrediente que queremos añadir 
+   * @param p ingrediente que queremos añadir al vector
    */
     bool insertar(const ingrediente &p);
 
@@ -129,21 +141,48 @@ public:
     */
     friend std::ostream & operator<<(std::ostream &os , const ingredientes &p);
     
-    int buscar(const ingrediente &p);
+    /**
+     * @brief Metodo que imprime el vector ordenado por el tipo del ingrediente
+     * @param flujo stream del salida
+     */
     
     void ImprimirPorTipo(ostream& flujo);
     
+    /**
+     * @brief Metodo que imprime el vector ordenado por el nombre del ingrediente
+     * @param flujo stream del salida
+     */
+    
     void ImprimirPorNombre(ostream& flujo);
         
-
+    /**
+     * @brief Metodo que busca si esta el ingrediente pasado como parametro en el vector
+     * @param p Ingrediente a  buscar 
+     * @return Devuelve true si esta el ingrediente dentro del vector o false si no esta
+     */
     
     bool incluidoIngrediente(const ingrediente &p)const;
     
-    int buscarTipo(const ingrediente &p);
+    /**
+     * @brief Sobrecarga del operador [] (Se puede modificar)
+     * @param i Posicion del ingediente en el vector
+     * @return Devuelve el ingrediente que esta en la posicion pasada como parametro
+     */
     
     ingrediente & operator[](int i);
     
+    /**
+     * @brief Consultor de los tipos que hay en el vector de ingredientes
+     * @return Devuelve todos los tios que estan denro del vector 
+     */
+    
     vector_dinamico<string> getTipos();
+    
+    /**
+     * @brief Metodo del vector filtrado por el tipo
+     * @param tipo Tipo del ingrediente a comparar
+     * @return Devuelve un vector de ingredientes con el mismo tipo (ordenado por nombre) 
+     */
     
     ingredientes getIngredienteTipo(string tipo);
 };
