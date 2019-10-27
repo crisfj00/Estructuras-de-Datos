@@ -126,7 +126,7 @@ using namespace std;
     }   
 
     std::istream & operator>>(std::istream & is, ingrediente & p){
-        char nombre[256], tipo[256];
+        char nombre[256], tipo[256]="";
         char calorias[256], hidratos[256], grasas[256], proteinas[256], fibra[256];
         
         is.getline(nombre,256, ';');
@@ -136,6 +136,10 @@ using namespace std;
         is.getline(grasas,256, ';');
         is.getline(fibra,256, ';');
         is.getline(tipo,256, '\n'); //cambiar ultimo elemento de ingredientes.txt, eliminar ';'
+        
+
+        
+        
         
         p.setNombre(nombre);
         p.setCalorias(stof(calorias));

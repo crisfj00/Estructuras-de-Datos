@@ -47,7 +47,7 @@ ingredientes::ingredientes(){
               int indice=indices[i];
               indices.borrar(i);
               borrado1=true;
-              for(int j=indices.getUtil()-1;j>=i;j--){
+              for(int j=indices.getUtil()-1;j>=0;j--){
                   if(indices[j]>indice)
                   indices[j]--;
               }
@@ -196,9 +196,17 @@ ingredientes::ingredientes(){
     
     ingredientes ingredientes::getIngredienteTipo(string tipo){
         ingredientes porTipo;
-        for(int i=0; i<indices.getUtil();i++)
-            if(datos[indices[i]].getTipo() == tipo)
+        bool salir=false;
+        for(int i=0; i<indices.getUtil() && !salir;i++)
+            if(datos[indices[i]].getTipo()==tipo){
                 porTipo.insertar(datos[indices[i]]);
+                if(i+1>=indices.getUtil()){
+                    salir=true;
+                    continue;
+                }
+                if(datos[indices[i+1]].getTipo()!=tipo) 
+                    salir=true;
+            }
         return porTipo;
             
         
@@ -208,22 +216,16 @@ ingredientes::ingredientes(){
         ingrediente aux(n,"defecto");
         
         assert(incluidoIngrediente(aux));
-        int izda = 0;
-        int centro;
-        int dcha = size() - 1;
-        bool encontrado = false;
-        while (izda <= dcha && !encontrado){
-        int centro = (izda + dcha) / 2;
-        if (datos[centro] == aux)
-            encontrado = true;
-        else if (aux.getNombre().compare(datos[centro].getNombre())<0)
-                dcha = centro - 1;
-            else
-                izda = centro + 1;
+
+        bool encontrado=false;
+        int indice=-1;
+        for (int i=0; i<size() && !encontrado;i++){
+            if (datos[i]==aux){
+                encontrado=true;
+                indice=i;
+            }
         }
-        
-        return datos[centro];
-        
+        return datos[indice];
     }
 
         

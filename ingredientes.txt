@@ -291,7 +291,7 @@ Mandarinas;34;8;1;0;2;Fruta
 Pistachos;602;13;21;52;6;Frutos Secos
 Trufas;25;0;6;0;17;Verdura
 Espinacas Cocidas;30;1;5;0;6;Verdura
-Speisequark Tipo Queso;101;3;10;5;0;Procesado
+Speisequark Tipo Queso;101;3;10;5;0;Procesprivateado
 Agua Manantial;0;0;0;0;0;Bebida
 Coñac;232;0;0;0;0;Bebida
 Chicharro;127;1;16;7;0;Pescado

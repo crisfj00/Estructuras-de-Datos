@@ -69,7 +69,7 @@ int main(int argc, char *argv[])
   
  /******************************************************************************************/
  //SECTION 4: Sobre ingredientes comprobamos consultar por nombre, size y borrar
-  cout<<endl<<endl;
+ cout<<endl<<endl;
   cout<<"El numero de ingredientes son "<<all_ingre.size()<<endl;
   
   cout<<"Dime un nombre de ingrediente:";
@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
    cout<<"Pulse una tecla para continuar "<<endl;
    cin.get();
   
-   string tipo="Molusco";
+   string tipo="Molusco\r"; //ingredientes.txt ha sido creado en windows e incluye el /r tras cada final de linea
    ingredientes ingre_tipo=all_ingre.getIngredienteTipo(tipo);
    cout<<"Los ingredientes de tipo "<<tipo<<" son: "<<endl<<ingre_tipo<<endl;
 

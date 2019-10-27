@@ -28,11 +28,14 @@ int main(int argc, char** argv) {
    ingredientes hola;
    
    ingrediente caca("coco","A");
+      ingrediente ec("pepe","Molusco");
    ingrediente mierda("leche","B");
+      ingrediente eac("cc","Molusco");
    ingrediente punsa("sal","C");
    ingrediente ultima("aceite","B");
    ingrediente e("miel","A");
-   ingrediente ec("polla","h");
+   ingrediente eec("polla","Molusco");
+      ingrediente erc("ader","Molusco");
    
    
    
@@ -40,12 +43,15 @@ int main(int argc, char** argv) {
    
    
    hola.insertar(mierda);
+   hola.insertar(ec);
+   hola.insertar(eac);
+   hola.insertar(eec);
    
    
    hola.insertar(punsa);
    hola.insertar(e);
    hola.insertar(ultima);
-   hola.insertar(ec);
+   hola.insertar(erc);
    hola.ImprimirPorNombre(cout);
    cout << endl;
    hola.ImprimirPorTipo(cout);
@@ -59,10 +65,15 @@ int main(int argc, char** argv) {
    hola.ImprimirPorTipo(cout);
    cout << endl;
    
-   cout << hola;
+   cout << "e?\n"<<hola;
    
+   cout << endl;
+   
+   ingredientes otro=hola.getIngredienteTipo("Molusco");
+   
+   cout << "otro\n" << otro;
 
     return 0;
 }
-
 */
+
