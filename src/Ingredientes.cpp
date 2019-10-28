@@ -1,6 +1,7 @@
 
 #include "ingredientes.h"   
 #include "vector_dinamico.cpp"
+#include <cassert>
 #include <iostream>
 #include <string.h>
 

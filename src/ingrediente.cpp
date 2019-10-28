@@ -135,7 +135,8 @@ using namespace std;
         is.getline(proteinas,256, ';');
         is.getline(grasas,256, ';');
         is.getline(fibra,256, ';');
-        is.getline(tipo,256, '\n'); //cambiar ultimo elemento de ingredientes.txt, eliminar ';'
+        is.getline(tipo,256, '\r'); //cambiar ultimo elemento de ingredientes.txt, eliminar ';'
+        is.get();
         
 
         

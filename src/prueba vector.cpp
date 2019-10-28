@@ -10,7 +10,7 @@
  *
  * Created on 15 de octubre de 2019, 12:15
  */
-
+/*
 #include <cstdlib>
 #include <iostream>
 #include "ingredientes.h"
@@ -18,7 +18,7 @@
 
 
 using namespace std;
-
+*/
 /*
  * 
  */

@@ -106,7 +106,7 @@ int main(int argc, char *argv[])
    cout<<"Pulse una tecla para continuar "<<endl;
    cin.get();
   
-   string tipo="Molusco\r"; //ingredientes.txt ha sido creado en windows e incluye el /r tras cada final de linea
+   string tipo="Molusco"; //ingredientes.txt ha sido creado en windows e incluye el /r tras cada final de linea
    ingredientes ingre_tipo=all_ingre.getIngredienteTipo(tipo);
    cout<<"Los ingredientes de tipo "<<tipo<<" son: "<<endl<<ingre_tipo<<endl;
 

@@ -17,7 +17,7 @@
  * Created on 18 de octubre de 2019, 19:31
  */
 
-#include "vector_dinamico.h"
+//#include "vector_dinamico.h"
 #include <cassert>
 
 
