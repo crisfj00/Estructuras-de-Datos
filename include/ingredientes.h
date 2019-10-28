@@ -29,7 +29,7 @@
   *
   * @author Fran Jimenez
   * @author Cristian Fernandez
-  * @date Marzo 2008
+  * @date Octubre 2019
   */
 class ingredientes{
 private:
