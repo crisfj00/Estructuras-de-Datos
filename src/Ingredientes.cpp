@@ -103,9 +103,10 @@ ingredientes::ingredientes(){
 
     ostream& operator<<(std::ostream& os, const ingredientes &p) {
         os << "Alimento (100 gramos);Calorias (Kcal.);Hidratos de Carb.;Proteinas;Grasas;Fibra;Tipo\n";
-        for (int i=0; i<p.size();i++)
-            os << p[i] ;
-            return os;
+        for(int i=0; i<p.size();i++)
+            os << p[i];
+        
+        return os;
         }
     
 
