@@ -24,9 +24,7 @@ int main(int argc, char *argv[])
     cout<<"No puedo abrir "<<nf<<endl;
     return 0;
  }
- 
- cout<<"\n Pulsa una tecla para continuar...."<<endl;
- cin.get();
+
  /******************************************************************************************/
 
  f.seekg(0);
@@ -49,11 +47,28 @@ int main(int argc, char *argv[])
    cout<<"Los ingredientes de tipo "<<tipo<<" son: "<<endl<<ingre_tipo<<endl;
    
    /******************************************************************************************/
-   
-   cout << "MEDIA: " << ingre_tipo.getMedia('H',tipo) << endl;
-   cout << "\nDESVIACION: " << ingre_tipo.getDesviacion('H',tipo) << endl << endl;
-   cout << ingre_tipo.getMaximo('H',tipo) << endl;
-   cout << ingre_tipo.getMinimo('H',tipo) << endl;
-   
+   cout << "________________________________________________________Estadistica___________________________________________________________\n\nTipo de Alimento: " << tipo << endl;
+   cout << "Promedio +- Desviacion\n";
+   cout << "Calorias        Hidratos de Carb        Proteinas       Grasas      Fibra"<<endl;
+   cout << ingre_tipo.getMedia('C',tipo) << " +- " << ingre_tipo.getDesviacion('C',tipo) << "       ";
+   cout << ingre_tipo.getMedia('H',tipo) << " +- " << ingre_tipo.getDesviacion('H',tipo) << "       ";
+   cout << ingre_tipo.getMedia('P',tipo) << " +- " << ingre_tipo.getDesviacion('P',tipo) << "       ";
+   cout << ingre_tipo.getMedia('G',tipo) << " +- " << ingre_tipo.getDesviacion('G',tipo) << "       ";
+   cout << ingre_tipo.getMedia('F',tipo) << " +- " << ingre_tipo.getDesviacion('F',tipo) << "       \n"<<endl;
+   cout << "Maximos Valores\n";
+   cout << "Calorias (Alimento)       Hidratos de Carb (Alimento)        Proteinas (Alimento)       Grasas (Alimento)      Fibra (Alimento)"<<endl;
+   cout << ingre_tipo.getMaximo('C',tipo).getCalorias() << " " << ingre_tipo.getMaximo('C',tipo).getNombre() << "       ";
+   cout << ingre_tipo.getMaximo('H',tipo).getHc() << " " << ingre_tipo.getMaximo('H',tipo).getNombre() << "       ";
+   cout << ingre_tipo.getMaximo('P',tipo).getProteinas() << " " << ingre_tipo.getMaximo('P',tipo).getNombre() << "       ";
+   cout << ingre_tipo.getMaximo('G',tipo).getGrasas() << " " << ingre_tipo.getMaximo('G',tipo).getNombre() << "       ";
+   cout << ingre_tipo.getMaximo('F',tipo).getFibra() << " " << ingre_tipo.getMaximo('F',tipo).getNombre() << "       "<<endl<<endl;
+   cout << "Minimos Valores\n";
+   cout << "Calorias (Alimento)       Hidratos de Carb (Alimento)        Proteinas (Alimento)       Grasas (Alimento)      Fibra (Alimento)"<<endl;
+   cout << ingre_tipo.getMinimo('C',tipo).getCalorias() << " " << ingre_tipo.getMinimo('C',tipo).getNombre() << "       ";
+   cout << ingre_tipo.getMinimo('H',tipo).getHc() << " " << ingre_tipo.getMinimo('H',tipo).getNombre() << "       ";
+   cout << ingre_tipo.getMinimo('P',tipo).getProteinas() << " " << ingre_tipo.getMinimo('P',tipo).getNombre() << "       ";
+   cout << ingre_tipo.getMinimo('G',tipo).getGrasas() << " " << ingre_tipo.getMinimo('G',tipo).getNombre() << "       ";
+   cout << ingre_tipo.getMinimo('F',tipo).getFibra() << " " << ingre_tipo.getMinimo('F',tipo).getNombre() << "       "<<endl;
+
 
 }
