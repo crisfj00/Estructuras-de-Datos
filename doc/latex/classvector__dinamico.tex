@@ -1,0 +1,306 @@
+\hypertarget{classvector__dinamico}{}\section{Referencia de la plantilla de la Clase vector\+\_\+dinamico$<$ T $>$}
+\label{classvector__dinamico}\index{vector\+\_\+dinamico$<$ T $>$@{vector\+\_\+dinamico$<$ T $>$}}
+
+
+T.\+D.\+A. Vector\+\_\+\+Dinamico.  
+
+
+
+
+{\ttfamily \#include $<$vector\+\_\+dinamico.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classvector__dinamico_ad32cc31634a714ac416d8f711fde4c4b}{vector\+\_\+dinamico} (int n=10)
+\begin{DoxyCompactList}\small\item\em Constructor del vector dinamico por defecto. \end{DoxyCompactList}\item 
+\hyperlink{classvector__dinamico_a9408bb09596374eabcbebe495f9dd2c6}{vector\+\_\+dinamico} (const \hyperlink{classvector__dinamico}{vector\+\_\+dinamico} \&original)
+\begin{DoxyCompactList}\small\item\em Constructor de copia de un vector dinamico. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classvector__dinamico_a34bd35e2c52735888f57bfbc19da1eac}\label{classvector__dinamico_a34bd35e2c52735888f57bfbc19da1eac}} 
+\hyperlink{classvector__dinamico_a34bd35e2c52735888f57bfbc19da1eac}{$\sim$vector\+\_\+dinamico} ()
+\begin{DoxyCompactList}\small\item\em Destructor del vector dinamico. \end{DoxyCompactList}\item 
+int \hyperlink{classvector__dinamico_a196f12479a340f66a26e59eadec6e4e6}{size} () const
+\begin{DoxyCompactList}\small\item\em Consultor del tamaño del vector(\+No permite modificar) \end{DoxyCompactList}\item 
+int \hyperlink{classvector__dinamico_a0cae31353cf2dbcdc0dbd37dafdf52de}{get\+Util} () const
+\begin{DoxyCompactList}\small\item\em Consultor del espacio ocupado en el vector. \end{DoxyCompactList}\item 
+const T \& \hyperlink{classvector__dinamico_ae774d0b2ea36fe4c6bd225a6a7d5c6ec}{get} (int i) const
+\begin{DoxyCompactList}\small\item\em Consultor de una posicion en el vector. \end{DoxyCompactList}\item 
+void \hyperlink{classvector__dinamico_aacef86aaef4e738716884b60e8b3b723}{set} (int i, T v)
+\begin{DoxyCompactList}\small\item\em Modificador del valor de una posicion del vector. \end{DoxyCompactList}\item 
+void \hyperlink{classvector__dinamico_a7b8e98c5f43fd59ab0843f6f24b409d7}{resize} (int n)
+\begin{DoxyCompactList}\small\item\em Metodo para reubicar el vector en un espacio de memoria mas grande. \end{DoxyCompactList}\item 
+T \& \hyperlink{classvector__dinamico_a8ad7523a8d94986322dc71d0913c8535}{operator\mbox{[}$\,$\mbox{]}} (int i)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador \mbox{[}\mbox{]} (Permite modificar) \end{DoxyCompactList}\item 
+const T \& \hyperlink{classvector__dinamico_a7e3f09d91df9c6008525f8d8737f743c}{operator\mbox{[}$\,$\mbox{]}} (int i) const
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador \mbox{[}\mbox{]} (No Permite modificar) \end{DoxyCompactList}\item 
+\hyperlink{classvector__dinamico}{vector\+\_\+dinamico} \& \hyperlink{classvector__dinamico_aa13f55271edd171d4dd4c203efb0c697}{operator=} (const \hyperlink{classvector__dinamico}{vector\+\_\+dinamico} \&original)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador =. \end{DoxyCompactList}\item 
+void \hyperlink{classvector__dinamico_ac1d374913e6a8b7cdcc45750e29213b0}{aniadir} (T otro)
+\begin{DoxyCompactList}\small\item\em Metodo para añadir un elemeto al final del vector. \end{DoxyCompactList}\item 
+T \& \hyperlink{classvector__dinamico_adfa7701af640b85c9c1642e54df903e4}{obtener} (int i)
+\begin{DoxyCompactList}\small\item\em Metodo para consultar el valor de una posicion en el vector (Permite modificar) \end{DoxyCompactList}\item 
+void \hyperlink{classvector__dinamico_a5b60524afb2974c19d06d954064cd356}{insertar} (int i, T otro)
+\begin{DoxyCompactList}\small\item\em Metodo para añadir un elemento. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classvector__dinamico_a2fc10d4b34ba2ea761d3e15a2890b554}\label{classvector__dinamico_a2fc10d4b34ba2ea761d3e15a2890b554}} 
+void \hyperlink{classvector__dinamico_a2fc10d4b34ba2ea761d3e15a2890b554}{Liberar} ()
+\begin{DoxyCompactList}\small\item\em Metodo para liberar el vector. \end{DoxyCompactList}\item 
+void \hyperlink{classvector__dinamico_a3d6c024fc32563bda3508264e12f9678}{borrar} (int pos)
+\begin{DoxyCompactList}\small\item\em Metodo para borrar una posicion en el vector. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+\subsubsection*{template$<$class T$>$\newline
+class vector\+\_\+dinamico$<$ T $>$}
+
+T.\+D.\+A. Vector\+\_\+\+Dinamico. 
+
+Representa un vector dinamico de cualquier tipo de dato y sus diferentes metodos
+
+\begin{DoxyAuthor}{Autor}
+Fran Jimenez 
+
+Cristian Fernandez 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+Octubre 2019 
+\end{DoxyDate}
+
+
+\subsection{Documentación del constructor y destructor}
+\mbox{\Hypertarget{classvector__dinamico_ad32cc31634a714ac416d8f711fde4c4b}\label{classvector__dinamico_ad32cc31634a714ac416d8f711fde4c4b}} 
+\index{vector\+\_\+dinamico@{vector\+\_\+dinamico}!vector\+\_\+dinamico@{vector\+\_\+dinamico}}
+\index{vector\+\_\+dinamico@{vector\+\_\+dinamico}!vector\+\_\+dinamico@{vector\+\_\+dinamico}}
+\subsubsection{\texorpdfstring{vector\+\_\+dinamico()}{vector\_dinamico()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$ T $>$\+::\hyperlink{classvector__dinamico}{vector\+\_\+dinamico} (\begin{DoxyParamCaption}\item[{int}]{n = {\ttfamily 10} }\end{DoxyParamCaption})}
+
+
+
+Constructor del vector dinamico por defecto. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em n} & Espacio reservado \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classvector__dinamico_a9408bb09596374eabcbebe495f9dd2c6}\label{classvector__dinamico_a9408bb09596374eabcbebe495f9dd2c6}} 
+\index{vector\+\_\+dinamico@{vector\+\_\+dinamico}!vector\+\_\+dinamico@{vector\+\_\+dinamico}}
+\index{vector\+\_\+dinamico@{vector\+\_\+dinamico}!vector\+\_\+dinamico@{vector\+\_\+dinamico}}
+\subsubsection{\texorpdfstring{vector\+\_\+dinamico()}{vector\_dinamico()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$ T $>$\+::\hyperlink{classvector__dinamico}{vector\+\_\+dinamico} (\begin{DoxyParamCaption}\item[{const \hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$ T $>$ \&}]{original }\end{DoxyParamCaption})}
+
+
+
+Constructor de copia de un vector dinamico. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em original} & vector dinamico que se va a copiar \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classvector__dinamico_ac1d374913e6a8b7cdcc45750e29213b0}\label{classvector__dinamico_ac1d374913e6a8b7cdcc45750e29213b0}} 
+\index{vector\+\_\+dinamico@{vector\+\_\+dinamico}!aniadir@{aniadir}}
+\index{aniadir@{aniadir}!vector\+\_\+dinamico@{vector\+\_\+dinamico}}
+\subsubsection{\texorpdfstring{aniadir()}{aniadir()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$ T $>$\+::aniadir (\begin{DoxyParamCaption}\item[{T}]{otro }\end{DoxyParamCaption})}
+
+
+
+Metodo para añadir un elemeto al final del vector. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em otro} & Dato que queremos añadir al vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classvector__dinamico_a3d6c024fc32563bda3508264e12f9678}\label{classvector__dinamico_a3d6c024fc32563bda3508264e12f9678}} 
+\index{vector\+\_\+dinamico@{vector\+\_\+dinamico}!borrar@{borrar}}
+\index{borrar@{borrar}!vector\+\_\+dinamico@{vector\+\_\+dinamico}}
+\subsubsection{\texorpdfstring{borrar()}{borrar()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$ T $>$\+::borrar (\begin{DoxyParamCaption}\item[{int}]{pos }\end{DoxyParamCaption})}
+
+
+
+Metodo para borrar una posicion en el vector. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pos} & Posicion a borrar \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classvector__dinamico_ae774d0b2ea36fe4c6bd225a6a7d5c6ec}\label{classvector__dinamico_ae774d0b2ea36fe4c6bd225a6a7d5c6ec}} 
+\index{vector\+\_\+dinamico@{vector\+\_\+dinamico}!get@{get}}
+\index{get@{get}!vector\+\_\+dinamico@{vector\+\_\+dinamico}}
+\subsubsection{\texorpdfstring{get()}{get()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+const T \& \hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$ T $>$\+::get (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Consultor de una posicion en el vector. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em i} & Posicion a consultar retrun Devuelve el valor de la posicion (cualquier tipo de dato) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classvector__dinamico_a0cae31353cf2dbcdc0dbd37dafdf52de}\label{classvector__dinamico_a0cae31353cf2dbcdc0dbd37dafdf52de}} 
+\index{vector\+\_\+dinamico@{vector\+\_\+dinamico}!get\+Util@{get\+Util}}
+\index{get\+Util@{get\+Util}!vector\+\_\+dinamico@{vector\+\_\+dinamico}}
+\subsubsection{\texorpdfstring{get\+Util()}{getUtil()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$ T $>$\+::get\+Util (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consultor del espacio ocupado en el vector. 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el espacio ocupado en el vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classvector__dinamico_a5b60524afb2974c19d06d954064cd356}\label{classvector__dinamico_a5b60524afb2974c19d06d954064cd356}} 
+\index{vector\+\_\+dinamico@{vector\+\_\+dinamico}!insertar@{insertar}}
+\index{insertar@{insertar}!vector\+\_\+dinamico@{vector\+\_\+dinamico}}
+\subsubsection{\texorpdfstring{insertar()}{insertar()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$ T $>$\+::insertar (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{T}]{otro }\end{DoxyParamCaption})}
+
+
+
+Metodo para añadir un elemento. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em i} & Posicion en el vector \\
+\hline
+{\em otro} & Dato que queremos añadir \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classvector__dinamico_adfa7701af640b85c9c1642e54df903e4}\label{classvector__dinamico_adfa7701af640b85c9c1642e54df903e4}} 
+\index{vector\+\_\+dinamico@{vector\+\_\+dinamico}!obtener@{obtener}}
+\index{obtener@{obtener}!vector\+\_\+dinamico@{vector\+\_\+dinamico}}
+\subsubsection{\texorpdfstring{obtener()}{obtener()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \& \hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$ T $>$\+::obtener (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Metodo para consultar el valor de una posicion en el vector (Permite modificar) 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em i} & Posicion a consultar  Devuelve el valor de la posicion (cualquier tipo de dato) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classvector__dinamico_aa13f55271edd171d4dd4c203efb0c697}\label{classvector__dinamico_aa13f55271edd171d4dd4c203efb0c697}} 
+\index{vector\+\_\+dinamico@{vector\+\_\+dinamico}!operator=@{operator=}}
+\index{operator=@{operator=}!vector\+\_\+dinamico@{vector\+\_\+dinamico}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+\hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$ T $>$ \& \hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$ T $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$ T $>$ \&}]{original }\end{DoxyParamCaption})}
+
+
+
+Sobrecarga del operador =. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em original} & Vector dinamico \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Asigna al objeto implícito el vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classvector__dinamico_a8ad7523a8d94986322dc71d0913c8535}\label{classvector__dinamico_a8ad7523a8d94986322dc71d0913c8535}} 
+\index{vector\+\_\+dinamico@{vector\+\_\+dinamico}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!vector\+\_\+dinamico@{vector\+\_\+dinamico}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+T \& \hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Sobrecarga del operador \mbox{[}\mbox{]} (Permite modificar) 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em i} & posicion en el vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el valor que hay en el vector de la posicion pasada como parametro 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classvector__dinamico_a7e3f09d91df9c6008525f8d8737f743c}\label{classvector__dinamico_a7e3f09d91df9c6008525f8d8737f743c}} 
+\index{vector\+\_\+dinamico@{vector\+\_\+dinamico}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!vector\+\_\+dinamico@{vector\+\_\+dinamico}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+const T \& \hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$ T $>$\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Sobrecarga del operador \mbox{[}\mbox{]} (No Permite modificar) 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em i} & posicion en el vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el valor que hay en el vector de la posicion pasada como parametro 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classvector__dinamico_a7b8e98c5f43fd59ab0843f6f24b409d7}\label{classvector__dinamico_a7b8e98c5f43fd59ab0843f6f24b409d7}} 
+\index{vector\+\_\+dinamico@{vector\+\_\+dinamico}!resize@{resize}}
+\index{resize@{resize}!vector\+\_\+dinamico@{vector\+\_\+dinamico}}
+\subsubsection{\texorpdfstring{resize()}{resize()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void \hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$ T $>$\+::resize (\begin{DoxyParamCaption}\item[{int}]{n }\end{DoxyParamCaption})}
+
+
+
+Metodo para reubicar el vector en un espacio de memoria mas grande. 
+
+n nuevo tamaño de memoria reservada \mbox{\Hypertarget{classvector__dinamico_aacef86aaef4e738716884b60e8b3b723}\label{classvector__dinamico_aacef86aaef4e738716884b60e8b3b723}} 
+\index{vector\+\_\+dinamico@{vector\+\_\+dinamico}!set@{set}}
+\index{set@{set}!vector\+\_\+dinamico@{vector\+\_\+dinamico}}
+\subsubsection{\texorpdfstring{set()}{set()}}
+{\footnotesize\ttfamily template$<$class T$>$ \\
+void \hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$ T $>$\+::set (\begin{DoxyParamCaption}\item[{int}]{i,  }\item[{T}]{v }\end{DoxyParamCaption})}
+
+
+
+Modificador del valor de una posicion del vector. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em i} & indice del vector(\+Posicion) \\
+\hline
+{\em v} & dato a insertar en la posicion pasada como parametro \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classvector__dinamico_a196f12479a340f66a26e59eadec6e4e6}\label{classvector__dinamico_a196f12479a340f66a26e59eadec6e4e6}} 
+\index{vector\+\_\+dinamico@{vector\+\_\+dinamico}!size@{size}}
+\index{size@{size}!vector\+\_\+dinamico@{vector\+\_\+dinamico}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+int \hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$ T $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consultor del tamaño del vector(\+No permite modificar) 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el espacio reservado para el vector 
+\end{DoxyReturn}
+
+
+La documentación para esta clase fue generada a partir de los siguientes ficheros\+:\begin{DoxyCompactItemize}
+\item 
+/home/cristian/\+Escritorio/ingrediente/include/\hyperlink{vector__dinamico_8h}{vector\+\_\+dinamico.\+h}\item 
+/home/cristian/\+Escritorio/ingrediente/include/vector\+\_\+dinamico.\+cpp\end{DoxyCompactItemize}

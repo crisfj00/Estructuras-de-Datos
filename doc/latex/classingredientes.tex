@@ -1,0 +1,371 @@
+\hypertarget{classingredientes}{}\section{Referencia de la Clase ingredientes}
+\label{classingredientes}\index{ingredientes@{ingredientes}}
+
+
+T.\+D.\+A. ingredientes.  
+
+
+
+
+{\ttfamily \#include $<$ingredientes.\+h$>$}
+
+\subsection*{Métodos públicos}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classingredientes_adb3e000aa798184c7253c401f165c1a5}\label{classingredientes_adb3e000aa798184c7253c401f165c1a5}} 
+\hyperlink{classingredientes_adb3e000aa798184c7253c401f165c1a5}{ingredientes} ()
+\begin{DoxyCompactList}\small\item\em Constructor por defecto del vector ingredientes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classingredientes_a7470e2be68c17cfa3193f4cf2cb57872}\label{classingredientes_a7470e2be68c17cfa3193f4cf2cb57872}} 
+\hyperlink{classingredientes_a7470e2be68c17cfa3193f4cf2cb57872}{ingredientes} (const \hyperlink{classingredientes}{ingredientes} \&original)
+\begin{DoxyCompactList}\small\item\em Contructor de copia de un vector de ingredientes. \end{DoxyCompactList}\item 
+void \hyperlink{classingredientes_ab5478a896ab96486a86dfb1b5707c565}{operator=} (const \hyperlink{classingredientes}{ingredientes} \&original)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador =. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classingredientes_a91a5e8d5d27853f07314a97928500dfe}\label{classingredientes_a91a5e8d5d27853f07314a97928500dfe}} 
+\hyperlink{classingredientes_a91a5e8d5d27853f07314a97928500dfe}{$\sim$ingredientes} ()
+\begin{DoxyCompactList}\small\item\em Destructor del vector. \end{DoxyCompactList}\item 
+int \hyperlink{classingredientes_aaf628d0360800484ae277fbb7aa2f81d}{size} () const
+\begin{DoxyCompactList}\small\item\em Consultor del numero de elementos del vector. \end{DoxyCompactList}\item 
+const \hyperlink{classingrediente}{ingrediente} \& \hyperlink{classingredientes_a2d4257359160b39365b1aac2ec6a1166}{get} (int pos) const
+\begin{DoxyCompactList}\small\item\em Consultor del atributo de esa posicion. \end{DoxyCompactList}\item 
+const \hyperlink{classingrediente}{ingrediente} \& \hyperlink{classingredientes_aae670bf5dc762313dff281c7c6aa1b4f}{get} (string n) const
+\begin{DoxyCompactList}\small\item\em Consultor del atributo segun el nombre en el vector. \end{DoxyCompactList}\item 
+void \hyperlink{classingredientes_a71bde8efdf96c22f0f27ab9cc6e50466}{borrar} (string n)
+\begin{DoxyCompactList}\small\item\em Metodo para borrar el ingrediente de nombre n. \end{DoxyCompactList}\item 
+bool \hyperlink{classingredientes_a7633d03cdda31180994b63090ff9dd11}{insertar} (const \hyperlink{classingrediente}{ingrediente} \&p)
+\begin{DoxyCompactList}\small\item\em Metodo para añadir un ingrediente en el orden pedido (por nombre o por tipo) \end{DoxyCompactList}\item 
+void \hyperlink{classingredientes_a24ea8c982877578bff6e0f450c4b79a6}{operator+=} (const \hyperlink{classingrediente}{ingrediente} \&p)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador +=. \end{DoxyCompactList}\item 
+const \hyperlink{classingrediente}{ingrediente} \& \hyperlink{classingredientes_a4d26f4035049ca7fb9506df48895cc4f}{operator\mbox{[}$\,$\mbox{]}} (int i) const
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador \mbox{[}\mbox{]} (No permite modificar) \end{DoxyCompactList}\item 
+void \hyperlink{classingredientes_a683d032576cbc230c210aa51cdbcc93e}{Imprimir\+Por\+Tipo} (ostream \&flujo)
+\begin{DoxyCompactList}\small\item\em Metodo que imprime el vector ordenado por el tipo del ingrediente. \end{DoxyCompactList}\item 
+void \hyperlink{classingredientes_adefafd151edf8a8997bca2dc22057ece}{Imprimir\+Por\+Nombre} (ostream \&flujo)
+\begin{DoxyCompactList}\small\item\em Metodo que imprime el vector ordenado por el nombre del ingrediente. \end{DoxyCompactList}\item 
+bool \hyperlink{classingredientes_a6d3f30e2e79299a970c705f61a8ee4d7}{incluido\+Ingrediente} (const \hyperlink{classingrediente}{ingrediente} \&p) const
+\begin{DoxyCompactList}\small\item\em Metodo que busca si esta el ingrediente pasado como parametro en el vector. \end{DoxyCompactList}\item 
+\hyperlink{classingrediente}{ingrediente} \& \hyperlink{classingredientes_a9e099786f83d0ac3cf38317b194691db}{operator\mbox{[}$\,$\mbox{]}} (int i)
+\begin{DoxyCompactList}\small\item\em Sobrecarga del operador \mbox{[}\mbox{]} (Se puede modificar) \end{DoxyCompactList}\item 
+\hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$ string $>$ \hyperlink{classingredientes_a4fc149d674b55f73c3079d58606e7e1c}{get\+Tipos} ()
+\begin{DoxyCompactList}\small\item\em Consultor de los tipos que hay en el vector de ingredientes. \end{DoxyCompactList}\item 
+\hyperlink{classingredientes}{ingredientes} \hyperlink{classingredientes_a160ecb07facb16cbe7369ea797c67549}{get\+Ingrediente\+Tipo} (string tipo)
+\begin{DoxyCompactList}\small\item\em Metodo del vector filtrado por el tipo. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classingredientes_aa124bb75b0ff0b233d313fce58668868}\label{classingredientes_aa124bb75b0ff0b233d313fce58668868}} 
+double {\bfseries get\+Media} (char atributo, string tipo)
+\item 
+\mbox{\Hypertarget{classingredientes_adc3f70ae78a02993e6a4b8dac6a4ba07}\label{classingredientes_adc3f70ae78a02993e6a4b8dac6a4ba07}} 
+double {\bfseries get\+Desviacion} (char atributo, string tipo)
+\item 
+\mbox{\Hypertarget{classingredientes_a6e4cfe264fddd851ccf2f2061d6b66ce}\label{classingredientes_a6e4cfe264fddd851ccf2f2061d6b66ce}} 
+\hyperlink{classingrediente}{ingrediente} {\bfseries get\+Maximo} (char atributo, string tipo)
+\item 
+\mbox{\Hypertarget{classingredientes_a0ec4fb15cad1b31709b24751abdf2067}\label{classingredientes_a0ec4fb15cad1b31709b24751abdf2067}} 
+\hyperlink{classingrediente}{ingrediente} {\bfseries get\+Minimo} (char atributo, string tipo)
+\end{DoxyCompactItemize}
+\subsection*{Amigas}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \hyperlink{classingredientes_adfbb6b2de8bd8b193715a3d58c313b84}{operator$>$$>$} (std\+::istream \&is, \hyperlink{classingredientes}{ingredientes} \&p)
+\begin{DoxyCompactList}\small\item\em Entrada de un vector ingredientes desde istream. \end{DoxyCompactList}\item 
+std\+::ostream \& \hyperlink{classingredientes_a47b68f377e21ce26320b8adb9c72f347}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{classingredientes}{ingredientes} \&p)
+\begin{DoxyCompactList}\small\item\em Salida de un a ostream. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Descripción detallada}
+T.\+D.\+A. ingredientes. 
+
+Representa un vector dinamico de {\itshape \hyperlink{classingrediente}{ingrediente(s)}}. Tiene dos ordenaciones posibles\+:
+
+
+\begin{DoxyItemize}
+\item Ordenacion por el nombre del ingrediente
+\item Ordenacion por el tipo de alimento
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Autor}
+Fran Jimenez 
+
+Cristian Fernandez 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Fecha}
+Octubre 2019 
+\end{DoxyDate}
+
+
+\subsection{Documentación de las funciones miembro}
+\mbox{\Hypertarget{classingredientes_a71bde8efdf96c22f0f27ab9cc6e50466}\label{classingredientes_a71bde8efdf96c22f0f27ab9cc6e50466}} 
+\index{ingredientes@{ingredientes}!borrar@{borrar}}
+\index{borrar@{borrar}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{borrar()}{borrar()}}
+{\footnotesize\ttfamily void ingredientes\+::borrar (\begin{DoxyParamCaption}\item[{string}]{n }\end{DoxyParamCaption})}
+
+
+
+Metodo para borrar el ingrediente de nombre n. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em n} & Nombre del ingrediente que queremos borrar del vector de ingredientes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classingredientes_a2d4257359160b39365b1aac2ec6a1166}\label{classingredientes_a2d4257359160b39365b1aac2ec6a1166}} 
+\index{ingredientes@{ingredientes}!get@{get}}
+\index{get@{get}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classingrediente}{ingrediente}\& ingredientes\+::get (\begin{DoxyParamCaption}\item[{int}]{pos }\end{DoxyParamCaption}) const}
+
+
+
+Consultor del atributo de esa posicion. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em pos} & Posicion que queremos obtener \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el ingrediente que esta en la posicon pasada como parametro 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classingredientes_aae670bf5dc762313dff281c7c6aa1b4f}\label{classingredientes_aae670bf5dc762313dff281c7c6aa1b4f}} 
+\index{ingredientes@{ingredientes}!get@{get}}
+\index{get@{get}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{get()}{get()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily const \hyperlink{classingrediente}{ingrediente}\& ingredientes\+::get (\begin{DoxyParamCaption}\item[{string}]{n }\end{DoxyParamCaption}) const}
+
+
+
+Consultor del atributo segun el nombre en el vector. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em n} & Nombre del ingredeinte \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve los valores del ingrediente que tenga el nombre pasado como argumento 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classingredientes_a160ecb07facb16cbe7369ea797c67549}\label{classingredientes_a160ecb07facb16cbe7369ea797c67549}} 
+\index{ingredientes@{ingredientes}!get\+Ingrediente\+Tipo@{get\+Ingrediente\+Tipo}}
+\index{get\+Ingrediente\+Tipo@{get\+Ingrediente\+Tipo}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{get\+Ingrediente\+Tipo()}{getIngredienteTipo()}}
+{\footnotesize\ttfamily \hyperlink{classingredientes}{ingredientes} ingredientes\+::get\+Ingrediente\+Tipo (\begin{DoxyParamCaption}\item[{string}]{tipo }\end{DoxyParamCaption})}
+
+
+
+Metodo del vector filtrado por el tipo. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em tipo} & Tipo del ingrediente a comparar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve un vector de ingredientes con el mismo tipo (ordenado por nombre) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classingredientes_a4fc149d674b55f73c3079d58606e7e1c}\label{classingredientes_a4fc149d674b55f73c3079d58606e7e1c}} 
+\index{ingredientes@{ingredientes}!get\+Tipos@{get\+Tipos}}
+\index{get\+Tipos@{get\+Tipos}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{get\+Tipos()}{getTipos()}}
+{\footnotesize\ttfamily \hyperlink{classvector__dinamico}{vector\+\_\+dinamico}$<$string$>$ ingredientes\+::get\+Tipos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Consultor de los tipos que hay en el vector de ingredientes. 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve todos los tios que estan denro del vector 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classingredientes_adefafd151edf8a8997bca2dc22057ece}\label{classingredientes_adefafd151edf8a8997bca2dc22057ece}} 
+\index{ingredientes@{ingredientes}!Imprimir\+Por\+Nombre@{Imprimir\+Por\+Nombre}}
+\index{Imprimir\+Por\+Nombre@{Imprimir\+Por\+Nombre}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{Imprimir\+Por\+Nombre()}{ImprimirPorNombre()}}
+{\footnotesize\ttfamily void ingredientes\+::\+Imprimir\+Por\+Nombre (\begin{DoxyParamCaption}\item[{ostream \&}]{flujo }\end{DoxyParamCaption})}
+
+
+
+Metodo que imprime el vector ordenado por el nombre del ingrediente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em flujo} & stream del salida \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classingredientes_a683d032576cbc230c210aa51cdbcc93e}\label{classingredientes_a683d032576cbc230c210aa51cdbcc93e}} 
+\index{ingredientes@{ingredientes}!Imprimir\+Por\+Tipo@{Imprimir\+Por\+Tipo}}
+\index{Imprimir\+Por\+Tipo@{Imprimir\+Por\+Tipo}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{Imprimir\+Por\+Tipo()}{ImprimirPorTipo()}}
+{\footnotesize\ttfamily void ingredientes\+::\+Imprimir\+Por\+Tipo (\begin{DoxyParamCaption}\item[{ostream \&}]{flujo }\end{DoxyParamCaption})}
+
+
+
+Metodo que imprime el vector ordenado por el tipo del ingrediente. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em flujo} & stream del salida \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classingredientes_a6d3f30e2e79299a970c705f61a8ee4d7}\label{classingredientes_a6d3f30e2e79299a970c705f61a8ee4d7}} 
+\index{ingredientes@{ingredientes}!incluido\+Ingrediente@{incluido\+Ingrediente}}
+\index{incluido\+Ingrediente@{incluido\+Ingrediente}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{incluido\+Ingrediente()}{incluidoIngrediente()}}
+{\footnotesize\ttfamily bool ingredientes\+::incluido\+Ingrediente (\begin{DoxyParamCaption}\item[{const \hyperlink{classingrediente}{ingrediente} \&}]{p }\end{DoxyParamCaption}) const}
+
+
+
+Metodo que busca si esta el ingrediente pasado como parametro en el vector. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em p} & Ingrediente a buscar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve true si esta el ingrediente dentro del vector o false si no esta 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classingredientes_a7633d03cdda31180994b63090ff9dd11}\label{classingredientes_a7633d03cdda31180994b63090ff9dd11}} 
+\index{ingredientes@{ingredientes}!insertar@{insertar}}
+\index{insertar@{insertar}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{insertar()}{insertar()}}
+{\footnotesize\ttfamily bool ingredientes\+::insertar (\begin{DoxyParamCaption}\item[{const \hyperlink{classingrediente}{ingrediente} \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Metodo para añadir un ingrediente en el orden pedido (por nombre o por tipo) 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em p} & ingrediente que queremos añadir al vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classingredientes_a24ea8c982877578bff6e0f450c4b79a6}\label{classingredientes_a24ea8c982877578bff6e0f450c4b79a6}} 
+\index{ingredientes@{ingredientes}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{operator+=()}{operator+=()}}
+{\footnotesize\ttfamily void ingredientes\+::operator+= (\begin{DoxyParamCaption}\item[{const \hyperlink{classingrediente}{ingrediente} \&}]{p }\end{DoxyParamCaption})}
+
+
+
+Sobrecarga del operador +=. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em p} & ingrediente a sumar con el objeto implícito \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classingredientes_ab5478a896ab96486a86dfb1b5707c565}\label{classingredientes_ab5478a896ab96486a86dfb1b5707c565}} 
+\index{ingredientes@{ingredientes}!operator=@{operator=}}
+\index{operator=@{operator=}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily void ingredientes\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{classingredientes}{ingredientes} \&}]{original }\end{DoxyParamCaption})}
+
+
+
+Sobrecarga del operador =. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em original} & vector de ingredientes \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Asigna al objeto implícito el vector de ingredientes 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classingredientes_a4d26f4035049ca7fb9506df48895cc4f}\label{classingredientes_a4d26f4035049ca7fb9506df48895cc4f}} 
+\index{ingredientes@{ingredientes}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{classingrediente}{ingrediente}\& ingredientes\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption}) const}
+
+
+
+Sobrecarga del operador \mbox{[}\mbox{]} (No permite modificar) 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em i} & Posicion en el vector a devolver \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve un ingrediente de la posicion pasada como parametro 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classingredientes_a9e099786f83d0ac3cf38317b194691db}\label{classingredientes_a9e099786f83d0ac3cf38317b194691db}} 
+\index{ingredientes@{ingredientes}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{classingrediente}{ingrediente}\& ingredientes\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Sobrecarga del operador \mbox{[}\mbox{]} (Se puede modificar) 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em i} & Posicion del ingediente en el vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el ingrediente que esta en la posicion pasada como parametro 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classingredientes_aaf628d0360800484ae277fbb7aa2f81d}\label{classingredientes_aaf628d0360800484ae277fbb7aa2f81d}} 
+\index{ingredientes@{ingredientes}!size@{size}}
+\index{size@{size}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily int ingredientes\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Consultor del numero de elementos del vector. 
+
+\begin{DoxyReturn}{Devuelve}
+Devuelve el numero de elementos del vector 
+\end{DoxyReturn}
+
+
+\subsection{Documentación de las funciones relacionadas y clases amigas}
+\mbox{\Hypertarget{classingredientes_a47b68f377e21ce26320b8adb9c72f347}\label{classingredientes_a47b68f377e21ce26320b8adb9c72f347}} 
+\index{ingredientes@{ingredientes}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{classingredientes}{ingredientes} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Salida de un a ostream. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em os} & stream de salida \\
+\hline
+{\em p} & Ingrediente a escribir \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPostcond}{Postcondición}
+Se obtiene en {\itshape os} la cadena de los diferentes ingredientes del vector con sus respetivos valores 
+\end{DoxyPostcond}
+\mbox{\Hypertarget{classingredientes_adfbb6b2de8bd8b193715a3d58c313b84}\label{classingredientes_adfbb6b2de8bd8b193715a3d58c313b84}} 
+\index{ingredientes@{ingredientes}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily std\+::istream\& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{is,  }\item[{\hyperlink{classingredientes}{ingredientes} \&}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Entrada de un vector ingredientes desde istream. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em is} & stream de entrada \\
+\hline
+{\em p} & Vector de Ingredientes que recibe el valor de ingredientes \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Valores devueltos}
+{\em El} & vector de ingredientes leído en p \\
+\hline
+\end{DoxyRetVals}
+
+
+La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
+\item 
+/home/cristian/\+Escritorio/ingrediente/include/ingredientes.\+h\end{DoxyCompactItemize}
