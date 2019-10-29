@@ -46,6 +46,9 @@ int main(int argc, char *argv[])
    ingredientes ingre_tipo=all_ingre.getIngredienteTipo(tipo);
    cout<<"Los ingredientes de tipo "<<tipo<<" son: "<<endl<<ingre_tipo<<endl;
    
+   cout <<"Pulse una tecla para continuar..." << endl << endl;
+   cin.get();
+   
    /******************************************************************************************/
    cout << "________________________________________________________Estadistica___________________________________________________________\n\nTipo de Alimento: " << tipo << endl;
    cout << "Promedio +- Desviacion\n";

@@ -4,12 +4,12 @@ OBJ = obj
 BIN = bin
 CXX = g++
 CPPFLAGS = -Wall -g  -I$(INC) -c --std=c++11
-all:$(BIN)/test_ingredientes $(BIN)/tipos_ingredientes
+all:$(BIN)/test_ingredientes $(BIN)/tipos_ingredientes documentacion
 .PHONY: all
 
 # ************ Generación de documentación ******************
-#documentacion:
-#	doxygen doc/Doxyfile
+documentacion:
+	doxygen doc/doxys/Doxy-file
 
 
 # ************ Compilación de módulos ************
