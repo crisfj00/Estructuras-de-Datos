@@ -19,6 +19,7 @@
       <itemPath>src/ingrediente.cpp</itemPath>
       <itemPath>src/prueba vector.cpp</itemPath>
       <itemPath>src/test_ingredientes.cpp</itemPath>
+      <itemPath>src/tipos_ingredientes.cpp</itemPath>
       <itemPath>include/vector_dinamico.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -70,6 +71,8 @@
       </item>
       <item path="src/test_ingredientes.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/tipos_ingredientes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
     </conf>
     <conf name="Release" type="1">
       <toolsSet>
@@ -106,6 +109,8 @@
       <item path="src/prueba vector.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/test_ingredientes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/tipos_ingredientes.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>

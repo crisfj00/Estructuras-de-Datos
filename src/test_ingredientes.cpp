@@ -111,3 +111,4 @@ int main(int argc, char *argv[])
    cout<<"Los ingredientes de tipo "<<tipo<<" son: "<<endl<<ingre_tipo<<endl;
 
 }
+

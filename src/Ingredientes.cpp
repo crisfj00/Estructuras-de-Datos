@@ -1,6 +1,7 @@
 
 #include "ingredientes.h"   
 #include "vector_dinamico.cpp"
+#include <cmath>
 #include <cassert>
 #include <iostream>
 #include <string.h>
@@ -229,6 +230,184 @@ ingredientes::ingredientes(){
         }
         return datos[indice];
     }
+    
+    
+    double ingredientes::getMedia(char atributo, string tipo){
+        double media;
+        ingredientes porTipo=getIngredienteTipo(tipo);
+        
+        switch(atributo){
+            case 'C':
+
+                for(int i=0; i<porTipo.size();i++)
+                    media+=porTipo[i].getCalorias();
+                break;
+                
+            case 'P':
+
+                for(int i=0; i<porTipo.size();i++)
+                    media+=porTipo[i].getProteinas();
+                break;
+                
+            case 'G':
+
+                for(int i=0; i<porTipo.size();i++)
+                    media+=porTipo[i].getGrasas();
+                break;
+                
+                
+            case 'F':
+
+                for(int i=0; i<porTipo.size();i++)
+                    media+=porTipo[i].getFibra();
+                break;
+                
+            case 'H':
+
+                for(int i=0; i<porTipo.size();i++)
+                    media+=porTipo[i].getHc();
+                break;       
+        }
+        
+        media/=porTipo.size();
+        
+        return media;
+        
+    }
+    
+    double ingredientes::getDesviacion(char atributo, string tipo) {
+        double media=getMedia(atributo,tipo);
+        double varianza=0;
+        ingredientes porTipo=getIngredienteTipo(tipo);
+        
+        switch(atributo){
+            case 'C':
+
+                for(int i=0; i<porTipo.size();i++)
+                    varianza+=pow((porTipo[i].getCalorias() - media),2.0);
+                break;
+                
+            case 'P':
+
+                for(int i=0; i<porTipo.size();i++)
+                    varianza+=pow((porTipo[i].getProteinas() - media),2.0);  
+                break;
+                
+            case 'G':
+
+                for(int i=0; i<porTipo.size();i++)
+                    varianza+=pow((porTipo[i].getGrasas() - media),2.0);  
+                break;
+                
+                
+            case 'F':
+
+                for(int i=0; i<porTipo.size();i++)
+                    varianza+=pow((porTipo[i].getFibra() - media),2.0); 
+                break;
+                
+            case 'H':
+
+                for(int i=0; i<porTipo.size();i++)
+                    varianza+=pow((porTipo[i].getHc() - media),2.0); 
+                break;       
+        }
+        
+        varianza=varianza/porTipo.size();
+        return sqrt(varianza);
+        
+    }
+    
+    
+    ingrediente ingredientes::getMaximo(char atributo, string tipo){
+        ingredientes porTipo=getIngredienteTipo(tipo);
+        int pos_maximo;
+        assert(porTipo.size()>0);
+            pos_maximo=0;
+   
+        switch(atributo){
+            case 'C':
+                for(int i=0; i<porTipo.size();i++)
+                    if(porTipo[i].getCalorias()>porTipo[pos_maximo].getCalorias())
+                        pos_maximo=i;
+                break;
+                
+            case 'P':
+                for(int i=0; i<porTipo.size();i++)
+                    if(porTipo[i].getProteinas()>porTipo[pos_maximo].getProteinas())
+                        pos_maximo=i; 
+                break;
+                
+            case 'G':
+                for(int i=0; i<porTipo.size();i++)
+                    if(porTipo[i].getGrasas()>porTipo[pos_maximo].getGrasas())
+                        pos_maximo=i;
+                break;
+                
+                
+            case 'F':
+                for(int i=0; i<porTipo.size();i++)
+                    if(porTipo[i].getFibra()>porTipo[pos_maximo].getFibra())
+                        pos_maximo=i;
+                break;
+                
+            case 'H':
+                for(int i=0; i<porTipo.size();i++)
+                    if(porTipo[i].getHc()>porTipo[pos_maximo].getHc())
+                        pos_maximo=i;
+                break;       
+        }
+        
+
+        
+        return porTipo[pos_maximo];
+    }
+    
+    
+    ingrediente ingredientes::getMinimo(char atributo, string tipo){
+        ingredientes porTipo=getIngredienteTipo(tipo);
+        int pos_minimo;
+        assert(porTipo.size()>0);
+            pos_minimo=0;
+   
+        switch(atributo){
+            case 'C':
+                for(int i=0; i<porTipo.size();i++)
+                    if(porTipo[i].getCalorias()<porTipo[pos_minimo].getCalorias())
+                        pos_minimo=i;
+                break;
+                
+            case 'P':
+                for(int i=0; i<porTipo.size();i++)
+                    if(porTipo[i].getProteinas()<porTipo[pos_minimo].getProteinas())
+                        pos_minimo=i; 
+                break;
+                
+            case 'G':
+                for(int i=0; i<porTipo.size();i++)
+                    if(porTipo[i].getGrasas()<porTipo[pos_minimo].getGrasas())
+                        pos_minimo=i;
+                break;
+                
+                
+            case 'F':
+                for(int i=0; i<porTipo.size();i++)
+                    if(porTipo[i].getFibra()<porTipo[pos_minimo].getFibra())
+                        pos_minimo=i;
+                break;
+                
+            case 'H':
+                for(int i=0; i<porTipo.size();i++)
+                    if(porTipo[i].getHc()<porTipo[pos_minimo].getHc())
+                        pos_minimo=i;
+                break;       
+        }
+        
+
+        
+        return porTipo[pos_minimo];
+    }
+    
 
         
     

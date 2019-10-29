@@ -185,6 +185,17 @@ public:
      */
     
     ingredientes getIngredienteTipo(string tipo);
+    
+    
+    double getMedia(char atributo, string tipo);
+    
+    double getDesviacion(char atributo, string tipo);
+    
+    ingrediente getMaximo(char atributo, string tipo);
+    
+    ingrediente getMinimo(char atributo, string tipo);
+    
+    
 };
 
 
