@@ -225,6 +225,12 @@ class ingrediente {
    * @return devulte true si son iguales o false si no lo son
    */
   bool operator==(const ingrediente &otro) const;
+  
+   /**
+   * @brief Información sobre el ingrediente
+   * @return devulte un string que muestra los atributos de un ingrediente
+   */
+  string informacion();
 
 };
 #endif

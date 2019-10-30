@@ -126,29 +126,24 @@ using namespace std;
     }   
 
     std::istream & operator>>(std::istream & is, ingrediente & p){
-        char nombre[256], tipo[256]="";
-        char calorias[256], hidratos[256], grasas[256], proteinas[256], fibra[256];
+        char tipo[256];
+        char cadena[256];
         
-        is.getline(nombre,256, ';');
-        is.getline(calorias,256, ';');
-        is.getline(hidratos,256, ';');
-        is.getline(proteinas,256, ';');
-        is.getline(grasas,256, ';');
-        is.getline(fibra,256, ';');
-        is.getline(tipo,256, '\r'); //cambiar ultimo elemento de ingredientes.txt, eliminar ';'
-        is.get();
-        
-
-        
-        
-        
-        p.setNombre(nombre);
-        p.setCalorias(stof(calorias));
-        p.setFibra(stof(fibra));
-        p.setGrasas(stof(grasas));
-        p.setHidratos(stof(hidratos));
-        p.setProteinas(stof(proteinas));
+        is.getline(cadena,256, ';');
+        p.setNombre(cadena);
+        is.getline(cadena,256, ';');
+        p.setCalorias(stof(cadena));
+        is.getline(cadena,256, ';');
+        p.setHidratos(stof(cadena));
+        is.getline(cadena,256, ';');
+        p.setProteinas(stof(cadena));
+        is.getline(cadena,256, ';');
+        p.setGrasas(stof(cadena));
+        is.getline(cadena,256, ';');
+        p.setFibra(stof(cadena));
+        is.getline(tipo,256,'\r'); //cambiar ultimo elemento de ingredientes.txt, eliminar ';'
         p.setTipo(tipo);
+        is.get();
         
         return is;
 
@@ -160,5 +155,15 @@ using namespace std;
           iguales=true;
       return iguales;
   }
+      
+      string ingrediente::informacion(){
+          return "Nombre: " + nombre +
+                  "\nCalorias: " + to_string(calorias) +
+                  "\nHidratos de carbono: " + to_string(hidratos) + 
+                  "\nProteinas: " + to_string(proteinas) +
+                  "\nGrasas: " + to_string(grasas) + 
+                  "\nFibra: " + to_string(fibra) +
+                  "\nTipo: " + tipo + "\n";
+      }
     
 
