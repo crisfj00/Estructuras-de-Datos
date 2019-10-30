@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include "ingrediente.h"
 #include "ingredientes.h"

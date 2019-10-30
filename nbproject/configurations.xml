@@ -17,7 +17,6 @@
                    projectFiles="true">
       <itemPath>src/Ingredientes.cpp</itemPath>
       <itemPath>src/ingrediente.cpp</itemPath>
-      <itemPath>src/prueba vector.cpp</itemPath>
       <itemPath>src/test_ingredientes.cpp</itemPath>
       <itemPath>src/tipos_ingredientes.cpp</itemPath>
       <itemPath>include/vector_dinamico.cpp</itemPath>
@@ -67,8 +66,6 @@
       </item>
       <item path="src/ingrediente.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="src/prueba vector.cpp" ex="false" tool="1" flavor2="0">
-      </item>
       <item path="src/test_ingredientes.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tipos_ingredientes.cpp" ex="false" tool="1" flavor2="0">
@@ -105,8 +102,6 @@
       <item path="src/Ingredientes.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/ingrediente.cpp" ex="false" tool="1" flavor2="0">
-      </item>
-      <item path="src/prueba vector.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/test_ingredientes.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -38,7 +38,6 @@ OBJECTFILES= \
 	${OBJECTDIR}/include/vector_dinamico.o \
 	${OBJECTDIR}/src/Ingredientes.o \
 	${OBJECTDIR}/src/ingrediente.o \
-	${OBJECTDIR}/src/prueba\ vector.o \
 	${OBJECTDIR}/src/test_ingredientes.o \
 	${OBJECTDIR}/src/tipos_ingredientes.o
 
@@ -81,12 +80,6 @@ ${OBJECTDIR}/src/ingrediente.o: src/ingrediente.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/vector_dinamico.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ingrediente.o src/ingrediente.cpp
-
-.NO_PARALLEL:${OBJECTDIR}/src/prueba\ vector.o
-${OBJECTDIR}/src/prueba\ vector.o: src/prueba\ vector.cpp
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/vector_dinamico.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/prueba\ vector.o src/prueba\ vector.cpp
 
 ${OBJECTDIR}/src/test_ingredientes.o: src/test_ingredientes.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
