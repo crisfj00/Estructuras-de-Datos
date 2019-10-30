@@ -126,7 +126,7 @@ class vector_dinamico {
 	/**
 	* @brief Metodo para consultar el valor de una posicion en el vector (Permite modificar)
 	* @param i Posicion a consultar
-	* @retrun Devuelve el valor de la posicion (cualquier tipo de dato)
+	* @return Devuelve el valor de la posicion (cualquier tipo de dato)
 	*/
         T& obtener(int i);
 

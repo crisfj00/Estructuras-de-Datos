@@ -6,7 +6,7 @@
  */
 
 /**
-  * @file Ingredientes.h
+  * @file ingredientes.h
   * @brief Fichero cabecera del TDA ingredientes
   *
   */
@@ -187,12 +187,64 @@ public:
     ingredientes getIngredienteTipo(string tipo);
     
     
+    /**
+     * @brief Metodo que hace la Media de todos los ingredientes del mismo tipo sobre uno de los valores nutricionales
+     * @param atributo Caracter que se refiere a un valor nutricional:
+     *
+     * 		-"C" Calorias
+     * 		-"P" Proteinas
+     * 		-"G" Grasas
+     * 		-"F" Fibra
+     * 		-"H" Hidratos de carbono
+     * 
+     * @param tipo Tipo del ingrediente 
+     * @return Devuelve la Media de todos los ingredientes del mismo tipo sobre uno de los valores nutricionales
+     */
     double getMedia(char atributo, string tipo);
-    
+
+     /**
+     * @brief Metodo que hace la Desviacion Tipica de todos los ingredientes del mismo tipo sobre uno de los valores nutricionales
+     * @param atributo Caracter que se refiere a un valor nutricional:
+     *
+     * 		-"C" Calorias
+     * 		-"P" Proteinas
+     * 		-"G" Grasas
+     * 		-"F" Fibra
+     * 		-"H" Hidratos de carbono
+     *
+     * @param tipo Tipo del ingrediente 
+     * @return Devuelve la Desviacion Tipica de todos los ingredientes del mismo tipo sobre uno de los valores nutricionales
+     */
     double getDesviacion(char atributo, string tipo);
     
+     /**
+     * @brief Metodo que Calcula el Maximo Ingrediente de todos los ingredientes del mismo tipo que tiene mas grande uno de los valores nutricionales
+     * @param atributo Caracter que se refiere a un valor nutricional:
+     *
+     * 		-"C" Calorias
+     * 		-"P" Proteinas
+     * 		-"G" Grasas
+     * 		-"F" Fibra
+     * 		-"H" Hidratos de carbono
+     *
+     * @param tipo Tipo del ingrediente 
+     * @return Devuelve el Maximo Ingrediente de todos los ingredientes del mismo tipo que tiene mas grande el valor nutricional pasado como parametro
+     */
     ingrediente getMaximo(char atributo, string tipo);
-    
+
+     /**
+     * @brief Metodo que Calcula el Minimo Ingrediente de todos los ingredientes del mismo tipo que tiene mas grande uno de los valores nutricionales
+     * @param atributo Caracter que se refiere a un valor nutricional:
+     *
+     * 		-"C" Calorias
+     * 		-"P" Proteinas
+     * 		-"G" Grasas
+     * 		-"F" Fibra
+     * 		-"H" Hidratos de carbono
+     *
+     * @param tipo Tipo del ingrediente 
+     * @return Devuelve el Minimo Ingrediente de todos los ingredientes del mismo tipo que tiene mas grande el valor nutricional pasado como parametro
+     */
     ingrediente getMinimo(char atributo, string tipo);
     
     

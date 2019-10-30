@@ -49,18 +49,14 @@ bool \hyperlink{classingredientes_a6d3f30e2e79299a970c705f61a8ee4d7}{incluido\+I
 \begin{DoxyCompactList}\small\item\em Consultor de los tipos que hay en el vector de ingredientes. \end{DoxyCompactList}\item 
 \hyperlink{classingredientes}{ingredientes} \hyperlink{classingredientes_a160ecb07facb16cbe7369ea797c67549}{get\+Ingrediente\+Tipo} (string tipo)
 \begin{DoxyCompactList}\small\item\em Metodo del vector filtrado por el tipo. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classingredientes_aa124bb75b0ff0b233d313fce58668868}\label{classingredientes_aa124bb75b0ff0b233d313fce58668868}} 
-double {\bfseries get\+Media} (char atributo, string tipo)
-\item 
-\mbox{\Hypertarget{classingredientes_adc3f70ae78a02993e6a4b8dac6a4ba07}\label{classingredientes_adc3f70ae78a02993e6a4b8dac6a4ba07}} 
-double {\bfseries get\+Desviacion} (char atributo, string tipo)
-\item 
-\mbox{\Hypertarget{classingredientes_a6e4cfe264fddd851ccf2f2061d6b66ce}\label{classingredientes_a6e4cfe264fddd851ccf2f2061d6b66ce}} 
-\hyperlink{classingrediente}{ingrediente} {\bfseries get\+Maximo} (char atributo, string tipo)
-\item 
-\mbox{\Hypertarget{classingredientes_a0ec4fb15cad1b31709b24751abdf2067}\label{classingredientes_a0ec4fb15cad1b31709b24751abdf2067}} 
-\hyperlink{classingrediente}{ingrediente} {\bfseries get\+Minimo} (char atributo, string tipo)
-\end{DoxyCompactItemize}
+double \hyperlink{classingredientes_aa124bb75b0ff0b233d313fce58668868}{get\+Media} (char atributo, string tipo)
+\begin{DoxyCompactList}\small\item\em Metodo que hace la Media de todos los ingredientes del mismo tipo sobre uno de los valores nutricionales. \end{DoxyCompactList}\item 
+double \hyperlink{classingredientes_adc3f70ae78a02993e6a4b8dac6a4ba07}{get\+Desviacion} (char atributo, string tipo)
+\begin{DoxyCompactList}\small\item\em Metodo que hace la Desviacion Tipica de todos los ingredientes del mismo tipo sobre uno de los valores nutricionales. \end{DoxyCompactList}\item 
+\hyperlink{classingrediente}{ingrediente} \hyperlink{classingredientes_a6e4cfe264fddd851ccf2f2061d6b66ce}{get\+Maximo} (char atributo, string tipo)
+\begin{DoxyCompactList}\small\item\em Metodo que Calcula el Maximo Ingrediente de todos los ingredientes del mismo tipo que tiene mas grande uno de los valores nutricionales. \end{DoxyCompactList}\item 
+\hyperlink{classingrediente}{ingrediente} \hyperlink{classingredientes_a0ec4fb15cad1b31709b24751abdf2067}{get\+Minimo} (char atributo, string tipo)
+\begin{DoxyCompactList}\small\item\em Metodo que Calcula el Minimo Ingrediente de todos los ingredientes del mismo tipo que tiene mas grande uno de los valores nutricionales. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Amigas}
 \begin{DoxyCompactItemize}
 \item 
@@ -143,6 +139,32 @@ Consultor del atributo segun el nombre en el vector.
 \begin{DoxyReturn}{Devuelve}
 Devuelve los valores del ingrediente que tenga el nombre pasado como argumento 
 \end{DoxyReturn}
+\mbox{\Hypertarget{classingredientes_adc3f70ae78a02993e6a4b8dac6a4ba07}\label{classingredientes_adc3f70ae78a02993e6a4b8dac6a4ba07}} 
+\index{ingredientes@{ingredientes}!get\+Desviacion@{get\+Desviacion}}
+\index{get\+Desviacion@{get\+Desviacion}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{get\+Desviacion()}{getDesviacion()}}
+{\footnotesize\ttfamily double ingredientes\+::get\+Desviacion (\begin{DoxyParamCaption}\item[{char}]{atributo,  }\item[{string}]{tipo }\end{DoxyParamCaption})}
+
+
+
+Metodo que hace la Desviacion Tipica de todos los ingredientes del mismo tipo sobre uno de los valores nutricionales. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em atributo} & Caracter que se refiere a un valor nutricional\+: \begin{DoxyVerb}    -"C" Calorias
+    -"P" Proteinas
+    -"G" Grasas
+    -"F" Fibra
+    -"H" Hidratos de carbono
+\end{DoxyVerb}
+\\
+\hline
+{\em tipo} & Tipo del ingrediente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve la Desviacion Tipica de todos los ingredientes del mismo tipo sobre uno de los valores nutricionales 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classingredientes_a160ecb07facb16cbe7369ea797c67549}\label{classingredientes_a160ecb07facb16cbe7369ea797c67549}} 
 \index{ingredientes@{ingredientes}!get\+Ingrediente\+Tipo@{get\+Ingrediente\+Tipo}}
 \index{get\+Ingrediente\+Tipo@{get\+Ingrediente\+Tipo}!ingredientes@{ingredientes}}
@@ -160,6 +182,84 @@ Metodo del vector filtrado por el tipo.
 \end{DoxyParams}
 \begin{DoxyReturn}{Devuelve}
 Devuelve un vector de ingredientes con el mismo tipo (ordenado por nombre) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classingredientes_a6e4cfe264fddd851ccf2f2061d6b66ce}\label{classingredientes_a6e4cfe264fddd851ccf2f2061d6b66ce}} 
+\index{ingredientes@{ingredientes}!get\+Maximo@{get\+Maximo}}
+\index{get\+Maximo@{get\+Maximo}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{get\+Maximo()}{getMaximo()}}
+{\footnotesize\ttfamily \hyperlink{classingrediente}{ingrediente} ingredientes\+::get\+Maximo (\begin{DoxyParamCaption}\item[{char}]{atributo,  }\item[{string}]{tipo }\end{DoxyParamCaption})}
+
+
+
+Metodo que Calcula el Maximo Ingrediente de todos los ingredientes del mismo tipo que tiene mas grande uno de los valores nutricionales. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em atributo} & Caracter que se refiere a un valor nutricional\+: \begin{DoxyVerb}    -"C" Calorias
+    -"P" Proteinas
+    -"G" Grasas
+    -"F" Fibra
+    -"H" Hidratos de carbono
+\end{DoxyVerb}
+\\
+\hline
+{\em tipo} & Tipo del ingrediente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el Maximo Ingrediente de todos los ingredientes del mismo tipo que tiene mas grande el valor nutricional pasado como parametro 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classingredientes_aa124bb75b0ff0b233d313fce58668868}\label{classingredientes_aa124bb75b0ff0b233d313fce58668868}} 
+\index{ingredientes@{ingredientes}!get\+Media@{get\+Media}}
+\index{get\+Media@{get\+Media}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{get\+Media()}{getMedia()}}
+{\footnotesize\ttfamily double ingredientes\+::get\+Media (\begin{DoxyParamCaption}\item[{char}]{atributo,  }\item[{string}]{tipo }\end{DoxyParamCaption})}
+
+
+
+Metodo que hace la Media de todos los ingredientes del mismo tipo sobre uno de los valores nutricionales. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em atributo} & Caracter que se refiere a un valor nutricional\+: \begin{DoxyVerb}    -"C" Calorias
+    -"P" Proteinas
+    -"G" Grasas
+    -"F" Fibra
+    -"H" Hidratos de carbono
+\end{DoxyVerb}
+\\
+\hline
+{\em tipo} & Tipo del ingrediente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve la Media de todos los ingredientes del mismo tipo sobre uno de los valores nutricionales 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classingredientes_a0ec4fb15cad1b31709b24751abdf2067}\label{classingredientes_a0ec4fb15cad1b31709b24751abdf2067}} 
+\index{ingredientes@{ingredientes}!get\+Minimo@{get\+Minimo}}
+\index{get\+Minimo@{get\+Minimo}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{get\+Minimo()}{getMinimo()}}
+{\footnotesize\ttfamily \hyperlink{classingrediente}{ingrediente} ingredientes\+::get\+Minimo (\begin{DoxyParamCaption}\item[{char}]{atributo,  }\item[{string}]{tipo }\end{DoxyParamCaption})}
+
+
+
+Metodo que Calcula el Minimo Ingrediente de todos los ingredientes del mismo tipo que tiene mas grande uno de los valores nutricionales. 
+
+
+\begin{DoxyParams}{Parámetros}
+{\em atributo} & Caracter que se refiere a un valor nutricional\+: \begin{DoxyVerb}    -"C" Calorias
+    -"P" Proteinas
+    -"G" Grasas
+    -"F" Fibra
+    -"H" Hidratos de carbono
+\end{DoxyVerb}
+\\
+\hline
+{\em tipo} & Tipo del ingrediente \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Devuelve}
+Devuelve el Minimo Ingrediente de todos los ingredientes del mismo tipo que tiene mas grande el valor nutricional pasado como parametro 
 \end{DoxyReturn}
 \mbox{\Hypertarget{classingredientes_a4fc149d674b55f73c3079d58606e7e1c}\label{classingredientes_a4fc149d674b55f73c3079d58606e7e1c}} 
 \index{ingredientes@{ingredientes}!get\+Tipos@{get\+Tipos}}
@@ -368,4 +468,4 @@ Entrada de un vector ingredientes desde istream.
 
 La documentación para esta clase fue generada a partir del siguiente fichero\+:\begin{DoxyCompactItemize}
 \item 
-/home/cristian/\+Escritorio/ingrediente/include/ingredientes.\+h\end{DoxyCompactItemize}
+include/\hyperlink{ingredientes_8h}{ingredientes.\+h}\end{DoxyCompactItemize}

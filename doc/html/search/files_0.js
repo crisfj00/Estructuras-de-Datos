@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['vector_5fdinamico_2eh',['vector_dinamico.h',['../vector__dinamico_8h.html',1,'']]]
+  ['ingrediente_2eh',['ingrediente.h',['../ingrediente_8h.html',1,'']]],
+  ['ingredientes_2eh',['ingredientes.h',['../ingredientes_8h.html',1,'']]]
 ];

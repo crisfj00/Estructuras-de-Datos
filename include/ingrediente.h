@@ -1,5 +1,5 @@
 /**
-  * @file Ingrediente.h
+  * @file ingrediente.h
   * @brief Fichero cabecera del TDA ingrediente
   *
   */
@@ -144,7 +144,7 @@ class ingrediente {
   * @brief Modificador de un ingrediente
   * @param n nombre del ingrediente
   * @param c cantidad de calorias del ingrediente
-  * @param hc cantidad de hidratos de carbono del ingrediente
+  * @param h cantidad de hidratos de carbono del ingrediente
   * @param p cantidad de proteinas del ingrediente
   * @param g cantidad de grasas del ingrediente
   * @param f cantidad de fibras del ingrediente
