@@ -35,7 +35,6 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/include/vector_dinamico.o \
 	${OBJECTDIR}/src/Ingredientes.o \
 	${OBJECTDIR}/src/ingrediente.o \
 	${OBJECTDIR}/src/test_ingredientes.o \
@@ -66,30 +65,25 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ingrediente: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ingrediente ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/include/vector_dinamico.o: include/vector_dinamico.cpp
-	${MKDIR} -p ${OBJECTDIR}/include
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/vector_dinamico.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/include/vector_dinamico.o include/vector_dinamico.cpp
-
 ${OBJECTDIR}/src/Ingredientes.o: src/Ingredientes.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/vector_dinamico.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Ingredientes.o src/Ingredientes.cpp
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Ingredientes.o src/Ingredientes.cpp
 
 ${OBJECTDIR}/src/ingrediente.o: src/ingrediente.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/vector_dinamico.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ingrediente.o src/ingrediente.cpp
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ingrediente.o src/ingrediente.cpp
 
 ${OBJECTDIR}/src/test_ingredientes.o: src/test_ingredientes.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/vector_dinamico.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/test_ingredientes.o src/test_ingredientes.cpp
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/test_ingredientes.o src/test_ingredientes.cpp
 
 ${OBJECTDIR}/src/tipos_ingredientes.o: src/tipos_ingredientes.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/vector_dinamico.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tipos_ingredientes.o src/tipos_ingredientes.cpp
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tipos_ingredientes.o src/tipos_ingredientes.cpp
 
 # Subprojects
 .build-subprojects:

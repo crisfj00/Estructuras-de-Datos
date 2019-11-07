@@ -28,7 +28,7 @@ $(OBJ)/test_ingredientes.o: $(SRC)/test_ingredientes.cpp $(INC)/ingrediente.h $(
 $(OBJ)/tipos_ingredientes.o: $(SRC)/tipos_ingredientes.cpp $(INC)/ingrediente.h $(INC)/ingredientes.h
 	$(CXX) $(CPPFLAGS)  $(SRC)/tipos_ingredientes.cpp -o  $(OBJ)/tipos_ingredientes.o
 
-$(OBJ)/ingredientes.o: $(SRC)/Ingredientes.cpp $(INC)/ingredientes.h $(INC)/vector_dinamico.h $(INC)/ingrediente.h
+$(OBJ)/ingredientes.o: $(SRC)/Ingredientes.cpp $(INC)/ingredientes.h $(INC)/ingrediente.h
 	$(CXX) $(CPPFLAGS)  $(SRC)/Ingredientes.cpp -o $(OBJ)/ingredientes.o
 
 $(OBJ)/ingrediente.o: $(SRC)/ingrediente.cpp $(INC)/ingrediente.h

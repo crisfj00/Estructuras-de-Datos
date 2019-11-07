@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['obtener',['obtener',['../classvector__dinamico.html#adfa7701af640b85c9c1642e54df903e4',1,'vector_dinamico']]],
-  ['operator_2b_3d',['operator+=',['../classingredientes.html#a24ea8c982877578bff6e0f450c4b79a6',1,'ingredientes']]],
-  ['operator_3c_3c',['operator&lt;&lt;',['../classingrediente.html#ae7d30d9b20aead90a4d3b11a4ff57e21',1,'ingrediente::operator&lt;&lt;()'],['../classingredientes.html#a47b68f377e21ce26320b8adb9c72f347',1,'ingredientes::operator&lt;&lt;()']]],
-  ['operator_3d',['operator=',['../classingrediente.html#a0556714d34bdd366599fc02758b6d046',1,'ingrediente::operator=()'],['../classingredientes.html#ab5478a896ab96486a86dfb1b5707c565',1,'ingredientes::operator=()'],['../classvector__dinamico.html#aa13f55271edd171d4dd4c203efb0c697',1,'vector_dinamico::operator=()']]],
-  ['operator_3d_3d',['operator==',['../classingrediente.html#aa3bc521369e0ba37383ca0958697f5af',1,'ingrediente']]],
-  ['operator_3e_3e',['operator&gt;&gt;',['../classingrediente.html#a934ac4c1bed7330ab27297cf27b994df',1,'ingrediente::operator&gt;&gt;()'],['../classingredientes.html#adfbb6b2de8bd8b193715a3d58c313b84',1,'ingredientes::operator&gt;&gt;()']]],
-  ['operator_5b_5d',['operator[]',['../classingredientes.html#a4d26f4035049ca7fb9506df48895cc4f',1,'ingredientes::operator[](int i) const'],['../classingredientes.html#a9e099786f83d0ac3cf38317b194691db',1,'ingredientes::operator[](int i)'],['../classvector__dinamico.html#a8ad7523a8d94986322dc71d0913c8535',1,'vector_dinamico::operator[](int i)'],['../classvector__dinamico.html#a7e3f09d91df9c6008525f8d8737f743c',1,'vector_dinamico::operator[](int i) const']]]
+  ['setcalorias',['setCalorias',['../classingrediente.html#af2f59af7fe9bf623fc6e9fa4e6da5fac',1,'ingrediente']]],
+  ['setfibra',['setFibra',['../classingrediente.html#a13928358db435d4a42b348f6ea1ee548',1,'ingrediente']]],
+  ['setgrasas',['setGrasas',['../classingrediente.html#a5b20e7a788dcdb5685c66c7362d65533',1,'ingrediente']]],
+  ['sethidratos',['setHidratos',['../classingrediente.html#ab678b69e2374ae25439162e4288d1e8a',1,'ingrediente']]],
+  ['setingrediente',['setIngrediente',['../classingrediente.html#a72f5ea23629bc29f3b45b7631550319b',1,'ingrediente::setIngrediente(string n, string t)'],['../classingrediente.html#ad55708ee5921247d2060bd2fc54b5f15',1,'ingrediente::setIngrediente(string n, float c, float h, float p, float g, float f, string t)']]],
+  ['setnombre',['setNombre',['../classingrediente.html#aac5aba3c36aa762c72a8bc38271e4c12',1,'ingrediente']]],
+  ['setproteinas',['setProteinas',['../classingrediente.html#a5ee4fac5c35f8ff71e7f974d1675a626',1,'ingrediente']]],
+  ['settipo',['setTipo',['../classingrediente.html#ae51c71ad615844974ee24bb2fe9c7b80',1,'ingrediente']]],
+  ['size',['size',['../classingredientes.html#aaf628d0360800484ae277fbb7aa2f81d',1,'ingredientes']]]
 ];

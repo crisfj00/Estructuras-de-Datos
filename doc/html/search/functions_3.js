@@ -1,10 +1,7 @@
 var searchData=
 [
-  ['imprimirpornombre',['ImprimirPorNombre',['../classingredientes.html#adefafd151edf8a8997bca2dc22057ece',1,'ingredientes']]],
-  ['imprimirportipo',['ImprimirPorTipo',['../classingredientes.html#a683d032576cbc230c210aa51cdbcc93e',1,'ingredientes']]],
-  ['incluidoingrediente',['incluidoIngrediente',['../classingredientes.html#a6d3f30e2e79299a970c705f61a8ee4d7',1,'ingredientes']]],
-  ['informacion',['informacion',['../classingrediente.html#a51a8da90674bb8d5f3c4019e87ad5e67',1,'ingrediente']]],
-  ['ingrediente',['ingrediente',['../classingrediente.html#a4f2c8e16106eb4cf5a8ad9695d7a3809',1,'ingrediente::ingrediente()'],['../classingrediente.html#ac23e8df5d6df594b77de60b303e74652',1,'ingrediente::ingrediente(string n, string t)'],['../classingrediente.html#a6952df43dea2eced53c3f2ce2126a39d',1,'ingrediente::ingrediente(string n, float c, float hc, float p, float g, float f, string t)']]],
-  ['ingredientes',['ingredientes',['../classingredientes.html#adb3e000aa798184c7253c401f165c1a5',1,'ingredientes::ingredientes()'],['../classingredientes.html#a7470e2be68c17cfa3193f4cf2cb57872',1,'ingredientes::ingredientes(const ingredientes &amp;original)']]],
-  ['insertar',['insertar',['../classingredientes.html#a7633d03cdda31180994b63090ff9dd11',1,'ingredientes::insertar()'],['../classvector__dinamico.html#a5b60524afb2974c19d06d954064cd356',1,'vector_dinamico::insertar()']]]
+  ['operator_2b_3d',['operator+=',['../classingredientes.html#a24ea8c982877578bff6e0f450c4b79a6',1,'ingredientes']]],
+  ['operator_3d',['operator=',['../classingrediente.html#a0556714d34bdd366599fc02758b6d046',1,'ingrediente::operator=()'],['../classingredientes.html#ab5478a896ab96486a86dfb1b5707c565',1,'ingredientes::operator=()']]],
+  ['operator_3d_3d',['operator==',['../classingrediente.html#aa3bc521369e0ba37383ca0958697f5af',1,'ingrediente']]],
+  ['operator_5b_5d',['operator[]',['../classingredientes.html#a4d26f4035049ca7fb9506df48895cc4f',1,'ingredientes::operator[](int i) const'],['../classingredientes.html#a9e099786f83d0ac3cf38317b194691db',1,'ingredientes::operator[](int i)']]]
 ];

@@ -6,7 +6,8 @@
                    projectFiles="true">
       <itemPath>include/ingrediente.h</itemPath>
       <itemPath>include/ingredientes.h</itemPath>
-      <itemPath>include/vector_dinamico.h</itemPath>
+      <itemPath>receta.h</itemPath>
+      <itemPath>recetas.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -19,7 +20,6 @@
       <itemPath>src/ingrediente.cpp</itemPath>
       <itemPath>src/test_ingredientes.cpp</itemPath>
       <itemPath>src/tipos_ingredientes.cpp</itemPath>
-      <itemPath>include/vector_dinamico.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
                    displayName="Test Files"
@@ -50,7 +50,8 @@
           <incFile>
             <pElem>include/ingrediente.h</pElem>
             <pElem>include/ingredientes.h</pElem>
-            <pElem>include/vector_dinamico.h</pElem>
+            <pElem>include/receta.h</pElem>
+            <pElem>include/recetas.h</pElem>
           </incFile>
         </ccTool>
       </compileType>
@@ -58,9 +59,9 @@
       </item>
       <item path="include/ingredientes.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/vector_dinamico.cpp" ex="false" tool="1" flavor2="0">
+      <item path="receta.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/vector_dinamico.h" ex="false" tool="3" flavor2="0">
+      <item path="recetas.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Ingredientes.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -95,9 +96,9 @@
       </item>
       <item path="include/ingredientes.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/vector_dinamico.cpp" ex="false" tool="1" flavor2="0">
+      <item path="receta.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="include/vector_dinamico.h" ex="false" tool="3" flavor2="0">
+      <item path="recetas.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Ingredientes.cpp" ex="false" tool="1" flavor2="0">
       </item>

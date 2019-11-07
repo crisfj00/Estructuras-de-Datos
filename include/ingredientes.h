@@ -15,8 +15,9 @@
 #define INGREDIENTES_H
 
 #include "ingrediente.h"
-#include "vector_dinamico.h"
+#include <vector>
 #include <iostream>
+#include <set>
 
   /**
   *  @brief T.D.A. ingredientes
@@ -49,8 +50,8 @@ private:
   * Alimento;Calorias;Hidratos de Carb;Proteinas;Grasas;Fibra;Tipo
   *
   */
-    vector_dinamico<ingrediente> datos; 
-    vector_dinamico<int> indices;
+    vector<ingrediente> datos; 
+    vector<int> indices;
     
 public:
     
@@ -176,7 +177,7 @@ public:
      * @return Devuelve todos los tios que estan denro del vector 
      */
     
-    vector_dinamico<string> getTipos();
+    vector<string> getTipos();
     
     /**
      * @brief Metodo del vector filtrado por el tipo
@@ -246,6 +247,28 @@ public:
      * @return Devuelve el Minimo Ingrediente de todos los ingredientes del mismo tipo que tiene mas grande el valor nutricional pasado como parametro
      */
     ingrediente getMinimo(char atributo, string tipo);
+    
+    /*
+    class iterador{
+    private:
+        vector<ingrediente>::iterator it;
+    };
+     
+    
+    class const_iterador{
+    private:
+        vector<ingrediente>::const_iterator it;
+    };
+     */
+    
+    typedef set<ingrediente>::iterator iterator;
+    typedef set<ingrediente>::const_iterator const_iterator;
+    
+    ingredientes::iterator begin();   
+    ingredientes::iterator end();
+    
+    ingredientes::const_iterator begin() const;
+    ingredientes::const_iterator end() const;
     
     
 };

@@ -1,18 +1,10 @@
 var searchData=
 [
-  ['get',['get',['../classingredientes.html#a2d4257359160b39365b1aac2ec6a1166',1,'ingredientes::get(int pos) const'],['../classingredientes.html#aae670bf5dc762313dff281c7c6aa1b4f',1,'ingredientes::get(string n) const'],['../classvector__dinamico.html#ae774d0b2ea36fe4c6bd225a6a7d5c6ec',1,'vector_dinamico::get()']]],
-  ['getcalorias',['getCalorias',['../classingrediente.html#ad22b8aa7d67351699d9e208de0b7d896',1,'ingrediente']]],
-  ['getdesviacion',['getDesviacion',['../classingredientes.html#adc3f70ae78a02993e6a4b8dac6a4ba07',1,'ingredientes']]],
-  ['getfibra',['getFibra',['../classingrediente.html#ad33a9651f19a39c8157dbd7d63c69cdb',1,'ingrediente']]],
-  ['getgrasas',['getGrasas',['../classingrediente.html#a6250c0751a2e5bc5adeb0c9de7f209e7',1,'ingrediente']]],
-  ['gethc',['getHc',['../classingrediente.html#a25b3b1bb017318d0aa9274484be7bc7a',1,'ingrediente']]],
-  ['getingredientetipo',['getIngredienteTipo',['../classingredientes.html#a160ecb07facb16cbe7369ea797c67549',1,'ingredientes']]],
-  ['getmaximo',['getMaximo',['../classingredientes.html#a6e4cfe264fddd851ccf2f2061d6b66ce',1,'ingredientes']]],
-  ['getmedia',['getMedia',['../classingredientes.html#aa124bb75b0ff0b233d313fce58668868',1,'ingredientes']]],
-  ['getminimo',['getMinimo',['../classingredientes.html#a0ec4fb15cad1b31709b24751abdf2067',1,'ingredientes']]],
-  ['getnombre',['getNombre',['../classingrediente.html#a8da227d03af8811627434703922b463a',1,'ingrediente']]],
-  ['getproteinas',['getProteinas',['../classingrediente.html#a64258034d6cf7c70cb496dc91c7ab0fa',1,'ingrediente']]],
-  ['gettipo',['getTipo',['../classingrediente.html#a03334e887add1dbdc7991de77234ede7',1,'ingrediente']]],
-  ['gettipos',['getTipos',['../classingredientes.html#a4fc149d674b55f73c3079d58606e7e1c',1,'ingredientes']]],
-  ['getutil',['getUtil',['../classvector__dinamico.html#a0cae31353cf2dbcdc0dbd37dafdf52de',1,'vector_dinamico']]]
+  ['imprimirpornombre',['ImprimirPorNombre',['../classingredientes.html#adefafd151edf8a8997bca2dc22057ece',1,'ingredientes']]],
+  ['imprimirportipo',['ImprimirPorTipo',['../classingredientes.html#a683d032576cbc230c210aa51cdbcc93e',1,'ingredientes']]],
+  ['incluidoingrediente',['incluidoIngrediente',['../classingredientes.html#a6d3f30e2e79299a970c705f61a8ee4d7',1,'ingredientes']]],
+  ['informacion',['informacion',['../classingrediente.html#a51a8da90674bb8d5f3c4019e87ad5e67',1,'ingrediente']]],
+  ['ingrediente',['ingrediente',['../classingrediente.html#a4f2c8e16106eb4cf5a8ad9695d7a3809',1,'ingrediente::ingrediente()'],['../classingrediente.html#ac23e8df5d6df594b77de60b303e74652',1,'ingrediente::ingrediente(string n, string t)'],['../classingrediente.html#a6952df43dea2eced53c3f2ce2126a39d',1,'ingrediente::ingrediente(string n, float c, float hc, float p, float g, float f, string t)']]],
+  ['ingredientes',['ingredientes',['../classingredientes.html#adb3e000aa798184c7253c401f165c1a5',1,'ingredientes::ingredientes()'],['../classingredientes.html#a7470e2be68c17cfa3193f4cf2cb57872',1,'ingredientes::ingredientes(const ingredientes &amp;original)']]],
+  ['insertar',['insertar',['../classingredientes.html#a7633d03cdda31180994b63090ff9dd11',1,'ingredientes']]]
 ];

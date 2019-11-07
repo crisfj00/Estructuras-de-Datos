@@ -1,5 +1,5 @@
 #include "ingredientes.h"   
-#include "vector_dinamico.cpp"
+#include <vector>
 #include <cmath>
 #include <cassert>
 #include <iostream>
@@ -10,8 +10,8 @@ using namespace std;
 
     ingredientes::ingredientes(){
         
-        datos=vector_dinamico<ingrediente>(1);
-        indices=vector_dinamico<int>(1);
+        datos=vector<ingrediente>();
+        indices=vector<int>();
 
     }
 
@@ -27,15 +27,11 @@ using namespace std;
         indices=original.indices;
     }
     
-    ingredientes::~ingredientes(){
-        
-        datos.~vector_dinamico();
-        indices.~vector_dinamico();
-    }
+    ingredientes::~ingredientes(){}
 
     int ingredientes::size() const{
         
-        return datos.getUtil();
+        return datos.size();
     }
     
     const ingrediente& ingredientes::get(int pos) const{
@@ -47,21 +43,21 @@ using namespace std;
         
         bool borrado1=false, borrado2=false;
         
-        for(int i=0; i<indices.getUtil() && !borrado1;i++){
+        for(long unsigned int i=0; i<indices.size() && !borrado1;i++){
             if(datos[indices[i]].getNombre()==n){
                 int indice=indices[i];
-                indices.borrar(i);
+                indices.erase(indices.begin()+i);
                 borrado1=true;
-                for(int j=indices.getUtil()-1;j>=0;j--){
+                for(int j=indices.size()-1;j>=0;j--){
                     if(indices[j]>indice)
                         indices[j]--;
                 }
             }
         }
         
-      for(int i=0; i<datos.getUtil() &&!borrado2; i++){
+      for(long unsigned int i=0; i<datos.size() &&!borrado2; i++){
           if(datos[i].getNombre()==n){
-              datos.borrar(i);
+              datos.erase(datos.begin()+i);
               borrado2=true;
           }
       }
@@ -70,15 +66,15 @@ using namespace std;
     bool ingredientes::incluidoIngrediente(const ingrediente &p) const{
         
         int izda = 0;
-        int dcha = datos.getUtil() - 1;
+        int dcha = datos.size() - 1;
         bool encontrado = false;
         int centro;
         
         while (izda <= dcha && !encontrado){
             centro = (izda + dcha) / 2;
-            if (datos.get(centro) == p)
+            if (datos[centro] == p)
                 encontrado = true;
-            else if (p.getNombre() < datos.get(centro).getNombre())
+            else if (p.getNombre() < datos[centro].getNombre())
                     dcha = centro - 1;
                 else
                     izda = centro + 1;
@@ -129,13 +125,13 @@ using namespace std;
     void ingredientes::ImprimirPorNombre(ostream& flujo){
         
         for(int i=0; i<size();i++)
-            flujo << datos.get(i);
+            flujo << datos[i];
     }
     
     void ingredientes::ImprimirPorTipo(ostream& flujo){
         
-        for(int i=0; i<indices.getUtil(); i++)
-            flujo << datos.get(indices.get(i));
+        for(long unsigned int i=0; i<indices.size(); i++)
+            flujo << datos[indices[i]];
     }
     
     bool ingredientes::insertar(const ingrediente& otro){
@@ -146,30 +142,30 @@ using namespace std;
             int pos_d, pos_i;
             string nombre=otro.getNombre(), tipo=otro.getTipo();
             
-            for(int i=0; i<datos.getUtil() && !insertado;i++){
+            for(long unsigned int i=0; i<datos.size() && !insertado;i++){
                 
-                if(nombre.compare(datos.get(i).getNombre())<0){
+                if(nombre.compare(datos[i].getNombre())<0){
                     pos_d=i;
-                    datos.insertar(pos_d,otro);
+                    datos.insert(datos.begin()+pos_d,otro);
                     insertado=true;
                 }   
             }
             if(!insertado){
-                int i=datos.getUtil();
-                datos.insertar(datos.getUtil(),otro);
+                int i=datos.size();
+                datos.push_back(otro);
                 pos_d=i;
             }
-            for(int i=0; i<indices.getUtil();i++)
+            for(long unsigned int i=0; i<indices.size();i++)
                 if(indices[i]>=pos_d)
                     indices[i]++;
             
             insertado=false;
             
-            for(int i=0; i<indices.getUtil() && !insertado;i++){
+            for(long unsigned int i=0; i<indices.size() && !insertado;i++){
                 
                 if(tipo.compare(datos[indices[i]].getTipo())<0){
                     pos_i=i;
-                    indices.insertar(pos_i,pos_d);
+                    indices.insert(indices.begin()+pos_i,pos_d);
                     insertado=true;
                 }
                 
@@ -177,15 +173,14 @@ using namespace std;
                     
                     if(nombre.compare(datos[indices[i]].getNombre())<0){
                     pos_i=i;
-                    indices.insertar(pos_i,pos_d);
+                    indices.insert(indices.begin()+pos_i,pos_d);
                     insertado=true;
                     }
                 }
             }
 
             if(!insertado){
-                int i=indices.getUtil();
-                indices.insertar(i,pos_d);
+                indices.push_back(pos_d);
                 insertado=true;
             }
  
@@ -194,15 +189,15 @@ using namespace std;
         return insertado;
     }
     
-    vector_dinamico<string> ingredientes::getTipos(){
+    vector<string> ingredientes::getTipos(){
         
-        vector_dinamico<string> tipos;
-        assert(indices.getUtil()>=1);
-        tipos.aniadir(datos[indices[0]].getTipo());
+        vector<string> tipos;
+        assert(indices.size()>=1);
+        tipos.push_back(datos[indices[0]].getTipo());
         
-        for(int i=1; i<indices.getUtil();i++)
+        for(long unsigned int i=1; i<indices.size();i++)
             if(datos[indices[i]].getTipo().compare(datos[indices[i-1]].getTipo())!=0)
-                tipos.aniadir(datos[indices[i]].getTipo());
+                tipos.push_back(datos[indices[i]].getTipo());
         
         return tipos;
     }
@@ -212,10 +207,10 @@ using namespace std;
         ingredientes porTipo;
         bool salir=false;
         
-        for(int i=0; i<indices.getUtil() && !salir;i++)
+        for(long unsigned int i=0; i<indices.size() && !salir;i++)
             if(datos[indices[i]].getTipo()==tipo){
                 porTipo.insertar(datos[indices[i]]);
-                if(i+1>=indices.getUtil()){
+                if(i+1>=indices.size()){
                     salir=true;
                     continue;
                 }
@@ -411,7 +406,18 @@ using namespace std;
         return porTipo[pos_minimo];
     }
     
-
-        
     
+    ingredientes::iterator ingredientes::begin(){
+        return datos.begin();
+    }
     
+    ingredientes::iterator ingredientes::end(){
+        return datos.end();
+    }
+    
+    ingredientes::const_iterator ingredientes::begin() const{
+        return this->datos.cbegin();
+    }
+    ingredientes::const_iterator ingredientes::end() const{
+        return this->datos.cend();
+    }

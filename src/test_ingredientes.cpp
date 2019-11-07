@@ -1,7 +1,7 @@
 #include <iostream>
-#include "ingrediente.h"
+//#include "ingrediente.h"
 #include "ingredientes.h"
-#include "vector_dinamico.cpp"
+//#include <vector>
 #include <fstream>
 using namespace std;
 void MuestraParametros(){
@@ -97,9 +97,9 @@ int main(int argc, char *argv[])
   cin.get();
   /******************************************************************************************/
   //SECTION 5: Obtiene los tipos diferentes y los  ingredientes de un tipo concreto
-   vector_dinamico<string> tipos=all_ingre.getTipos();
+   vector<string> tipos=all_ingre.getTipos();
    cout<<"Los tipos de alimentos son:"<<endl;
-   for (int i=0;i<tipos.size(); ++i){
+   for (long unsigned int i=0;i<tipos.size(); ++i){
       cout<<tipos[i]<<endl;
    }
    cout<<"Pulse una tecla para continuar "<<endl;
@@ -108,7 +108,6 @@ int main(int argc, char *argv[])
    string tipo="Molusco"; //ingredientes.txt ha sido creado en windows e incluye el /r tras cada final de linea
    ingredientes ingre_tipo=all_ingre.getIngredienteTipo(tipo);
    cout<<"Los ingredientes de tipo "<<tipo<<" son: "<<endl<<ingre_tipo<<endl;
-   
 
 }
 
