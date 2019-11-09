@@ -15,6 +15,9 @@
 #define RECETAS_H
 
 #include <map>
+#include <string>
+
+using namespace std;
 
 
 class recetas{
@@ -23,16 +26,36 @@ class recetas{
         
     public:
         
-        class iterator{
-            private:
-                map<string,receta>::iterator it;
-                
-        };
         
-        class const_iterator{
-            private:
-                map<string,receta>::const_iterator it;
-        };
+        
+/*******************************ITERADORES***********************************/  
+        
+  typedef typename map<string, receta>::iterator iterator;
+  typedef typename map<string, receta>::const_iterator const_iterator;
+
+  /**
+   * @brief Primer elemento del map
+   * @return Iterador señalando al primer elemento
+   */
+  iterator begin() { return datos.begin(); }
+
+  /**
+   * @brief Primer elemento del map
+   * @return Iterador constante señalando al primer elemento
+   */
+  const_iterator cbegin() const { return datos.cbegin(); }
+
+  /**
+   * @brief Último elemento del map
+   * @return Iterador señalando al último elemento
+   */
+  iterator end() { return datos.end(); }
+
+  /**
+   * @brief Último elemento del map
+   * @return Iterador constante señalando al último elemento
+   */
+  const_iterator cend() const { return datos.cend(); }
     
 };
 

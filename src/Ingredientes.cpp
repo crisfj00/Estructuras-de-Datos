@@ -407,17 +407,3 @@ using namespace std;
     }
     
     
-    ingredientes::iterator ingredientes::begin(){
-        return datos.begin();
-    }
-    
-    ingredientes::iterator ingredientes::end(){
-        return datos.end();
-    }
-    
-    ingredientes::const_iterator ingredientes::begin() const{
-        return this->datos.cbegin();
-    }
-    ingredientes::const_iterator ingredientes::end() const{
-        return this->datos.cend();
-    }

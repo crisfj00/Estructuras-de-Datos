@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['_7eingredientes',['~ingredientes',['../classingredientes.html#a91a5e8d5d27853f07314a97928500dfe',1,'ingredientes']]]
+  ['receta',['receta',['../classreceta.html',1,'']]],
+  ['recetas',['recetas',['../classrecetas.html',1,'']]],
+  ['rep_20del_20tda_20ingrediente',['Rep del TDA ingrediente',['../repConjunto.html',1,'']]]
 ];

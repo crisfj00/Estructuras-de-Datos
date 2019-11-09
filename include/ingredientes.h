@@ -247,28 +247,38 @@ public:
      * @return Devuelve el Minimo Ingrediente de todos los ingredientes del mismo tipo que tiene mas grande el valor nutricional pasado como parametro
      */
     ingrediente getMinimo(char atributo, string tipo);
-    
-    /*
-    class iterador{
-    private:
-        vector<ingrediente>::iterator it;
-    };
      
     
-    class const_iterador{
-    private:
-        vector<ingrediente>::const_iterator it;
-    };
-     */
     
-    typedef set<ingrediente>::iterator iterator;
-    typedef set<ingrediente>::const_iterator const_iterator;
+/*******************************ITERADORES***********************************/  
+    typedef vector<ingrediente>::iterator iterator;
     
-    ingredientes::iterator begin();   
-    ingredientes::iterator end();
+    typedef vector<ingrediente>::const_iterator const_iterator;
     
-    ingredientes::const_iterator begin() const;
-    ingredientes::const_iterator end() const;
+
+  /**
+   * @brief Primer elemento del vector datos
+   * @return Iterador señalando al primer elemento
+   */
+  iterator begin() { return datos.begin(); }
+
+  /**
+   * @brief Primer elemento del vector datos
+   * @return Iterador constante señalando al primer elemento
+   */
+  const_iterator cbegin() const { return datos.cbegin(); }
+
+  /**
+   * @brief Último elemento del vector datos
+   * @return Iterador señalando al último elemento
+   */
+  iterator end() { return datos.end(); }
+
+  /**
+   * @brief Último elemento del vector datos
+   * @return Iterador constante señalando al último elemento
+   */
+  const_iterator cend() const { return datos.cend(); }
     
     
 };

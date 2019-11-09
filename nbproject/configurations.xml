@@ -6,8 +6,8 @@
                    projectFiles="true">
       <itemPath>include/ingrediente.h</itemPath>
       <itemPath>include/ingredientes.h</itemPath>
-      <itemPath>receta.h</itemPath>
-      <itemPath>recetas.h</itemPath>
+      <itemPath>include/receta.h</itemPath>
+      <itemPath>include/recetas.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -18,7 +18,10 @@
                    projectFiles="true">
       <itemPath>src/Ingredientes.cpp</itemPath>
       <itemPath>src/ingrediente.cpp</itemPath>
+      <itemPath>src/receta.cpp</itemPath>
+      <itemPath>src/recetas.cpp</itemPath>
       <itemPath>src/test_ingredientes.cpp</itemPath>
+      <itemPath>src/test_receta.cpp</itemPath>
       <itemPath>src/tipos_ingredientes.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -59,15 +62,21 @@
       </item>
       <item path="include/ingredientes.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="receta.h" ex="false" tool="3" flavor2="0">
+      <item path="include/receta.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="recetas.h" ex="false" tool="3" flavor2="0">
+      <item path="include/recetas.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Ingredientes.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/ingrediente.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/receta.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/recetas.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/test_ingredientes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/test_receta.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tipos_ingredientes.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -96,15 +105,21 @@
       </item>
       <item path="include/ingredientes.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="receta.h" ex="false" tool="3" flavor2="0">
+      <item path="include/receta.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="recetas.h" ex="false" tool="3" flavor2="0">
+      <item path="include/recetas.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="src/Ingredientes.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/ingrediente.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/receta.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/recetas.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/test_ingredientes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/test_receta.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/tipos_ingredientes.cpp" ex="false" tool="1" flavor2="0">
       </item>

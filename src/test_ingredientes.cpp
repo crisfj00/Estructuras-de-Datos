@@ -1,7 +1,6 @@
 #include <iostream>
-//#include "ingrediente.h"
+#include "ingrediente.h"
 #include "ingredientes.h"
-//#include <vector>
 #include <fstream>
 using namespace std;
 void MuestraParametros(){
@@ -68,7 +67,7 @@ int main(int argc, char *argv[])
   
  /******************************************************************************************/
  //SECTION 4: Sobre ingredientes comprobamos consultar por nombre, size y borrar
- cout<<endl<<endl;
+  cout<<endl<<endl;
   cout<<"El numero de ingredientes son "<<all_ingre.size()<<endl;
   
   cout<<"Dime un nombre de ingrediente:";
@@ -105,9 +104,28 @@ int main(int argc, char *argv[])
    cout<<"Pulse una tecla para continuar "<<endl;
    cin.get();
   
-   string tipo="Molusco"; //ingredientes.txt ha sido creado en windows e incluye el /r tras cada final de linea
+   string tipo="Molusco";
    ingredientes ingre_tipo=all_ingre.getIngredienteTipo(tipo);
    cout<<"Los ingredientes de tipo "<<tipo<<" son: "<<endl<<ingre_tipo<<endl;
+   
+   /******************************************************************************************/
+   //SECTION 6: Probamos el iterador de ingredientes
+   cout<<endl<<"Impresión de los datos con el iterador"<<endl;
+   cout<<endl<<"Pulsa una tecla"<<endl;
+   cin.get();
+   ingredientes::iterator it;
+   for (it=all_ingre.begin();it!=all_ingre.end();++it){
+	   cout<<*it;
+   }
+   cout<<"Ahora imprimimos al contrario"<<endl;
+   cin.get();
+   it=all_ingre.end();
+   if(all_ingre.begin()!=all_ingre.end()){
+     do{
+	   --it;
+	   cout<<*it;
+	 
+     }while(it!=all_ingre.begin());
+   }
 
 }
-

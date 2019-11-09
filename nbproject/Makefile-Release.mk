@@ -37,7 +37,10 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/src/Ingredientes.o \
 	${OBJECTDIR}/src/ingrediente.o \
+	${OBJECTDIR}/src/receta.o \
+	${OBJECTDIR}/src/recetas.o \
 	${OBJECTDIR}/src/test_ingredientes.o \
+	${OBJECTDIR}/src/test_receta.o \
 	${OBJECTDIR}/src/tipos_ingredientes.o
 
 
@@ -75,10 +78,25 @@ ${OBJECTDIR}/src/ingrediente.o: src/ingrediente.cpp
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ingrediente.o src/ingrediente.cpp
 
+${OBJECTDIR}/src/receta.o: src/receta.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/receta.o src/receta.cpp
+
+${OBJECTDIR}/src/recetas.o: src/recetas.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recetas.o src/recetas.cpp
+
 ${OBJECTDIR}/src/test_ingredientes.o: src/test_ingredientes.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/test_ingredientes.o src/test_ingredientes.cpp
+
+${OBJECTDIR}/src/test_receta.o: src/test_receta.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/test_receta.o src/test_receta.cpp
 
 ${OBJECTDIR}/src/tipos_ingredientes.o: src/tipos_ingredientes.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
