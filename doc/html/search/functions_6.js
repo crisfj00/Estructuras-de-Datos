@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['setcalorias',['setCalorias',['../classingrediente.html#af2f59af7fe9bf623fc6e9fa4e6da5fac',1,'ingrediente']]],
-  ['setfibra',['setFibra',['../classingrediente.html#a13928358db435d4a42b348f6ea1ee548',1,'ingrediente']]],
-  ['setgrasas',['setGrasas',['../classingrediente.html#a5b20e7a788dcdb5685c66c7362d65533',1,'ingrediente']]],
-  ['sethidratos',['setHidratos',['../classingrediente.html#ab678b69e2374ae25439162e4288d1e8a',1,'ingrediente']]],
-  ['setingrediente',['setIngrediente',['../classingrediente.html#a72f5ea23629bc29f3b45b7631550319b',1,'ingrediente::setIngrediente(string n, string t)'],['../classingrediente.html#ad55708ee5921247d2060bd2fc54b5f15',1,'ingrediente::setIngrediente(string n, float c, float h, float p, float g, float f, string t)']]],
-  ['setnombre',['setNombre',['../classingrediente.html#aac5aba3c36aa762c72a8bc38271e4c12',1,'ingrediente']]],
-  ['setproteinas',['setProteinas',['../classingrediente.html#a5ee4fac5c35f8ff71e7f974d1675a626',1,'ingrediente']]],
-  ['settipo',['setTipo',['../classingrediente.html#ae51c71ad615844974ee24bb2fe9c7b80',1,'ingrediente']]],
-  ['size',['size',['../classingredientes.html#aaf628d0360800484ae277fbb7aa2f81d',1,'ingredientes']]]
+  ['obteneringrediente',['obtenerIngrediente',['../classreceta.html#a6ceb80925f44fbe5e8f4c3ac380f4d18',1,'receta']]],
+  ['operator_2b_3d',['operator+=',['../classingredientes.html#a24ea8c982877578bff6e0f450c4b79a6',1,'ingredientes']]],
+  ['operator_3d',['operator=',['../classingrediente.html#a0556714d34bdd366599fc02758b6d046',1,'ingrediente::operator=()'],['../classingredientes.html#ab5478a896ab96486a86dfb1b5707c565',1,'ingredientes::operator=()'],['../classreceta.html#a006287d0d539ebad815db816e69176bf',1,'receta::operator=()']]],
+  ['operator_3d_3d',['operator==',['../classingrediente.html#aa3bc521369e0ba37383ca0958697f5af',1,'ingrediente']]],
+  ['operator_5b_5d',['operator[]',['../classingredientes.html#a4d26f4035049ca7fb9506df48895cc4f',1,'ingredientes::operator[](int i) const'],['../classingredientes.html#a9e099786f83d0ac3cf38317b194691db',1,'ingredientes::operator[](int i)'],['../classreceta.html#aa3fd8f626a446bccb86d4695b8d2ec1a',1,'receta::operator[](int i) const'],['../classreceta.html#aa1ce593219621930261a49bbb94a75ec',1,'receta::operator[](int i)'],['../classrecetas.html#ab1aa3cf1020dd307843a777195993ef6',1,'recetas::operator[](int i) const'],['../classrecetas.html#a5eb7e3a707d79569adb733de75cec17c',1,'recetas::operator[](int i)']]]
 ];

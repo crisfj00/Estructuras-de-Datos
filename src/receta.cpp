@@ -2,11 +2,25 @@
 #include "receta.h"
 #include <cmath>
 #include <cassert>
+#include <string.h>
 #include <string>
 
 using namespace std;
 
-
+    receta::receta(){
+        code="00";
+        plato=-1;
+        nombre="DEFAULT";
+        calorias=0;
+        hc=0;
+        proteinas=0;
+        fibra=0;
+        grasas=0;
+    }
+    
+    receta::receta(const receta & p){
+        this=p;
+    }
 
     string receta::getCode(){
         return code;
@@ -56,6 +70,7 @@ using namespace std;
         nombre=n;
     }
     
+    /*
     void receta::setCalorias(float cal) {
         calorias=cal;
     }
@@ -75,7 +90,7 @@ using namespace std;
     void receta::setFibra(float f) {
         fibra=f;
     }
-    
+    */
     const pair<string,unsigned int> receta::getIngrediente(int i) const{
         return *(ings.begin()+i);
     }
@@ -135,6 +150,21 @@ using namespace std;
         p.setPlato(stoi(cadena));
         is.getline(cadena,256, ';'); //NOMBRE
         p.setNombre(cadena);
+        
+        
+        int posANTES = is.tellg();
+        is.getline(cadena,256,'\n');
+        bool encontrado=false;
+        for(int i=0; i<strlen(cadena);i++){
+            if(!encontrado && cadena[i]==';'){
+                encontrado=true;
+                cadena.erase(i);
+            }
+            if(encontrado)
+        }
+        
+        //LEER CADENA, CAMBIAR OFFSET Ó BORRAR A PARTIR DEL PUNTO Y COMA DETECTADO
+        
         
         
 

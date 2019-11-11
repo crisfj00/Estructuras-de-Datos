@@ -1,6 +1,10 @@
 var searchData=
 [
-  ['receta',['receta',['../classreceta.html',1,'']]],
-  ['recetas',['recetas',['../classrecetas.html',1,'']]],
-  ['rep_20del_20tda_20ingrediente',['Rep del TDA ingrediente',['../repConjunto.html',1,'']]]
+  ['obteneringrediente',['obtenerIngrediente',['../classreceta.html#a6ceb80925f44fbe5e8f4c3ac380f4d18',1,'receta']]],
+  ['operator_2b_3d',['operator+=',['../classingredientes.html#a24ea8c982877578bff6e0f450c4b79a6',1,'ingredientes']]],
+  ['operator_3c_3c',['operator&lt;&lt;',['../classingrediente.html#ae7d30d9b20aead90a4d3b11a4ff57e21',1,'ingrediente::operator&lt;&lt;()'],['../classingredientes.html#a47b68f377e21ce26320b8adb9c72f347',1,'ingredientes::operator&lt;&lt;()'],['../classreceta.html#ad48f7b29e85b8b2ffa0853e4476a3977',1,'receta::operator&lt;&lt;()'],['../classrecetas.html#a714b4e608fac0ab5042575450ed5a2c1',1,'recetas::operator&lt;&lt;()']]],
+  ['operator_3d',['operator=',['../classingrediente.html#a0556714d34bdd366599fc02758b6d046',1,'ingrediente::operator=()'],['../classingredientes.html#ab5478a896ab96486a86dfb1b5707c565',1,'ingredientes::operator=()'],['../classreceta.html#a006287d0d539ebad815db816e69176bf',1,'receta::operator=()']]],
+  ['operator_3d_3d',['operator==',['../classingrediente.html#aa3bc521369e0ba37383ca0958697f5af',1,'ingrediente']]],
+  ['operator_3e_3e',['operator&gt;&gt;',['../classingrediente.html#a934ac4c1bed7330ab27297cf27b994df',1,'ingrediente::operator&gt;&gt;()'],['../classingredientes.html#adfbb6b2de8bd8b193715a3d58c313b84',1,'ingredientes::operator&gt;&gt;()'],['../classreceta.html#ad3eb4d0c4a663114167d2a89b260870a',1,'receta::operator&gt;&gt;()'],['../classrecetas.html#a2c27374108df1d7e08f3883865bb6909',1,'recetas::operator&gt;&gt;()']]],
+  ['operator_5b_5d',['operator[]',['../classingredientes.html#a4d26f4035049ca7fb9506df48895cc4f',1,'ingredientes::operator[](int i) const'],['../classingredientes.html#a9e099786f83d0ac3cf38317b194691db',1,'ingredientes::operator[](int i)'],['../classreceta.html#aa3fd8f626a446bccb86d4695b8d2ec1a',1,'receta::operator[](int i) const'],['../classreceta.html#aa1ce593219621930261a49bbb94a75ec',1,'receta::operator[](int i)'],['../classrecetas.html#ab1aa3cf1020dd307843a777195993ef6',1,'recetas::operator[](int i) const'],['../classrecetas.html#a5eb7e3a707d79569adb733de75cec17c',1,'recetas::operator[](int i)']]]
 ];

@@ -251,8 +251,16 @@ public:
     
     
 /*******************************ITERADORES***********************************/  
+    /**
+    * @brief Iterador que puede modificar y recorrer los elementos del contenedor
+    * @return El iterador
+    */  
     typedef vector<ingrediente>::iterator iterator;
     
+     /**
+     * @brief Iterador que puede recorrer los elementos del contenedor
+     * @return El iterador
+     */  
     typedef vector<ingrediente>::const_iterator const_iterator;
     
 

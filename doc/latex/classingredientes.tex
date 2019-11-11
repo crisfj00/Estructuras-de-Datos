@@ -12,12 +12,10 @@ T.\+D.\+A. ingredientes.
 \subsection*{Tipos públicos}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classingredientes_af0cadce160cefe5482ca7d55ef86c893}\label{classingredientes_af0cadce160cefe5482ca7d55ef86c893}} 
-typedef vector$<$ \hyperlink{classingrediente}{ingrediente} $>$\+::iterator {\bfseries iterator}
-\item 
-\mbox{\Hypertarget{classingredientes_ac84040efbb789929ebe9177605bb890a}\label{classingredientes_ac84040efbb789929ebe9177605bb890a}} 
-typedef vector$<$ \hyperlink{classingrediente}{ingrediente} $>$\+::const\+\_\+iterator {\bfseries const\+\_\+iterator}
-\end{DoxyCompactItemize}
+typedef vector$<$ \hyperlink{classingrediente}{ingrediente} $>$\+::\hyperlink{classingredientes_af0cadce160cefe5482ca7d55ef86c893}{iterator} \hyperlink{classingredientes_af0cadce160cefe5482ca7d55ef86c893}{iterator}
+\begin{DoxyCompactList}\small\item\em Iterador que puede modificar y recorrer los elementos del contenedor. \end{DoxyCompactList}\item 
+typedef vector$<$ \hyperlink{classingrediente}{ingrediente} $>$\+::\hyperlink{classingredientes_ac84040efbb789929ebe9177605bb890a}{const\+\_\+iterator} \hyperlink{classingredientes_ac84040efbb789929ebe9177605bb890a}{const\+\_\+iterator}
+\begin{DoxyCompactList}\small\item\em Iterador que puede recorrer los elementos del contenedor. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Métodos públicos}
 \begin{DoxyCompactItemize}
 \item 
@@ -66,13 +64,13 @@ double \hyperlink{classingredientes_adc3f70ae78a02993e6a4b8dac6a4ba07}{get\+Desv
 \begin{DoxyCompactList}\small\item\em Metodo que Calcula el Maximo Ingrediente de todos los ingredientes del mismo tipo que tiene mas grande uno de los valores nutricionales. \end{DoxyCompactList}\item 
 \hyperlink{classingrediente}{ingrediente} \hyperlink{classingredientes_a0ec4fb15cad1b31709b24751abdf2067}{get\+Minimo} (char atributo, string tipo)
 \begin{DoxyCompactList}\small\item\em Metodo que Calcula el Minimo Ingrediente de todos los ingredientes del mismo tipo que tiene mas grande uno de los valores nutricionales. \end{DoxyCompactList}\item 
-iterator \hyperlink{classingredientes_a9d61c6347e216b9f99264982ad8e6074}{begin} ()
+\hyperlink{classingredientes_af0cadce160cefe5482ca7d55ef86c893}{iterator} \hyperlink{classingredientes_a9d61c6347e216b9f99264982ad8e6074}{begin} ()
 \begin{DoxyCompactList}\small\item\em Primer elemento del vector datos. \end{DoxyCompactList}\item 
-const\+\_\+iterator \hyperlink{classingredientes_a40fdccf1fc4542ea0774a79cfc83e070}{cbegin} () const
+\hyperlink{classingredientes_ac84040efbb789929ebe9177605bb890a}{const\+\_\+iterator} \hyperlink{classingredientes_a40fdccf1fc4542ea0774a79cfc83e070}{cbegin} () const
 \begin{DoxyCompactList}\small\item\em Primer elemento del vector datos. \end{DoxyCompactList}\item 
-iterator \hyperlink{classingredientes_a52a01bdabf8b52426c12976badcee775}{end} ()
+\hyperlink{classingredientes_af0cadce160cefe5482ca7d55ef86c893}{iterator} \hyperlink{classingredientes_a52a01bdabf8b52426c12976badcee775}{end} ()
 \begin{DoxyCompactList}\small\item\em Último elemento del vector datos. \end{DoxyCompactList}\item 
-const\+\_\+iterator \hyperlink{classingredientes_a5149813ebd368e888102e69b3d9c54e8}{cend} () const
+\hyperlink{classingredientes_ac84040efbb789929ebe9177605bb890a}{const\+\_\+iterator} \hyperlink{classingredientes_a5149813ebd368e888102e69b3d9c54e8}{cend} () const
 \begin{DoxyCompactList}\small\item\em Último elemento del vector datos. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Amigas}
 \begin{DoxyCompactItemize}
@@ -104,12 +102,41 @@ Octubre 2019
 \end{DoxyDate}
 
 
+\subsection{Documentación de los \textquotesingle{}Typedef\textquotesingle{} miembros de la clase}
+\mbox{\Hypertarget{classingredientes_ac84040efbb789929ebe9177605bb890a}\label{classingredientes_ac84040efbb789929ebe9177605bb890a}} 
+\index{ingredientes@{ingredientes}!const\+\_\+iterator@{const\+\_\+iterator}}
+\index{const\+\_\+iterator@{const\+\_\+iterator}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{const\+\_\+iterator}{const\_iterator}}
+{\footnotesize\ttfamily typedef vector$<$\hyperlink{classingrediente}{ingrediente}$>$\+::\hyperlink{classingredientes_ac84040efbb789929ebe9177605bb890a}{const\+\_\+iterator} \hyperlink{classingredientes_ac84040efbb789929ebe9177605bb890a}{ingredientes\+::const\+\_\+iterator}}
+
+
+
+Iterador que puede recorrer los elementos del contenedor. 
+
+\begin{DoxyReturn}{Devuelve}
+El iterador 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classingredientes_af0cadce160cefe5482ca7d55ef86c893}\label{classingredientes_af0cadce160cefe5482ca7d55ef86c893}} 
+\index{ingredientes@{ingredientes}!iterator@{iterator}}
+\index{iterator@{iterator}!ingredientes@{ingredientes}}
+\subsubsection{\texorpdfstring{iterator}{iterator}}
+{\footnotesize\ttfamily typedef vector$<$\hyperlink{classingrediente}{ingrediente}$>$\+::\hyperlink{classingredientes_af0cadce160cefe5482ca7d55ef86c893}{iterator} \hyperlink{classingredientes_af0cadce160cefe5482ca7d55ef86c893}{ingredientes\+::iterator}}
+
+
+
+Iterador que puede modificar y recorrer los elementos del contenedor. 
+
+\begin{DoxyReturn}{Devuelve}
+El iterador 
+\end{DoxyReturn}
+
+
 \subsection{Documentación de las funciones miembro}
 \mbox{\Hypertarget{classingredientes_a9d61c6347e216b9f99264982ad8e6074}\label{classingredientes_a9d61c6347e216b9f99264982ad8e6074}} 
 \index{ingredientes@{ingredientes}!begin@{begin}}
 \index{begin@{begin}!ingredientes@{ingredientes}}
 \subsubsection{\texorpdfstring{begin()}{begin()}}
-{\footnotesize\ttfamily iterator ingredientes\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \hyperlink{classingredientes_af0cadce160cefe5482ca7d55ef86c893}{iterator} ingredientes\+::begin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -137,7 +164,7 @@ Metodo para borrar el ingrediente de nombre n.
 \index{ingredientes@{ingredientes}!cbegin@{cbegin}}
 \index{cbegin@{cbegin}!ingredientes@{ingredientes}}
 \subsubsection{\texorpdfstring{cbegin()}{cbegin()}}
-{\footnotesize\ttfamily const\+\_\+iterator ingredientes\+::cbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \hyperlink{classingredientes_ac84040efbb789929ebe9177605bb890a}{const\+\_\+iterator} ingredientes\+::cbegin (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -150,7 +177,7 @@ Iterador constante señalando al primer elemento
 \index{ingredientes@{ingredientes}!cend@{cend}}
 \index{cend@{cend}!ingredientes@{ingredientes}}
 \subsubsection{\texorpdfstring{cend()}{cend()}}
-{\footnotesize\ttfamily const\+\_\+iterator ingredientes\+::cend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \hyperlink{classingredientes_ac84040efbb789929ebe9177605bb890a}{const\+\_\+iterator} ingredientes\+::cend (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -163,7 +190,7 @@ Iterador constante señalando al último elemento
 \index{ingredientes@{ingredientes}!end@{end}}
 \index{end@{end}!ingredientes@{ingredientes}}
 \subsubsection{\texorpdfstring{end()}{end()}}
-{\footnotesize\ttfamily iterator ingredientes\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily \hyperlink{classingredientes_af0cadce160cefe5482ca7d55ef86c893}{iterator} ingredientes\+::end (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 

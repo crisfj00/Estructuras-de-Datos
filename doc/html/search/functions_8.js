@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vector_5fdinamico',['vector_dinamico',['../classvector__dinamico.html#ad32cc31634a714ac416d8f711fde4c4b',1,'vector_dinamico::vector_dinamico(int n=10)'],['../classvector__dinamico.html#a9408bb09596374eabcbebe495f9dd2c6',1,'vector_dinamico::vector_dinamico(const vector_dinamico &amp;original)']]]
+  ['_7eingredientes',['~ingredientes',['../classingredientes.html#a91a5e8d5d27853f07314a97928500dfe',1,'ingredientes']]]
 ];
