@@ -76,6 +76,9 @@ class recetas{
   */
   friend std::ostream & operator<<(std::ostream &os , const recetas &p);
   
+  
+  void aniadir(const receta & p);
+  
               
 /*******************************ITERADORES***********************************/  
   /**

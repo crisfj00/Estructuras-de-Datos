@@ -28,7 +28,14 @@ using namespace std;
   
   
   friend std::istream & operator>>(std::istream &is , recetas &p){
-      
+        receta pl();
+        
+        for (int i=0; !is.eof();i++){
+            is >> pl;
+            p.aniadir(pl);
+        }
+        
+        return is;
   }
 
   friend std::ostream & operator<<(std::ostream &os , const recetas &p){
@@ -36,5 +43,9 @@ using namespace std;
             os << it->second;
         
         return os;
+  }
+  
+  void recetas::aniadir(const receta & p){
+      datos.insert(pair<p.getCode(),p>);
   }
   
