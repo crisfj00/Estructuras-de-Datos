@@ -4,6 +4,7 @@
 #include <cassert>
 #include <string.h>
 #include <string>
+#include <cctype>
 
 using namespace std;
 
@@ -18,11 +19,19 @@ using namespace std;
         grasas=0;
     }
     
-    receta::receta(const receta & p){
-        this=p;
+    receta::receta(const receta& p){
+        code=p.getCode();
+        plato=p.getPlato();
+        nombre=p.getNombre();
+        ings=p.getListaIngredientes();
+        calorias=p.getCalorias();
+        hc=p.getHc();
+        grasas=p.getGrasas();
+        proteinas=p.getProteinas();
+        fibra=p.getFibra();
     }
 
-    string receta::getCode(){
+    string receta::getCode()const{
         return code;
     }
     
@@ -92,16 +101,21 @@ using namespace std;
     }
     */
     const pair<string,unsigned int> receta::getIngrediente(int i) const{
-        return *(ings.begin()+i);
+        list<pair<string,unsigned int>>::const_iterator it=ings.begin();
+        advance(it,i);
+        return *it;
     }
     
     pair<string,unsigned int> & receta::obtenerIngrediente(int i){
-        return *(ings.begin()+i);
+        list<pair<string,unsigned int>>::iterator it=ings.begin();
+        advance(it,i);
+        return *it;
     }
     
     const pair<string,unsigned int> &receta::operator[] (int i) const{ 
-        
-       return getIngrediente(i);
+        list<pair<string,unsigned int>>::const_iterator it=ings.begin();
+        advance(it,i);
+        return *it;
     }
     
     pair<string,unsigned int> & receta::operator[](int i){
@@ -127,11 +141,17 @@ using namespace std;
         fibra=P.getFibra();
     }
     
+    
+    void receta::aniadirIngrediente(const pair<string,unsigned int> & p){
+        ings.push_back(p);
+    }
+
+    
     std::ostream& operator<<(std::ostream& os, const receta& p) {
 
         os << p.getCode() << ";" << p.getPlato() << ";" << p.getNombre();
         
-        for(long unsigned int i=0; i<size();i++){
+        for(long unsigned int i=0; i<p.ningredientes();i++){
             os << ";" << p[i].first << " "<< p[i].second;
         }
         
@@ -143,7 +163,7 @@ using namespace std;
     std::istream & operator>>(std::istream & is, receta & p){
         
         char cadena[256];
-        
+        char numero[256];
         is.getline(cadena,256, ';'); //CODE
         p.setCode(cadena);
         is.getline(cadena,256, ';'); //PLATO
@@ -151,24 +171,49 @@ using namespace std;
         is.getline(cadena,256, ';'); //NOMBRE
         p.setNombre(cadena);
         
-        
-        int posANTES = is.tellg();
-        is.getline(cadena,256,'\n');
         bool encontrado=false;
-        for(int i=0; i<strlen(cadena);i++){
+        
+        while(!encontrado){
+        int posANTES = is.tellg();
+        int poscoma;
+        is.getline(cadena,256,'\n');
+        for(size_t i=0; !encontrado &&i<strlen(cadena);i++){     //BORRAR CADENAS DESPUÉS DEL ';'
             if(!encontrado && cadena[i]==';'){
                 encontrado=true;
-                cadena.erase(i);
+                poscoma=i;
             }
-            if(encontrado)
         }
+        string cadena2=cadena;
+        cadena2=cadena2.substr(0,poscoma);
+        int posEntero=cadena2.size()-1;
+        for(int i=cadena2.size()-1; i>0;i--){
+            if(isdigit(cadena2[i]))
+                posEntero=i;   
+        }
+        cadena2=cadena2.substr(0,posEntero-1);  //BORRAR EL NUMERO
+        is.seekg(posANTES+cadena2.size());      //CAMBIAR EL OFFSET JUSTO DESPUÉS DEL NOMBRE DEL INGREDIENTE
+        
+        
+        if(encontrado){
+            is.getline(numero,256,';');
+            encontrado=false;
+        }
+        else{
+            is.getline(numero,256,'\n');    
+            encontrado=true;
+        }
+        //LEER EL NUMERO
+        pair<string,unsigned int> nuevo;
+        
+        nuevo.first=cadena2;
+        nuevo.second=stoul(numero);
+        
+        p.aniadirIngrediente(nuevo);
         
         //LEER CADENA, CAMBIAR OFFSET Ó BORRAR A PARTIR DEL PUNTO Y COMA DETECTADO
         
-        
-        
+        }     
 
         
         return is;
-
     }

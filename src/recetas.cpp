@@ -27,8 +27,8 @@ using namespace std;
   }
   
   
-  friend std::istream & operator>>(std::istream &is , recetas &p){
-        receta pl();
+   std::istream & operator>>(std::istream &is , recetas &p){
+        receta pl;
         
         for (int i=0; !is.eof();i++){
             is >> pl;
@@ -38,14 +38,22 @@ using namespace std;
         return is;
   }
 
-  friend std::ostream & operator<<(std::ostream &os , const recetas &p){
-        for(recetas::const_iterator it=recetas.cbegin(); it!=recetas.cend();++it)
-            os << it->second;
+   std::ostream & operator<<(std::ostream &os , const recetas &p){
+        for(recetas::const_iterator it=p.cbegin(); it!=p.cend();it++)
+            os << (*it).second;
         
         return os;
   }
   
+   std::ostream & operator<<(std::ostream &os , const pair<const string, receta> its){
+      os << its.second;
+        return os;
+  }
+  
   void recetas::aniadir(const receta & p){
-      datos.insert(pair<p.getCode(),p>);
+      pair<string,receta>nuevo;
+      nuevo.first=p.getCode();
+      nuevo.second=p;
+      datos.insert(nuevo);
   }
   

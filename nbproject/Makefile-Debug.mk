@@ -35,8 +35,8 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
-	${OBJECTDIR}/src/Ingredientes.o \
 	${OBJECTDIR}/src/ingrediente.o \
+	${OBJECTDIR}/src/ingredientes.o \
 	${OBJECTDIR}/src/receta.o \
 	${OBJECTDIR}/src/recetas.o \
 	${OBJECTDIR}/src/test_ingredientes.o \
@@ -68,15 +68,15 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ingrediente: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ingrediente ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/src/Ingredientes.o: src/Ingredientes.cpp
-	${MKDIR} -p ${OBJECTDIR}/src
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/Ingredientes.o src/Ingredientes.cpp
-
 ${OBJECTDIR}/src/ingrediente.o: src/ingrediente.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ingrediente.o src/ingrediente.cpp
+
+${OBJECTDIR}/src/ingredientes.o: src/ingredientes.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ingredientes.o src/ingredientes.cpp
 
 ${OBJECTDIR}/src/receta.o: src/receta.cpp
 	${MKDIR} -p ${OBJECTDIR}/src

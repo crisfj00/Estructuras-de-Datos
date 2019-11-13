@@ -69,14 +69,14 @@ public:
     
     receta();
     
-    receta(const receta & p);
+    receta(const receta& p);
     
     
     /**
      * @brief Consultor del codigo de la receta
      * @reutrn El codigo de la receta
      */
-    string getCode();
+    string getCode() const;
     
     /**
      * @brief Consultor del numero del plato de la receta
@@ -143,6 +143,7 @@ public:
      * @param n Numero de plato nuevo
      */
     void setNombre(string n);
+    
     
     /*
     void setCalorias(float cal);
@@ -214,6 +215,8 @@ public:
   *   de la receta de \a p
   */
   friend std::ostream & operator<<(std::ostream &os , const receta &p);
+  
+  void aniadirIngrediente(const pair<string,unsigned int> & p);
   
     
 /*******************************ITERADORES***********************************/  

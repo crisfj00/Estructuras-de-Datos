@@ -50,14 +50,14 @@ class recetas{
     * @param i Posicion en el diccionario a devolver
     * @return Devuelve una receta de la posicion pasada como parametro
     */
-    const receta &operator[](int i) const;
+    const receta &operator[](string i) const;
     
     /**
     * @brief  Sobrecarga del operador [] 
     * @param i Posicion en el diccionario a devolver
     * @return Devuelve una receta de la posicion pasada como parametro
     */
-    receta & operator[](int i); 
+    receta & operator[](string i); 
     
     
      /**
@@ -75,6 +75,8 @@ class recetas{
   * @post Se obtiene en \a os el conjunto de recetas con sus valores de \a p
   */
   friend std::ostream & operator<<(std::ostream &os , const recetas &p);
+  
+    friend std::ostream & operator<<(std::ostream &os , const pair<string, receta> its);
   
   
   void aniadir(const receta & p);
