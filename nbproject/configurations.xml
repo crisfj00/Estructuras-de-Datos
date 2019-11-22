@@ -18,6 +18,7 @@
                    projectFiles="true">
       <itemPath>src/ingrediente.cpp</itemPath>
       <itemPath>src/ingredientes.cpp</itemPath>
+      <itemPath>src/nutricion_receta.cpp</itemPath>
       <itemPath>src/receta.cpp</itemPath>
       <itemPath>src/recetas.cpp</itemPath>
       <itemPath>src/test_ingredientes.cpp</itemPath>
@@ -70,6 +71,8 @@
       </item>
       <item path="src/ingredientes.cpp" ex="false" tool="1" flavor2="0">
       </item>
+      <item path="src/nutricion_receta.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/receta.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/recetas.cpp" ex="false" tool="1" flavor2="0">
@@ -112,6 +115,8 @@
       <item path="src/ingrediente.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/ingredientes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/nutricion_receta.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/receta.cpp" ex="false" tool="1" flavor2="0">
       </item>

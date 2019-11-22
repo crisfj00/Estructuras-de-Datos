@@ -10,11 +10,11 @@ void MuestraParametros(){
 }
 
 int main(int argc, char *argv[])
-{/*
+{
   if (argc!=3){
 	  MuestraParametros();
 	  return 0;
- }	*/
+ }	
  /******************************************************************************************/	
 
  string nf =argv[1];

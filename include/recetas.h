@@ -76,7 +76,7 @@ class recetas{
   */
   friend std::ostream & operator<<(std::ostream &os , const recetas &p);
   
-    friend std::ostream & operator<<(std::ostream &os , const pair<string, receta> its);
+  friend std::ostream & operator<<(std::ostream &os , const pair< string, receta> &its);
   
   
   void aniadir(const receta & p);

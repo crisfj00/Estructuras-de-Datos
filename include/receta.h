@@ -71,6 +71,9 @@ public:
     
     receta(const receta& p);
     
+    void Liberar();
+    
+    ~receta();
     
     /**
      * @brief Consultor del codigo de la receta
@@ -145,7 +148,7 @@ public:
     void setNombre(string n);
     
     
-    /*
+    
     void setCalorias(float cal);
     
     void setHc(float h);
@@ -155,7 +158,7 @@ public:
     void setProteinas(float p);
     
     void setFibra(float f);
-    */
+    
 
     /**
      * @brief Consultor de un ingrediente de la receta (Nombre, Cantidad)

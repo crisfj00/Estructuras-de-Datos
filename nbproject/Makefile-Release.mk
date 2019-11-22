@@ -37,6 +37,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 OBJECTFILES= \
 	${OBJECTDIR}/src/ingrediente.o \
 	${OBJECTDIR}/src/ingredientes.o \
+	${OBJECTDIR}/src/nutricion_receta.o \
 	${OBJECTDIR}/src/receta.o \
 	${OBJECTDIR}/src/recetas.o \
 	${OBJECTDIR}/src/test_ingredientes.o \
@@ -77,6 +78,11 @@ ${OBJECTDIR}/src/ingredientes.o: src/ingredientes.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ingredientes.o src/ingredientes.cpp
+
+${OBJECTDIR}/src/nutricion_receta.o: src/nutricion_receta.cpp
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/nutricion_receta.o src/nutricion_receta.cpp
 
 ${OBJECTDIR}/src/receta.o: src/receta.cpp
 	${MKDIR} -p ${OBJECTDIR}/src

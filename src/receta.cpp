@@ -30,6 +30,12 @@ using namespace std;
         proteinas=p.getProteinas();
         fibra=p.getFibra();
     }
+    
+    void receta::Liberar(){
+        ings.~list();
+    }
+    
+    receta::~receta(){}
 
     string receta::getCode()const{
         return code;
@@ -79,7 +85,7 @@ using namespace std;
         nombre=n;
     }
     
-    /*
+    
     void receta::setCalorias(float cal) {
         calorias=cal;
     }
@@ -99,7 +105,7 @@ using namespace std;
     void receta::setFibra(float f) {
         fibra=f;
     }
-    */
+    
     const pair<string,unsigned int> receta::getIngrediente(int i) const{
         list<pair<string,unsigned int>>::const_iterator it=ings.begin();
         advance(it,i);
@@ -161,6 +167,8 @@ using namespace std;
     }   
 
     std::istream & operator>>(std::istream & is, receta & p){
+        if(!p.ings.empty())
+            p.ings.clear();
         
         char cadena[256];
         char numero[256];
@@ -182,7 +190,10 @@ using namespace std;
                 encontrado=true;
                 poscoma=i;
             }
+            
         }
+        if(!encontrado)
+            poscoma=strlen(cadena);
         string cadena2=cadena;
         cadena2=cadena2.substr(0,poscoma);
         int posEntero=cadena2.size()-1;
@@ -210,10 +221,14 @@ using namespace std;
         
         p.aniadirIngrediente(nuevo);
         
+
         //LEER CADENA, CAMBIAR OFFSET Ó BORRAR A PARTIR DEL PUNTO Y COMA DETECTADO
         
-        }     
+        }
+        
+        
 
         
         return is;
+
     }

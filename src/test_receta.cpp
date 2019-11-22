@@ -11,7 +11,7 @@ int main(int argc,char *argv[]){
   }
   ifstream f(argv[1]);
   if (!f){
-	  cout<<"No existe el fichero "<<argv[1]<<endl;
+	  cout<<"No existe el fichero "<<endl;
   }
   /***********************************************************************/
   
@@ -38,17 +38,17 @@ int main(int argc,char *argv[]){
   /***********************************************************************/
   
   //SECTION 3: Test sobre TDA recetas. Operadores de lectura y escritura
-/*  
+ 
   recetas rall;
   f>>rall;
   cout<<"Todas las recetas: "<<endl<<rall<<endl;
   cout<<"Numero de recetas "<<rall.size()<<endl;
   cout<<"Pulse una tecla para continuar"<<endl;
-  cin.get(); */
+  cin.get(); 
   /***********************************************************************/
   
   //SECTION 4: Consultar una receta por codigo
- /* cout<<"Dime el codigo de una receta:";
+ cout<<"Dime el codigo de una receta:";
   string c;
   cin>>c;
   if (rall[c].getNombre()!="Undefined"){
@@ -56,20 +56,26 @@ int main(int argc,char *argv[]){
   }
   else{
 	  cout<<"La receta con codigo "<<c<<" no existe"<<endl;
-  }*/
+  }
   /***********************************************************************/
   
   //SECTION 5: Borramos la receta con un código. Comprobamos el 
   //funcionamiento del iterador de recetas
-  /*rall.borrar(c);
+  rall.borrar(c);
   cout<<"Tras el borrado "<<endl;
   recetas::iterator its;
+  
+  /*
   for (its=rall.begin();its!=rall.end();++its){
-	cout<<*its<<endl;  
-	  
+ 	cout<< *its <<endl;  	  
+  }*/
+  
+  for (its=rall.begin();its!=rall.end();++its){ //UTILIZAR OPERADOR PAIR, FALLA
+ 	cout<< its->second;  	  
   }
+  
   cout<<endl;
   cout<<"Numero de recetas "<<rall.size()<<endl;
   
-*/
+
 }

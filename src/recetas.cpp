@@ -30,9 +30,12 @@ using namespace std;
    std::istream & operator>>(std::istream &is , recetas &p){
         receta pl;
         
-        for (int i=0; !is.eof();i++){
+        for (int i=0;!is.eof();i++){
+            if(i==21)       //HA DE CAMBIARSE
+                break;      //FALLO EOF??
             is >> pl;
             p.aniadir(pl);
+            
         }
         
         return is;
@@ -45,8 +48,8 @@ using namespace std;
         return os;
   }
   
-   std::ostream & operator<<(std::ostream &os , const pair<const string, receta> its){
-      os << its.second;
+   std::ostream & operator<<(std::ostream &os , std::pair<const std::__cxx11::basic_string<char>, receta> its){
+      os << its.second; //NO LO DETECTA 
         return os;
   }
   
