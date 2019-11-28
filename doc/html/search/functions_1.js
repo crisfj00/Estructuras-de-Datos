@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['cbegin',['cbegin',['../classingredientes.html#a40fdccf1fc4542ea0774a79cfc83e070',1,'ingredientes::cbegin()'],['../classreceta.html#a319f09bc6b8925dac9f6397d6087d108',1,'receta::cbegin()'],['../classrecetas.html#aebfdc8fb18a7554c7d74eb39a5a9b20b',1,'recetas::cbegin()']]],
-  ['cend',['cend',['../classingredientes.html#a5149813ebd368e888102e69b3d9c54e8',1,'ingredientes::cend()'],['../classreceta.html#a5487466375b82ffa14549fdc1115ee42',1,'receta::cend()'],['../classrecetas.html#ae1d9b56c505d01c8610d5b80aa007322',1,'recetas::cend()']]]
+  ['begin',['begin',['../classingredientes.html#a9d61c6347e216b9f99264982ad8e6074',1,'ingredientes::begin()'],['../classreceta.html#a625bfcff90bc88689c85f65d36e5e8e6',1,'receta::begin()'],['../classrecetas.html#a7b51f0b8e1d4a5d604cd0d8dd35356a1',1,'recetas::begin()']]],
+  ['borrar',['borrar',['../classingredientes.html#a71bde8efdf96c22f0f27ab9cc6e50466',1,'ingredientes::borrar()'],['../classrecetas.html#ad7ed4a77f71dcbf83ba7c3588e169e67',1,'recetas::borrar()']]]
 ];

@@ -8,7 +8,7 @@ all:$(BIN)/test_ingredientes $(BIN)/tipos_ingredientes $(BIN)/test_receta $(BIN)
 .PHONY: all
 # ************ Generación de documentación ******************
 documentacion:
-	doxygen doc/doxys/Doxyfile
+	doxygen doc/doxys/Doxy-file
 
 	
 # ************ Compilación de módulos ************

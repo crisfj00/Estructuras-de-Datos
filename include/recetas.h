@@ -20,7 +20,7 @@
 using namespace std;
 
 /**
-  *  @brief T.D.A. Receta
+  *  @brief T.D.A. Recetas
   *
   * Representa un objeto del TDA @c Recetas representa un conjunto no repetido de objetos de tipo Receta.
   *	   
@@ -36,50 +36,83 @@ using namespace std;
   */
 class recetas{
     private:
+    
+    /**
+     * @page repConjunto Rep del TDA Recetas
+     *
+     * @section invConjunto Invariante de la representacion
+     *
+     * Un invariante es rep.datos.size>0                      //ESTO SE LO TENGO QUE PREGUNTAR  
+     * 
+     *
+     * @section faConjunto Funcion de abstraccion
+     *
+     * Un objeto valido @e rep del TDA Recetas representa 
+     *
+     *    Codigo; Numero de plato (1-3); Nombre de la receta; Ingrediente 1 y la cantidad del ingrediente; ..... ; Ingrediente n y la cantidad del ingrediente
+     *
+     */
 
         map<string,receta> datos;
         
     public:
         
-  long unsigned int size() const;
-  
-  void borrar(string codigo);
+      /**
+       * @brief Metodo para saber el numero total de recetas 
+       * @return Numero total de las recetas que contiene 
+       */  
+     long unsigned int size() const;
+
+      /**
+       * @brief Metodo para borrar una receta segun el codigo
+       * @param codigo Codigo unico de la receta a borrar
+       */
+     void borrar(string codigo);
   
    /**
     * @brief  Sobrecarga del operador [] (No permite modificar)
-    * @param i Posicion en el diccionario a devolver
-    * @return Devuelve una receta de la posicion pasada como parametro
+    * @param i Código de la receta en el diccionario a devolver
+    * @return Devuelve una receta con el código pasado como parametro
     */
     const receta &operator[](string i) const;
     
     /**
     * @brief  Sobrecarga del operador [] 
-    * @param i Posicion en el diccionario a devolver
-    * @return Devuelve una receta de la posicion pasada como parametro
+    * @param i Código de la receta en el diccionario a devolver
+    * @return Devuelve una receta con el código pasado como parametro
     */
     receta & operator[](string i); 
     
     
-     /**
-  * @brief Entrada de un conjunto de recetas desde istream
-  * @param is stream de entrada
-  * @param p recetas que recibe el valor
-  * @retval Las recetas leída en p
-  */
-  friend std::istream & operator>>(std::istream &is , recetas &p);
+   /**
+    * @brief Entrada de un conjunto de recetas desde istream
+    * @param is stream de entrada
+    * @param p recetas que recibe el valor
+    * @retval Las recetas leída en p
+    */
+    friend std::istream & operator>>(std::istream &is , recetas &p);
 
-  /**
-  * @brief Salida de recetas a ostream
-  * @param os stream de salida
-  * @param p recetas a escribir
-  * @post Se obtiene en \a os el conjunto de recetas con sus valores de \a p
-  */
-  friend std::ostream & operator<<(std::ostream &os , const recetas &p);
+   /**
+    * @brief Salida de recetas a ostream
+    * @param os stream de salida
+    * @param p recetas a escribir
+    * @post Se obtiene en \a os el conjunto de recetas con sus valores de \a p
+    */
+    friend std::ostream & operator<<(std::ostream &os , const recetas &p);
   
-  friend std::ostream & operator<<(std::ostream &os , const pair< string, receta> &its);
+   /**
+    * @brief Salida de un elemento del map 
+    * @param os stream de salida
+    * @param its un elemeto del map de recetas
+    * @post Se obtiene en \a os el elemento de recetas con sus valores de \a p
+    */
+    friend std::ostream & operator<<(std::ostream &os , const pair< string, receta> &its);
   
-  
-  void aniadir(const receta & p);
+   /**
+    * @brief Metodo para añadir una receta al map
+    * @param p Receta a añadir
+    */
+    void aniadir(const receta & p);
   
               
 /*******************************ITERADORES***********************************/  

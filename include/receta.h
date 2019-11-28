@@ -67,17 +67,24 @@ class receta{
         
 public:
     
+    /**
+     * @brief Constructor por defecto
+     */ 
     receta();
     
+    /**
+     * @brief Constructor de copia 
+     */
     receta(const receta& p);
     
-    void Liberar();
-    
+    /**
+     * @brief Destructor del vector de recetas
+     */
     ~receta();
     
     /**
      * @brief Consultor del codigo de la receta
-     * @reutrn El codigo de la receta
+     * @return El codigo de la receta
      */
     string getCode() const;
     
@@ -148,15 +155,34 @@ public:
     void setNombre(string n);
     
     
-    
+    /**
+     * @brief Modificador de las calorias de la receta
+     * @param cal Cantidad de calorias nuevas 
+     */
     void setCalorias(float cal);
     
+    /**
+     * @brief Modificador de los hidratos de carbono de la receta
+     * @param h Cantidad de hidratos de carbono nuevos 
+     */
     void setHc(float h);
     
+    /**
+     * @brief Modificador de las grasas de la receta
+     * @param g Cantidad de grasas nuevas 
+     */
     void setGrasas(float g);
     
+    /**
+     * @brief Modificador de las proteinas de la receta
+     * @param p Cantidad de proteinas nuevas 
+     */
     void setProteinas(float p);
     
+    /**
+     * @brief Modificador de las fibras de la receta
+     * @param f Cantidad de fibras nuevas 
+     */
     void setFibra(float f);
     
 

@@ -31,9 +31,6 @@ using namespace std;
         fibra=p.getFibra();
     }
     
-    void receta::Liberar(){
-        ings.~list();
-    }
     
     receta::~receta(){}
 

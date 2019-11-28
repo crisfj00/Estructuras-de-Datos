@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7eingredientes',['~ingredientes',['../classingredientes.html#a91a5e8d5d27853f07314a97928500dfe',1,'ingredientes']]]
+  ['receta',['receta',['../classreceta.html#ab103b4d892eaced39989fe3d705ca303',1,'receta::receta()'],['../classreceta.html#a82ffa587b05804df6f921844a8135003',1,'receta::receta(const receta &amp;p)']]]
 ];
