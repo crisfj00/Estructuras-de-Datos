@@ -31,7 +31,6 @@ using namespace std;
         fibra=p.getFibra();
     }
     
-    
     receta::~receta(){}
 
     string receta::getCode()const{

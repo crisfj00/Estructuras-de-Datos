@@ -31,8 +31,6 @@ using namespace std;
         receta pl;
         
         for (int i=0;!is.eof();i++){
-            if(i==21)       //HA DE CAMBIARSE
-                break;      //FALLO EOF??
             is >> pl;
             p.aniadir(pl);
             
@@ -42,8 +40,8 @@ using namespace std;
   }
 
    std::ostream & operator<<(std::ostream &os , const recetas &p){
-        for(recetas::const_iterator it=p.cbegin(); it!=p.cend();it++)
-            os << (*it).second;
+        for(recetas::const_iterator it=p.cbegin(); it!=p.cend();++it)
+            os << *it;
         
         return os;
   }
@@ -52,6 +50,7 @@ using namespace std;
       os << its.second; //NO LO DETECTA 
         return os;
   }
+
   
   void recetas::aniadir(const receta & p){
       pair<string,receta>nuevo;

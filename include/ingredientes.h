@@ -255,40 +255,144 @@ public:
     * @brief Iterador que puede modificar y recorrer los elementos del contenedor
     * @return El iterador
     */  
-    typedef vector<ingrediente>::iterator iterator;
+    //typedef vector<ingrediente>::iterator iterator;
     
      /**
      * @brief Iterador que puede recorrer los elementos del contenedor
      * @return El iterador
      */  
-    typedef vector<ingrediente>::const_iterator const_iterator;
+    //typedef vector<ingrediente>::const_iterator const_iterator;
     
 
   /**
    * @brief Primer elemento del vector datos
    * @return Iterador señalando al primer elemento
    */
-  iterator begin() { return datos.begin(); }
+  //iterator begin() { return datos.begin(); }
 
   /**
    * @brief Primer elemento del vector datos
    * @return Iterador constante señalando al primer elemento
    */
-  const_iterator cbegin() const { return datos.cbegin(); }
+  //const_iterator cbegin() const { return datos.cbegin(); }
 
   /**
    * @brief Último elemento del vector datos
    * @return Iterador señalando al último elemento
    */
-  iterator end() { return datos.end(); }
+  //iterator end() { return datos.end(); }
 
   /**
    * @brief Último elemento del vector datos
    * @return Iterador constante señalando al último elemento
    */
-  const_iterator cend() const { return datos.cend(); }
+  //const_iterator cend() const { return datos.cend(); }
     
     
+    class iterator{
+    private:
+        vector<ingrediente>::iterator puntero;
+    public:
+        iterator(): puntero(0) {}
+        
+        iterator(const iterator &v): puntero(v.puntero){}
+        
+        ~iterator(){}
+        
+        iterator& operator= (const iterator& orig){
+            puntero=orig.puntero;
+            return *this;
+        }
+        
+        ingrediente& operator*() const{
+            return *puntero;
+        }
+        
+        iterator& operator++(){
+            puntero++;
+            return *this;
+        }
+        
+        iterator& operator--(){
+            puntero--;
+            return *this;
+        }
+        
+        bool operator!=(const iterator & v) const{
+            return puntero!=v.puntero;
+        }
+        
+        bool operator==(const iterator &v) const{
+            return puntero==v.puntero;
+        }
+        
+
+        
+        friend class ingredientes;
+    };
+        iterator begin(){
+            iterator i;
+            i.puntero = datos.begin();
+            return i;
+        }
+        
+        iterator end(){
+            iterator i;
+            i.puntero = datos.end();
+            return i;
+        }    
+    
+ class const_iterator{
+    private:
+        vector<ingrediente>::const_iterator puntero;
+        const_iterator(vector<ingrediente>::const_iterator p): puntero(p){}
+    public:
+        const_iterator(): puntero(0) {}
+        
+        const_iterator(const iterator &v): puntero(v.puntero){}
+        
+        const_iterator(const const_iterator &v): puntero(v.puntero){}
+
+        
+        ~const_iterator(){}
+        
+        const_iterator& operator= (const iterator& orig){
+            puntero=orig.puntero;
+            return *this;
+        }
+        
+        const ingrediente& operator*() const{
+            return *puntero;
+        }
+        
+        const_iterator& operator++(){
+            puntero++;
+            return *this;
+        }
+        
+        const_iterator& operator--(){
+            puntero--;
+            return *this;
+        }
+        
+        bool operator!=(const const_iterator & v) const{
+            return puntero!=v.puntero;
+        }
+        
+        bool operator==(const const_iterator &v) const{
+            return puntero==v.puntero;
+        }
+        
+        friend class ingredientes;
+    };
+    
+        const_iterator cbegin(){
+            return datos.cbegin();
+        }
+        
+        const_iterator cend(){
+            return datos.cend();
+        }   
 };
 
 

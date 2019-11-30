@@ -14,7 +14,7 @@ int main(int argc,char *argv[]){
     
   ifstream f(argv[1]);
   ifstream d(argv[2]);
-  float caloriasMAX=atof(argv[3]);
+  const float caloriasMAX=atof(argv[3]);
   
   if (!f){
 	  cout<<"No existe el fichero "<<endl;
@@ -31,37 +31,37 @@ int main(int argc,char *argv[]){
 
   vector<pair<string,float>> razones; 
   
-  for(recetas::iterator it=rall.begin(); it!=rall.end(); it++){
+  for(recetas::iterator it=rall.begin(); it!=rall.end(); ++it){
       calorias=0;
       hc=0;
       grasas=0;
       proteinas=0;
       fibra=0;
-      for(receta::iterator its=it->second.begin(); its!=it->second.end(); its++){
-          ingrediente i= iall.get(its->first);
-          calorias+=i.getCalorias()*its->second/100;
-          hc+=i.getHc()*its->second/100;
-          grasas+=i.getGrasas()*its->second/100;
-          proteinas+=i.getProteinas()*its->second/100;
-          fibra+=i.getFibra()*its->second/100;
+      for(receta::iterator its=(*it).begin(); its!=(*it).end(); ++its){ //OBTENEMOS DE ingredientes SUS VALORES Y LOS ASIGNAMOS A LAS RECETAS
+          ingrediente i= iall.get((*its).first);
+          calorias+=i.getCalorias()*(*its).second/100;
+          hc+=i.getHc()*(*its).second/100;
+          grasas+=i.getGrasas()*(*its).second/100;
+          proteinas+=i.getProteinas()*(*its).second/100;
+          fibra+=i.getFibra()*(*its).second/100;
       }
      
       
-      it->second.setCalorias(calorias);
-      it->second.setHc(hc);
-      it->second.setGrasas(grasas);
-      it->second.setProteinas(proteinas);
-      it->second.setFibra(fibra);
+      (*it).setCalorias(calorias);
+      (*it).setHc(hc);
+      (*it).setGrasas(grasas);
+      (*it).setProteinas(proteinas);
+      (*it).setFibra(fibra);
       
-      razones.push_back({it->first,it->second.getProteinas()/it->second.getHc()});
+      razones.push_back({(*it).getCode(),(*it).getProteinas()/(*it).getHc()}); //AÑADIMOS A UN VECTOR EL PAR codigo, proteinas/Hc
       
-      cout << "Valores Nutricionales de la receta " << it->first << endl;
-      cout << it->second;
-      cout << "Calorias " << it->second.getCalorias();
-      cout << "     Hidratos de Carb " << it->second.getHc();
-      cout << "     Proteinas " << it->second.getProteinas();
-      cout << "     Grasas " << it->second.getGrasas();
-      cout << "     Fibra " << it->second.getFibra();
+      cout << "Valores Nutricionales de la receta " << (*it).getCode() << endl;
+      cout << (*it);
+      cout << "Calorias " << (*it).getCalorias();
+      cout << "     Hidratos de Carb " << (*it).getHc();
+      cout << "     Proteinas " << (*it).getProteinas();
+      cout << "     Grasas " << (*it).getGrasas();
+      cout << "     Fibra " << (*it).getFibra();
       cout << endl << endl;
 
   }
@@ -72,7 +72,7 @@ int main(int argc,char *argv[]){
   vector<pair<string,float>>::iterator it2;
   pair<string,float> aux;
 
-  for(long unsigned int izda=0; izda < razones.size() && cambio; izda++){
+  for(long unsigned int izda=0; izda < razones.size() && cambio; izda++){ //ORDENAMOS EL VECTOR DE MAYOR A MENOR
       cambio=false;
       
       for(long unsigned int i=razones.size()-1; i>izda;i--){
@@ -94,7 +94,7 @@ int main(int argc,char *argv[]){
   
   float caloriasT=0;
   float proteinasT=0;
-  for(vector<pair<string,float>>::const_iterator it=razones.cbegin(); it!=razones.cend(); it++){
+  for(vector<pair<string,float>>::const_iterator it=razones.cbegin(); it!=razones.cend(); it++){ //SELECCIONAMOS HASTA COMPLETAR LAS CALORIAS PEDIDAS
       if((caloriasT+rall[it->first].getCalorias())<= caloriasMAX){
           subconjunto.aniadir(rall[it->first]);
           caloriasT+=rall[it->first].getCalorias();
@@ -103,8 +103,8 @@ int main(int argc,char *argv[]){
   }
   cout << endl;
   cout << "Las recetas escogidas son: \n\n";
-    for(recetas::iterator it=subconjunto.begin(); it!=subconjunto.end(); it++){
-        cout << it->second;
+    for(recetas::iterator it=subconjunto.begin(); it!=subconjunto.end(); ++it){
+        cout << (*it);
     }
   cout << endl << "Calorias Totales " << caloriasT << "\tProteinas Totales " << proteinasT << endl;
 

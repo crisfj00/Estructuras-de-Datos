@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   recetas.h
  * Author: cristian
@@ -120,38 +114,157 @@ class recetas{
   * @brief Iterador que puede modificar y recorrer los elementos del contenedor
   * @return El iterador
   */      
-  typedef typename map<string, receta>::iterator iterator;
+  //typedef typename map<string, receta>::iterator iterator;
 
   /**
   * @brief Iterador que puede modificar y recorrer los elementos del contenedor
   * @return El iterador
   */ 
-  typedef typename map<string, receta>::const_iterator const_iterator;
+  //typedef typename map<string, receta>::const_iterator const_iterator;
 
   /**
    * @brief Primer elemento del map
    * @return Iterador señalando al primer elemento
    */
-  iterator begin() { return datos.begin(); }
+  //iterator begin() { return datos.begin(); }
 
   /**
    * @brief Primer elemento del map
    * @return Iterador constante señalando al primer elemento
    */
-  const_iterator cbegin() const { return datos.begin(); }
+  //const_iterator cbegin() const { return datos.begin(); }
 
   /**
    * @brief Último elemento del map
    * @return Iterador señalando al último elemento
    */
-  iterator end() { return datos.end(); }
+  //iterator end() { return datos.end(); }
 
   /**
    * @brief Último elemento del map
    * @return Iterador constante señalando al último elemento
    */
-  const_iterator cend() const { return datos.end(); }
+  //const_iterator cend() const { return datos.end(); }
   
+class iterator{
+    private:
+        map<string,receta>::iterator puntero;
+
+    public:
+
+    iterator() : puntero(0) {};
+
+    iterator(const iterator & v) : puntero(v.puntero) {};
+
+    ~iterator(){}
+
+
+    iterator & operator=(const iterator & orig){
+        puntero = orig.puntero;
+        return *this;
+    }
+
+
+    receta &operator*()const{
+         return puntero->second;
+    }
+
+    iterator & operator++(){
+         puntero++;
+         return *this;
+    }
+
+
+    iterator &operator--(){
+        puntero--;
+        return *this;
+    }
+
+
+    bool operator !=(const iterator& v)const{
+        return puntero != v.puntero;
+    }
+
+
+    bool operator ==(const iterator& v)const{
+        return puntero == v.puntero;
+    }
+
+    friend class recetas;
+
+};
+
+    iterator begin(){
+        iterator i;
+        i.puntero= datos.begin();
+        return i;
+    }
+
+
+
+    iterator end(){
+        iterator i;
+        i.puntero=datos.end();
+        return i;
+    }
+
+class const_iterator{
+    private:
+        map<string,receta>::const_iterator puntero;
+    public:
+
+    const_iterator() : puntero(0) {};
+
+   
+    const_iterator(const const_iterator &v) : puntero(v.puntero){};
+
+    const_iterator(const iterator &v) : puntero(v.puntero){};
+
+    ~const_iterator(){};
+
+    const_iterator& operator=(const iterator &orig){
+        puntero = orig.puntero;
+        return *this;
+    }
+
+    const receta& operator*()const{
+        return puntero->second;
+    }
+
+    const_iterator operator++(){
+        puntero++;
+        return *this;
+    }
+    
+    const_iterator operator--(){
+        puntero--;
+        return *this;
+    }  
+      
+    bool operator!=(const const_iterator & v)const{
+        return puntero != v.puntero;
+    }
+
+ 
+    bool operator==(const const_iterator & v)const{
+         return puntero == v.puntero;
+    } 
+
+friend class recetas;
+
+};
+
+        const_iterator cbegin() const{
+            const_iterator i;
+            i.puntero=datos.cbegin();
+            return i;
+        }
+        
+        const_iterator cend() const{
+            const_iterator i;
+            i.puntero=datos.cend();
+            return i;
+        }
     
 };
 

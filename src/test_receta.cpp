@@ -65,13 +65,9 @@ int main(int argc,char *argv[]){
   cout<<"Tras el borrado "<<endl;
   recetas::iterator its;
   
-  /*
+
   for (its=rall.begin();its!=rall.end();++its){
  	cout<< *its <<endl;  	  
-  }*/
-  
-  for (its=rall.begin();its!=rall.end();++its){ //UTILIZAR OPERADOR PAIR, FALLA
- 	cout<< its->second;  	  
   }
   
   cout<<endl;

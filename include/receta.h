@@ -1,9 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /* 
  * File:   receta.h
  * Author: cristian
@@ -254,36 +248,158 @@ public:
     * @brief Iterador que puede modificar y recorrer los elementos del contenedor
     * @return El iterador
     */ 
-  typedef typename list<pair<string, unsigned int>>::iterator iterator;
+  //typedef typename list<pair<string, unsigned int>>::iterator iterator;
     /**
     * @brief Iterador que puede recorrer los elementos del contenedor
     * @return El iterador
     */ 
-  typedef typename list<pair<string, unsigned int>>::const_iterator const_iterator;
+  //typedef typename list<pair<string, unsigned int>>::const_iterator const_iterator;
 
   /**
    * @brief Primer elemento del list
    * @return Iterador señalando al primer elemento
    */
-  iterator begin() { return ings.begin(); }
+  //iterator begin() { return ings.begin(); }
 
   /**
    * @brief Primer elemento del list
    * @return Iterador constante señalando al primer elemento
    */
-  const_iterator cbegin() const { return ings.cbegin(); }
+  //const_iterator cbegin() const { return ings.cbegin(); }
 
   /**
    * @brief Último elemento del list
    * @return Iterador señalando al último elemento
    */
-  iterator end() { return ings.end(); }
+  //iterator end() { return ings.end(); }
 
   /**
    * @brief Último elemento del list
    * @return Iterador constante señalando al último elemento
    */
-  const_iterator cend() const { return ings.cend(); }
+  //const_iterator cend() const { return ings.cend(); }
+  
+  class iterator{
+    private:
+        list<pair<string,unsigned int>>::iterator puntero;
+
+    public:
+
+    iterator() : puntero(0){};
+
+    iterator(const iterator & v) : puntero(v.puntero){};
+
+
+    ~iterator(){}
+
+
+    iterator & operator=(const iterator & orig){
+        puntero = orig.puntero;
+        return *this;
+    }
+
+
+    pair<string ,unsigned int> &operator*()const{
+         return *puntero;
+    }
+
+
+    iterator & operator++(){
+         puntero++;
+         return *this;
+    }
+
+
+
+    iterator &operator--(){
+        puntero--;
+        return *this;
+    }
+
+
+    bool operator !=(const iterator& v)const{
+        return puntero != v.puntero;
+    }
+
+    bool operator ==(const iterator& v)const{
+        return puntero == v.puntero;
+    }
+
+    friend class receta;
+
+};
+
+
+    iterator begin(){
+    iterator i;
+    i.puntero=ings.begin();
+    return i;
+}
+
+    iterator end(){
+    iterator i;
+    i.puntero=ings.end();
+    return i;
+}
+
+  class const_iterator{
+    private:
+        list<pair<string,unsigned int>>::const_iterator puntero;
+    public:
+
+    const_iterator(): puntero(0){};
+
+    const_iterator(const const_iterator &v): puntero(v.puntero){};
+
+    const_iterator(const iterator &v): puntero(v.puntero){};
+
+    ~const_iterator(){};
+
+    const_iterator& operator=(const iterator &orig){
+        puntero = orig.puntero;
+        return *this;
+    }
+
+
+    const pair<string ,unsigned int>& operator*()const{
+        return *puntero;
+    }
+
+    const_iterator operator++(){
+        puntero++;
+        return *this;
+    }
+
+    const_iterator operator--(){
+        puntero--;
+        return *this;
+    }  
+
+     
+    bool operator!=(const const_iterator & v)const{
+        return puntero != v.puntero;
+    }
+
+
+    bool operator==(const const_iterator & v)const{
+         return puntero == v.puntero;
+    } 
+
+friend class receta;
+
+};   
+
+    const_iterator cbegin(){
+        const_iterator i;
+        i.puntero=ings.cbegin();
+        return i;
+    }
+
+    const_iterator cend(){
+        const_iterator i;
+        i.puntero=ings.cend();
+        return i;
+    }
         
 };
 
