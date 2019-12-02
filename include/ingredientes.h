@@ -251,77 +251,92 @@ public:
     
     
 /*******************************ITERADORES***********************************/  
-    /**
-    * @brief Iterador que puede modificar y recorrer los elementos del contenedor
-    * @return El iterador
-    */  
+     
     //typedef vector<ingrediente>::iterator iterator;
     
-     /**
-     * @brief Iterador que puede recorrer los elementos del contenedor
-     * @return El iterador
-     */  
+       
     //typedef vector<ingrediente>::const_iterator const_iterator;
     
 
-  /**
-   * @brief Primer elemento del vector datos
-   * @return Iterador señalando al primer elemento
-   */
+  
   //iterator begin() { return datos.begin(); }
 
-  /**
-   * @brief Primer elemento del vector datos
-   * @return Iterador constante señalando al primer elemento
-   */
+  
   //const_iterator cbegin() const { return datos.cbegin(); }
 
-  /**
-   * @brief Último elemento del vector datos
-   * @return Iterador señalando al último elemento
-   */
+  
   //iterator end() { return datos.end(); }
 
-  /**
-   * @brief Último elemento del vector datos
-   * @return Iterador constante señalando al último elemento
-   */
+  
   //const_iterator cend() const { return datos.cend(); }
     
     
     class iterator{
     private:
+        /**
+        * @brief Iterador que puede modificar y recorrer los elementos del contenedor
+        * @return El iterador
+        */ 
         vector<ingrediente>::iterator puntero;
     public:
+        /**
+         * @brief Constructor por defecto
+         */
         iterator(): puntero(0) {}
-        
+        /**
+         * @brief Constructor de copia
+         * @param v Iterador 
+         */
         iterator(const iterator &v): puntero(v.puntero){}
-        
+        /**
+         * @brief Destructor (liberar memoria)
+         */
         ~iterator(){}
-        
+        /**
+         * @brief Sobrecarga del operador =
+         * @param orig iterador 
+         * @return Devuelve un iterador con la posicion del iterador de la otra receta
+         */
         iterator& operator= (const iterator& orig){
             puntero=orig.puntero;
             return *this;
         }
-        
+        /**
+         * @brief Sobrecarga del operador *
+         * @return Devuelve el ingrediente del elemento del vector al que esta apuntando
+         */
         ingrediente& operator*() const{
             return *puntero;
         }
-        
+        /**
+         * @brief Sobrecarga del operador ++
+         * @return Devuelve el iterador de la siguiente posicion
+         */
         iterator& operator++(){
             puntero++;
             return *this;
         }
-        
+        /**
+         * @brief Sobrecarga del operador --
+         * @return Devuelve el iterador de la anterior posicion
+         */
         iterator& operator--(){
             puntero--;
             return *this;
         }
-        
+        /**
+         * @brief Sobrecarga del operador !=
+         * @param v iterador 
+         * @return Devuelve true si la posicion de los iteradores son distintos y false si son iguales 
+         */
         bool operator!=(const iterator & v) const{
             return puntero!=v.puntero;
         }
-        
+        /**
+         * @brief Sobrecarga del operador ==
+         * @param v Iterador
+         * @return Devuelve true si la posicion de los iteradores son iguales y false si no lo son 
+         */
         bool operator==(const iterator &v) const{
             return puntero==v.puntero;
         }
@@ -330,12 +345,19 @@ public:
         
         friend class ingredientes;
     };
+        /**
+        * @brief Primer elemento del vector datos
+        * @return Iterador señalando al primer elemento
+        */   
         iterator begin(){
             iterator i;
             i.puntero = datos.begin();
             return i;
         }
-        
+        /**
+        * @brief Último elemento del vector datos
+        * @return Iterador señalando al último elemento
+        */
         iterator end(){
             iterator i;
             i.puntero = datos.end();
@@ -344,52 +366,94 @@ public:
     
  class const_iterator{
     private:
+        /**
+        * @brief Iterador que puede recorrer los elementos del contenedor
+        * @return El iterador
+        */ 
         vector<ingrediente>::const_iterator puntero;
         const_iterator(vector<ingrediente>::const_iterator p): puntero(p){}
     public:
+        /**
+         * @brief Constructor por defecto
+         */
         const_iterator(): puntero(0) {}
-        
+        /**
+         * @brief Constructor de copia
+         * @param v Iterador 
+         */
         const_iterator(const iterator &v): puntero(v.puntero){}
-        
+        /**
+         * @brief Constructor de copia
+         * @param v Iterador constante
+         */
         const_iterator(const const_iterator &v): puntero(v.puntero){}
 
-        
+        /**
+         * @brief Destructor (liberar memoria)
+         */
         ~const_iterator(){}
-        
+        /**
+         * @brief Sobrecarga del operador =
+         * @param orig iterador 
+         * @return Devuelve un iterador constante con la posicion del iterador del otro ingrediente
+         */
         const_iterator& operator= (const iterator& orig){
             puntero=orig.puntero;
             return *this;
         }
-        
+        /**
+         * @brief Sobrecarga del operador *
+         * @return Devuelve el ingrediente constante del elemento del vector al que esta apuntando
+         */
         const ingrediente& operator*() const{
             return *puntero;
         }
-        
+        /**
+         * @brief Sobrecarga del operador ++
+         * @return Devuelve el iterador constante de la siguiente posicion
+         */
         const_iterator& operator++(){
             puntero++;
             return *this;
         }
-        
+        /**
+         * @brief Sobrecarga del operador --
+         * @return Devuelve el iterador constante de la anterior posicion
+         */
         const_iterator& operator--(){
             puntero--;
             return *this;
         }
-        
+        /**
+         * @brief Sobrecarga del operador !=
+         * @param v iterador constante
+         * @return Devuelve true si la posicion de los iteradores constantes son distintos y false si son iguales 
+         */
         bool operator!=(const const_iterator & v) const{
             return puntero!=v.puntero;
         }
-        
+        /**
+         * @brief Sobrecarga del operador ==
+         * @param v Iterador constante
+         * @return Devuelve true si la posicion de los iteradores son iguales y false si no lo son 
+         */
         bool operator==(const const_iterator &v) const{
             return puntero==v.puntero;
         }
         
         friend class ingredientes;
     };
-    
+        /**
+        * @brief Primer elemento del vector datos
+        * @return Iterador constante señalando al primer elemento
+        */
         const_iterator cbegin(){
             return datos.cbegin();
         }
-        
+        /**
+        * @brief Último elemento del vector datos
+        * @return Iterador constante señalando al último elemento
+        */
         const_iterator cend(){
             return datos.cend();
         }   

@@ -102,6 +102,30 @@ using namespace std;
         fibra=f;
     }
     
+    void receta::actualizarNutrientes(const ingredientes & ingre){
+        float calorias, hc, grasas, proteinas, fibra;
+        calorias=0;
+        hc=0;
+        grasas=0;
+        proteinas=0;
+        fibra=0;
+        for(receta::iterator its=begin(); its!=end(); ++its){ //OBTENEMOS DE ingredientes SUS VALORES Y LOS ASIGNAMOS A LAS RECETAS
+            ingrediente i=ingre.get((*its).first);
+            calorias+=i.getCalorias()*(*its).second/100;
+            hc+=i.getHc()*(*its).second/100;
+            grasas+=i.getGrasas()*(*its).second/100;
+            proteinas+=i.getProteinas()*(*its).second/100;
+            fibra+=i.getFibra()*(*its).second/100;
+        }
+
+        setCalorias(calorias);
+        setHc(hc);
+        setGrasas(grasas);
+        setProteinas(proteinas);
+        setFibra(fibra);        
+    }
+
+    
     const pair<string,unsigned int> receta::getIngrediente(int i) const{
         list<pair<string,unsigned int>>::const_iterator it=ings.begin();
         advance(it,i);

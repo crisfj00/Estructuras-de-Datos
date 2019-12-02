@@ -27,32 +27,11 @@ int main(int argc,char *argv[]){
   ingredientes iall;
   d>>iall;
   
-  float calorias, hc, grasas, proteinas, fibra;
 
   vector<pair<string,float>> razones; 
   
   for(recetas::iterator it=rall.begin(); it!=rall.end(); ++it){
-      calorias=0;
-      hc=0;
-      grasas=0;
-      proteinas=0;
-      fibra=0;
-      for(receta::iterator its=(*it).begin(); its!=(*it).end(); ++its){ //OBTENEMOS DE ingredientes SUS VALORES Y LOS ASIGNAMOS A LAS RECETAS
-          ingrediente i= iall.get((*its).first);
-          calorias+=i.getCalorias()*(*its).second/100;
-          hc+=i.getHc()*(*its).second/100;
-          grasas+=i.getGrasas()*(*its).second/100;
-          proteinas+=i.getProteinas()*(*its).second/100;
-          fibra+=i.getFibra()*(*its).second/100;
-      }
-     
-      
-      (*it).setCalorias(calorias);
-      (*it).setHc(hc);
-      (*it).setGrasas(grasas);
-      (*it).setProteinas(proteinas);
-      (*it).setFibra(fibra);
-      
+      (*it).actualizarNutrientes(iall);      
       razones.push_back({(*it).getCode(),(*it).getProteinas()/(*it).getHc()}); //AÑADIMOS A UN VECTOR EL PAR codigo, proteinas/Hc
       
       cout << "Valores Nutricionales de la receta " << (*it).getCode() << endl;

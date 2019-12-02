@@ -52,7 +52,7 @@ int main(int argc,char *argv[]){
   string c;
   cin>>c;
   if (rall[c].getNombre()!="Undefined"){
-	  cout<<"La receta es "<<rall[c]<<endl;
+	  cout<<"La receta es "<<rall[c];
   }
   else{
 	  cout<<"La receta con codigo "<<c<<" no existe"<<endl;
@@ -67,7 +67,7 @@ int main(int argc,char *argv[]){
   
 
   for (its=rall.begin();its!=rall.end();++its){
- 	cout<< *its <<endl;  	  
+ 	cout<< *its;  	  
   }
   
   cout<<endl;

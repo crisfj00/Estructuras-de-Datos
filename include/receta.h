@@ -10,6 +10,7 @@
 
 #include<string>
 #include <list>
+#include "ingredientes.h"
 using namespace std;
 
  /**
@@ -179,6 +180,11 @@ public:
      */
     void setFibra(float f);
     
+    /**
+     * @brief Modificador de todos los nutrientes de una receta
+     * @param ingre Ingredientes sobre los cuales buscará la información
+     */
+    void actualizarNutrientes(const ingredientes & ingre);
 
     /**
      * @brief Consultor de un ingrediente de la receta (Nombre, Cantidad)
@@ -244,33 +250,18 @@ public:
     
 /*******************************ITERADORES***********************************/  
     
-    /**
-    * @brief Iterador que puede modificar y recorrer los elementos del contenedor
-    * @return El iterador
-    */ 
+    
   //typedef typename list<pair<string, unsigned int>>::iterator iterator;
-    /**
-    * @brief Iterador que puede recorrer los elementos del contenedor
-    * @return El iterador
-    */ 
+    
   //typedef typename list<pair<string, unsigned int>>::const_iterator const_iterator;
 
-  /**
-   * @brief Primer elemento del list
-   * @return Iterador señalando al primer elemento
-   */
+  
   //iterator begin() { return ings.begin(); }
 
-  /**
-   * @brief Primer elemento del list
-   * @return Iterador constante señalando al primer elemento
-   */
+  
   //const_iterator cbegin() const { return ings.cbegin(); }
 
-  /**
-   * @brief Último elemento del list
-   * @return Iterador señalando al último elemento
-   */
+  
   //iterator end() { return ings.end(); }
 
   /**
@@ -281,46 +272,78 @@ public:
   
   class iterator{
     private:
+        /**
+    * @brief Iterador que puede modificar y recorrer los elementos del contenedor
+    * @return El iterador
+    */ 
         list<pair<string,unsigned int>>::iterator puntero;
 
     public:
-
+    /**
+     * @brief Constructor por defecto
+     */
     iterator() : puntero(0){};
-
+    /**
+     * @brief Constructor de copia
+     * @param v Iterador 
+     */
     iterator(const iterator & v) : puntero(v.puntero){};
 
-
+    /**
+    * @brief Destructor (liberar memoria)
+    */
     ~iterator(){}
 
-
+    /**
+     * @brief Sobrecarga del operador =
+     * @param orig iterador 
+     * @return Devuelve un iterador con la posicion del iterador de la otra receta
+     */
     iterator & operator=(const iterator & orig){
         puntero = orig.puntero;
         return *this;
     }
 
-
+    /**
+         * @brief Sobrecarga del operador *
+         * @return Devuelve un pair del elemento de la lista al que esta apuntando
+         */
     pair<string ,unsigned int> &operator*()const{
          return *puntero;
     }
 
-
+    /**
+     * @brief Sobrecarga del operador ++
+     * @return Devuelve el iterador de la siguiente posicion
+     */
     iterator & operator++(){
          puntero++;
          return *this;
     }
 
 
-
+    /**
+     * @brief Sobrecarga del operador --
+     * @return Devuelve el iterador de la anterior posicion
+     */
     iterator &operator--(){
         puntero--;
         return *this;
     }
 
-
+    /**
+     * @brief Sobrecarga del operador !=
+     * @param v iterador 
+     * @return Devuelve true si la posicion de los iteradores son distintos y false si son iguales 
+     */
     bool operator !=(const iterator& v)const{
         return puntero != v.puntero;
     }
-
+    /**
+     * @brief Sobrecarga del operador ==
+     * @param v Iterador
+     * @return Devuelve true si la posicion de los iteradores son iguales y false si no lo son 
+     */
     bool operator ==(const iterator& v)const{
         return puntero == v.puntero;
     }
@@ -329,13 +352,20 @@ public:
 
 };
 
-
+    /**
+   * @brief Primer elemento del list
+   * @return Iterador señalando al primer elemento
+   */
     iterator begin(){
     iterator i;
     i.puntero=ings.begin();
     return i;
 }
-
+    
+    /**
+   * @brief Último elemento del list
+   * @return Iterador señalando al último elemento
+   */
     iterator end(){
     iterator i;
     i.puntero=ings.end();
@@ -344,43 +374,78 @@ public:
 
   class const_iterator{
     private:
+        /**
+    * @brief Iterador que puede recorrer los elementos del contenedor
+    * @return El iterador constante
+    */ 
         list<pair<string,unsigned int>>::const_iterator puntero;
     public:
-
+    /**
+    * @brief Constructor por defecto
+    */
     const_iterator(): puntero(0){};
-
+    /**
+    * @brief Constructor de copia
+    * @param v Iterador constante 
+    */
     const_iterator(const const_iterator &v): puntero(v.puntero){};
-
+    /**
+    * @brief Constructor de copia
+    * @param v Iterador  
+    */
     const_iterator(const iterator &v): puntero(v.puntero){};
-
+    /**
+    * @brief Destructor (liberar memoria)
+    */
     ~const_iterator(){};
-
+    /**
+     * @brief Sobrecarga del operador =
+     * @param orig iterador 
+     * @return Devuelve un iterador constante con la posicion del iterador de la otra receta
+     */
     const_iterator& operator=(const iterator &orig){
         puntero = orig.puntero;
         return *this;
     }
 
-
+    /**
+    * @brief Sobrecarga del operador *
+    * @return Devuelve la receta constante del elemento de la lista al que esta apuntando
+    */
     const pair<string ,unsigned int>& operator*()const{
         return *puntero;
     }
-
+    /**
+         * @brief Sobrecarga del operador ++
+         * @return Devuelve el iterador constante de la siguiente posicion
+         */
     const_iterator operator++(){
         puntero++;
         return *this;
     }
-
+    /**
+     * @brief Sobrecarga del operador --
+     * @return Devuelve el iterador constante de la anterior posicion
+     */
     const_iterator operator--(){
         puntero--;
         return *this;
     }  
 
-     
+     /**
+     * @brief Sobrecarga del operador !=
+     * @param v iterador constante
+     * @return Devuelve true si la posicion de los iteradores constantes son distintos y false si son iguales 
+     */
     bool operator!=(const const_iterator & v)const{
         return puntero != v.puntero;
     }
 
-
+    /**
+     * @brief Sobrecarga del operador ==
+     * @param v Iterador constante
+     * @return Devuelve true si la posicion de los iteradores son iguales y false si no lo son 
+     */
     bool operator==(const const_iterator & v)const{
          return puntero == v.puntero;
     } 
@@ -388,13 +453,19 @@ public:
 friend class receta;
 
 };   
-
+    /**
+   * @brief Primer elemento del list
+   * @return Iterador constante señalando al primer elemento
+   */
     const_iterator cbegin(){
         const_iterator i;
         i.puntero=ings.cbegin();
         return i;
     }
-
+    /**
+   * @brief Último elemento del list
+   * @return Iterador constante señalando al último elemento
+   */
     const_iterator cend(){
         const_iterator i;
         i.puntero=ings.cend();

@@ -28,9 +28,9 @@ using namespace std;
   * @author Cristian Fernandez
   * @date Noviembre 2019 
   */
-class recetas{
-    private:
-    
+class recetas
+{
+private:
     /**
      * @page repConjunto Rep del TDA Recetas
      *
@@ -47,226 +47,294 @@ class recetas{
      *
      */
 
-        map<string,receta> datos;
-        
-    public:
-        
-      /**
+    map<string, receta> datos;
+
+public:
+    /**
        * @brief Metodo para saber el numero total de recetas 
        * @return Numero total de las recetas que contiene 
-       */  
-     long unsigned int size() const;
+       */
+    long unsigned int size() const;
 
-      /**
+    /**
        * @brief Metodo para borrar una receta segun el codigo
        * @param codigo Codigo unico de la receta a borrar
        */
-     void borrar(string codigo);
-  
-   /**
+    void borrar(string codigo);
+
+    /**
     * @brief  Sobrecarga del operador [] (No permite modificar)
     * @param i Código de la receta en el diccionario a devolver
     * @return Devuelve una receta con el código pasado como parametro
     */
     const receta &operator[](string i) const;
-    
+
     /**
     * @brief  Sobrecarga del operador [] 
     * @param i Código de la receta en el diccionario a devolver
     * @return Devuelve una receta con el código pasado como parametro
     */
-    receta & operator[](string i); 
-    
-    
-   /**
+    receta &operator[](string i);
+
+    /**
     * @brief Entrada de un conjunto de recetas desde istream
     * @param is stream de entrada
     * @param p recetas que recibe el valor
     * @retval Las recetas leída en p
     */
-    friend std::istream & operator>>(std::istream &is , recetas &p);
+    friend std::istream &operator>>(std::istream &is, recetas &p);
 
-   /**
+    /**
     * @brief Salida de recetas a ostream
     * @param os stream de salida
     * @param p recetas a escribir
     * @post Se obtiene en \a os el conjunto de recetas con sus valores de \a p
     */
-    friend std::ostream & operator<<(std::ostream &os , const recetas &p);
-  
-   /**
+    friend std::ostream &operator<<(std::ostream &os, const recetas &p);
+
+    /**
     * @brief Salida de un elemento del map 
     * @param os stream de salida
     * @param its un elemeto del map de recetas
     * @post Se obtiene en \a os el elemento de recetas con sus valores de \a p
     */
-    friend std::ostream & operator<<(std::ostream &os , const pair< string, receta> &its);
-  
-   /**
+    friend std::ostream &operator<<(std::ostream &os, const pair<string, receta> &its);
+
+    /**
     * @brief Metodo para añadir una receta al map
     * @param p Receta a añadir
     */
-    void aniadir(const receta & p);
+    void aniadir(const receta &p);
+
+    /*******************************ITERADORES***********************************/
+    
+    //typedef typename map<string, receta>::iterator iterator;
+
+    
+    //typedef typename map<string, receta>::const_iterator const_iterator;
+
   
-              
-/*******************************ITERADORES***********************************/  
-  /**
-  * @brief Iterador que puede modificar y recorrer los elementos del contenedor
-  * @return El iterador
-  */      
-  //typedef typename map<string, receta>::iterator iterator;
+    //iterator begin() { return datos.begin(); }
 
-  /**
-  * @brief Iterador que puede modificar y recorrer los elementos del contenedor
-  * @return El iterador
-  */ 
-  //typedef typename map<string, receta>::const_iterator const_iterator;
+   
+    //const_iterator cbegin() const { return datos.begin(); }
 
-  /**
-   * @brief Primer elemento del map
-   * @return Iterador señalando al primer elemento
-   */
-  //iterator begin() { return datos.begin(); }
+    
+    //iterator end() { return datos.end(); }
 
-  /**
-   * @brief Primer elemento del map
-   * @return Iterador constante señalando al primer elemento
-   */
-  //const_iterator cbegin() const { return datos.begin(); }
 
-  /**
+    //const_iterator cend() const { return datos.end(); }
+
+    class iterator
+    {
+    private:
+        /**
+         * @brief Iterador que puede modificar y recorrer los elementos del contenedor
+         * @return El iterador
+         */
+        map<string, receta>::iterator puntero;
+
+    public:
+
+        /**
+         * @brief Constructor por defecto
+         */
+        iterator() : puntero(0){};
+        /**
+         * @brief Constructor de copia
+         * @param v Iterador 
+         */
+        iterator(const iterator &v) : puntero(v.puntero){};
+        /**
+         * @brief Destructor (liberar memoria)
+         */
+        ~iterator() {}
+        /**
+         * @brief Sobrecarga del operador =
+         * @param orig iterador 
+         * @return Devuelve un iterador con la posicion del iterador de la otra receta
+         */
+        iterator &operator=(const iterator &orig)
+        {
+            puntero = orig.puntero;
+            return *this;
+        }
+        /**
+         * @brief Sobrecarga del operador *
+         * @return Devuelve la receta del elemento del map al que esta apuntando
+         */
+        receta &operator*() const
+        {
+            return puntero->second;
+        }
+        /**
+         * @brief Sobrecarga del operador ++
+         * @return Devuelve el iterador de la siguiente posicion
+         */
+        iterator &operator++()
+        {
+            puntero++;
+            return *this;
+        }
+        /**
+         * @brief Sobrecarga del operador --
+         * @return Devuelve el iterador de la anterior posicion
+         */
+        iterator &operator--()
+        {
+            puntero--;
+            return *this;
+        }
+        /**
+         * @brief Sobrecarga del operador !=
+         * @param v iterador 
+         * @return Devuelve true si la posicion de los iteradores son distintos y false si son iguales 
+         */
+        bool operator!=(const iterator &v) const
+        {
+            return puntero != v.puntero;
+        }
+        /**
+         * @brief Sobrecarga del operador ==
+         * @param v Iterador
+         * @return Devuelve true si la posicion de los iteradores son iguales y false si no lo son 
+         */
+        bool operator==(const iterator &v) const
+        {
+            return puntero == v.puntero;
+        }
+
+        friend class recetas;
+    };
+    /**
+    * @brief Primer elemento del map
+    * @return Iterador señalando al primer elemento
+    */
+    iterator begin()
+    {
+        iterator i;
+        i.puntero = datos.begin();
+        return i;
+    }
+    /**
    * @brief Último elemento del map
    * @return Iterador señalando al último elemento
    */
-  //iterator end() { return datos.end(); }
+    iterator end()
+    {
+        iterator i;
+        i.puntero = datos.end();
+        return i;
+    }
 
-  /**
+
+
+
+    class const_iterator
+    {
+    private:
+        /**
+         * @brief Iterador que puede modificar y recorrer los elementos del contenedor
+         * @return El iterador
+         */
+        map<string, receta>::const_iterator puntero;
+
+    public:
+        /**
+         * @brief Constructor por defecto
+         */
+        const_iterator() : puntero(0){};
+        /**
+         * @brief Constructor de copia
+         * @param v Iterador constante
+         */
+        const_iterator(const const_iterator &v) : puntero(v.puntero){};
+        /**
+         * @brief Constructor de copia
+         * @param v Iterador 
+         */
+        const_iterator(const iterator &v) : puntero(v.puntero){};
+        /**
+         * @brief Destructor (liberar memoria)
+         */
+        ~const_iterator(){};
+        /**
+         * @brief Sobrecarga del operador =
+         * @param orig iterador 
+         * @return Devuelve un iterador constante con la posicion del iterador de la otra receta
+         */
+        const_iterator &operator=(const iterator &orig)
+        {
+            puntero = orig.puntero;
+            return *this;
+        }
+         /**
+         * @brief Sobrecarga del operador *
+         * @return Devuelve la receta constante del elemento del map al que esta apuntando
+         */
+        const receta &operator*() const
+        {
+            return puntero->second;
+        }
+        /**
+         * @brief Sobrecarga del operador ++
+         * @return Devuelve el iterador constante de la siguiente posicion
+         */
+        const_iterator operator++()
+        {
+            puntero++;
+            return *this;
+        }
+        /**
+         * @brief Sobrecarga del operador --
+         * @return Devuelve el iterador constante de la anterior posicion
+         */
+        const_iterator operator--()
+        {
+            puntero--;
+            return *this;
+        }
+        /**
+         * @brief Sobrecarga del operador !=
+         * @param v iterador constante
+         * @return Devuelve true si la posicion de los iteradores constantes son distintos y false si son iguales 
+         */
+        bool operator!=(const const_iterator &v) const
+        {
+            return puntero != v.puntero;
+        }
+        /**
+         * @brief Sobrecarga del operador ==
+         * @param v Iterador constante
+         * @return Devuelve true si la posicion de los iteradores son iguales y false si no lo son 
+         */
+        bool operator==(const const_iterator &v) const
+        {
+            return puntero == v.puntero;
+        }
+
+        friend class recetas;
+    };
+    /**
+   * @brief Primer elemento del map
+   * @return Iterador constante señalando al primer elemento
+   */
+    const_iterator cbegin() const
+    {
+        const_iterator i;
+        i.puntero = datos.cbegin();
+        return i;
+    }
+    /**
    * @brief Último elemento del map
    * @return Iterador constante señalando al último elemento
    */
-  //const_iterator cend() const { return datos.end(); }
-  
-class iterator{
-    private:
-        map<string,receta>::iterator puntero;
-
-    public:
-
-    iterator() : puntero(0) {};
-
-    iterator(const iterator & v) : puntero(v.puntero) {};
-
-    ~iterator(){}
-
-
-    iterator & operator=(const iterator & orig){
-        puntero = orig.puntero;
-        return *this;
-    }
-
-
-    receta &operator*()const{
-         return puntero->second;
-    }
-
-    iterator & operator++(){
-         puntero++;
-         return *this;
-    }
-
-
-    iterator &operator--(){
-        puntero--;
-        return *this;
-    }
-
-
-    bool operator !=(const iterator& v)const{
-        return puntero != v.puntero;
-    }
-
-
-    bool operator ==(const iterator& v)const{
-        return puntero == v.puntero;
-    }
-
-    friend class recetas;
-
-};
-
-    iterator begin(){
-        iterator i;
-        i.puntero= datos.begin();
+    const_iterator cend() const
+    {
+        const_iterator i;
+        i.puntero = datos.cend();
         return i;
     }
-
-
-
-    iterator end(){
-        iterator i;
-        i.puntero=datos.end();
-        return i;
-    }
-
-class const_iterator{
-    private:
-        map<string,receta>::const_iterator puntero;
-    public:
-
-    const_iterator() : puntero(0) {};
-
-   
-    const_iterator(const const_iterator &v) : puntero(v.puntero){};
-
-    const_iterator(const iterator &v) : puntero(v.puntero){};
-
-    ~const_iterator(){};
-
-    const_iterator& operator=(const iterator &orig){
-        puntero = orig.puntero;
-        return *this;
-    }
-
-    const receta& operator*()const{
-        return puntero->second;
-    }
-
-    const_iterator operator++(){
-        puntero++;
-        return *this;
-    }
-    
-    const_iterator operator--(){
-        puntero--;
-        return *this;
-    }  
-      
-    bool operator!=(const const_iterator & v)const{
-        return puntero != v.puntero;
-    }
-
- 
-    bool operator==(const const_iterator & v)const{
-         return puntero == v.puntero;
-    } 
-
-friend class recetas;
-
-};
-
-        const_iterator cbegin() const{
-            const_iterator i;
-            i.puntero=datos.cbegin();
-            return i;
-        }
-        
-        const_iterator cend() const{
-            const_iterator i;
-            i.puntero=datos.cend();
-            return i;
-        }
-    
 };
 
 #endif /* RECETAS_H */
-
