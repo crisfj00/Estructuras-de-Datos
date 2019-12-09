@@ -7,11 +7,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/cristian/Escritorio/ingrediente/src/nutricion_receta.cpp</file>
             <file>file:/home/cristian/Escritorio/ingrediente/include/receta.h</file>
-            <file>file:/home/cristian/Escritorio/ingrediente/src/ingredientes.cpp</file>
+            <file>file:/home/cristian/Escritorio/ingrediente/src/instrucciones.cpp</file>
+            <file>file:/home/cristian/Escritorio/ingrediente/src/cocinero_integral.cpp</file>
+            <file>file:/home/cristian/Escritorio/ingrediente/src/acciones.cpp</file>
+            <file>file:/home/cristian/Escritorio/ingrediente/include/instrucciones.h</file>
+            <file>file:/home/cristian/Escritorio/ingrediente/include/acciones.h</file>
             <file>file:/home/cristian/Escritorio/ingrediente/src/receta.cpp</file>
-            <file>file:/home/cristian/Escritorio/ingrediente/include/ingredientes.h</file>
         </group>
     </open-files>
 </project-private>

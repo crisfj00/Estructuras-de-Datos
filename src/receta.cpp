@@ -29,6 +29,7 @@ using namespace std;
         grasas=p.getGrasas();
         proteinas=p.getProteinas();
         fibra=p.getFibra();
+        inst=p.getPasos();
     }
     
     receta::~receta(){}
@@ -64,6 +65,11 @@ using namespace std;
     float receta::getFibra() const{
         return fibra;
     }
+    
+    instrucciones receta::getPasos() const{
+        return inst;
+    }
+
     
     long unsigned int receta::ningredientes() const{
         return ings.size();
@@ -102,6 +108,10 @@ using namespace std;
         fibra=f;
     }
     
+    void receta::setArbol(ArbolBinario<string> arbol){
+        inst.setArbol(arbol);
+    }
+    
     void receta::actualizarNutrientes(const ingredientes & ingre){
         float calorias, hc, grasas, proteinas, fibra;
         calorias=0;
@@ -123,6 +133,10 @@ using namespace std;
         setGrasas(grasas);
         setProteinas(proteinas);
         setFibra(fibra);        
+    }
+
+    void receta::actualizarPasos(const instrucciones & inst){
+        this->inst=inst;
     }
 
     
@@ -247,8 +261,31 @@ using namespace std;
         }
         
         
-
-        
         return is;
 
     }
+    
+    
+    void receta::imprimirRecetaCompleta(ostream &os){
+
+      os << endl << BOLD("CODE: ") << getCode() << BOLD(" RECETA: ") << getNombre() << BOLD(" PLATO: ") << getPlato() << endl << endl;
+
+      os << UNDL(BOLD("Ingredientes:")) << endl << endl;
+
+      for(receta::const_iterator it=cbegin(); it!=cend(); ++it)
+          os << "\t" << (*it).first << " " << (*it).second << endl;
+
+
+      os << UNDL(BOLD("Información Nutricional:")) << endl << endl;
+      os << "\tCalorias: " << getCalorias() << endl;
+      os << "\tHidratos de Carbono: " << getHc() << endl;
+      os << "\tGrasas: " << getGrasas() << endl;
+      os << "\tProteinas: " << getProteinas() << endl;
+      os << "\tFibra: " << getFibra() << endl;
+
+      os << UNDL(BOLD("Pasos a seguir:")) << endl << endl;
+
+      getPasos().getArbol().RecorridoPostOrden(os);
+      
+    }
+    

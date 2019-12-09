@@ -4,8 +4,13 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>include/acciones.h</itemPath>
+      <itemPath>include/arbolbinario.h</itemPath>
+      <itemPath>include/arbolbinario.tpp</itemPath>
+      <itemPath>include/color.h</itemPath>
       <itemPath>include/ingrediente.h</itemPath>
       <itemPath>include/ingredientes.h</itemPath>
+      <itemPath>include/instrucciones.h</itemPath>
       <itemPath>include/receta.h</itemPath>
       <itemPath>include/recetas.h</itemPath>
     </logicalFolder>
@@ -16,8 +21,11 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>src/acciones.cpp</itemPath>
+      <itemPath>src/cocinero_integral.cpp</itemPath>
       <itemPath>src/ingrediente.cpp</itemPath>
       <itemPath>src/ingredientes.cpp</itemPath>
+      <itemPath>src/instrucciones.cpp</itemPath>
       <itemPath>src/nutricion_receta.cpp</itemPath>
       <itemPath>src/receta.cpp</itemPath>
       <itemPath>src/recetas.cpp</itemPath>
@@ -56,20 +64,38 @@
             <pElem>include/ingredientes.h</pElem>
             <pElem>include/receta.h</pElem>
             <pElem>include/recetas.h</pElem>
+            <pElem>include/arbolbinario.h</pElem>
+            <pElem>include/color.h</pElem>
           </incFile>
         </ccTool>
       </compileType>
+      <item path="include/acciones.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/arbolbinario.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/arbolbinario.tpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/color.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/ingrediente.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/ingredientes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/instrucciones.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/receta.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/recetas.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/acciones.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/cocinero_integral.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/ingrediente.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/ingredientes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/instrucciones.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/nutricion_receta.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -104,17 +130,33 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="include/acciones.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/arbolbinario.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/arbolbinario.tpp" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/color.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="include/ingrediente.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/ingredientes.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="include/instrucciones.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/receta.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="include/recetas.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="src/acciones.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/cocinero_integral.cpp" ex="false" tool="1" flavor2="0">
+      </item>
       <item path="src/ingrediente.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/ingredientes.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="src/instrucciones.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="src/nutricion_receta.cpp" ex="false" tool="1" flavor2="0">
       </item>

@@ -19,11 +19,16 @@ using namespace std;
   }
   
   const receta & recetas::operator[](string i) const{
-      return datos.at(i);
+        map<string,receta>::const_iterator it=datos.find(i);
+        assert (it!=datos.end());
+          return it->second;
+
   }
   
   receta & recetas::operator[](string i){
-      return datos.at(i);
+        map<string,receta>::iterator it=datos.find(i);
+        assert (it!=datos.end());
+           return it->second;
   }
   
   
@@ -59,3 +64,50 @@ using namespace std;
       datos.insert(nuevo);
   }
   
+    receta fusionarRecetas(recetas &allrecet, string code1, string code2){
+        receta fusion;
+        fusion.setNombre("Fusión " + allrecet[code1].getNombre() + " y " + allrecet[code2].getNombre());
+        fusion.setCode("F_"+code1+"_"+code2);
+        if(allrecet[code1].getPlato()==2 && allrecet[code2].getPlato()==2)
+            fusion.setPlato(2);
+        else
+            fusion.setPlato(1);
+
+        for(receta::const_iterator it=allrecet[code1].cbegin(); it!=allrecet[code1].cend(); ++it)
+            fusion.aniadirIngrediente({(*it).first,(*it).second});
+
+
+        for(receta::const_iterator it=allrecet[code2].cbegin(); it!=allrecet[code2].cend(); ++it){
+            bool encontrado=false;
+
+            for(receta::iterator it2=fusion.begin(); it2!=fusion.end(); ++it2){
+                if((*it).first==(*it2).first){
+                    (*it2).second+=(*it).second;
+                    encontrado=true;
+                }
+            }
+
+            if(!encontrado)
+                fusion.aniadirIngrediente({(*it).first,(*it).second});
+        }
+
+        fusion.setCalorias(allrecet[code1].getCalorias()+allrecet[code2].getCalorias());
+        fusion.setHc(allrecet[code1].getHc()+allrecet[code2].getHc());
+        fusion.setGrasas(allrecet[code1].getGrasas()+allrecet[code2].getGrasas());
+        fusion.setProteinas(allrecet[code1].getProteinas()+allrecet[code2].getProteinas());
+        fusion.setFibra(allrecet[code1].getFibra()+allrecet[code2].getFibra());
+
+        allrecet.aniadir(fusion);
+
+        ArbolBinario<string> uno=allrecet[code1].getPasos().getArbol();
+        ArbolBinario<string> dos=allrecet[code2].getPasos().getArbol();
+        ArbolBinario<string> arbol("Acompañar");
+        arbol.Insertar_Hi(arbol.getRaiz(),uno);
+        arbol.Insertar_Hd(arbol.getRaiz(),dos);
+        fusion.setArbol(arbol);
+        arbol.~ArbolBinario();
+        uno.~ArbolBinario();
+        dos.~ArbolBinario();
+
+        return fusion;
+    }

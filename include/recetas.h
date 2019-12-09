@@ -105,6 +105,7 @@ public:
     * @param p Receta a añadir
     */
     void aniadir(const receta &p);
+    
 
     /*******************************ITERADORES***********************************/
     
@@ -336,5 +337,8 @@ public:
         return i;
     }
 };
+
+    receta fusionarRecetas(recetas &allrecet, string code1, string code2);
+
 
 #endif /* RECETAS_H */

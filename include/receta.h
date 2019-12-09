@@ -11,6 +11,8 @@
 #include<string>
 #include <list>
 #include "ingredientes.h"
+#include "instrucciones.h"
+#include "color.h"
 using namespace std;
 
  /**
@@ -59,6 +61,7 @@ class receta{
         string nombre;
         list<pair<string,unsigned int> > ings;
         float calorias, hc, grasas, proteinas, fibra;
+        instrucciones inst;
         
 public:
     
@@ -124,6 +127,8 @@ public:
   * @return devuelve la cantidad de fibra de la receta
   */
   float getFibra() const ;
+  
+  instrucciones getPasos() const;
     
     /**
      * @brief Consultor del numero de ingredientes de la receta
@@ -180,11 +185,19 @@ public:
      */
     void setFibra(float f);
     
+    void setArbol(ArbolBinario<string> arbol);
+
+    
     /**
      * @brief Modificador de todos los nutrientes de una receta
      * @param ingre Ingredientes sobre los cuales buscará la información
      */
     void actualizarNutrientes(const ingredientes & ingre);
+    /**
+     * @brief Modificador de todos los pasos a seguir para la realización de una receta
+     * @param inst Instrucciones sobre los cuales obtendrá la información
+     */    
+    void actualizarPasos(const instrucciones & inst);
 
     /**
      * @brief Consultor de un ingrediente de la receta (Nombre, Cantidad)
@@ -247,6 +260,8 @@ public:
   
   void aniadirIngrediente(const pair<string,unsigned int> & p);
   
+  void imprimirRecetaCompleta(ostream &os);
+
     
 /*******************************ITERADORES***********************************/  
     
@@ -473,6 +488,8 @@ friend class receta;
     }
         
 };
+
+
 
 
 #endif /* RECETA_H */
