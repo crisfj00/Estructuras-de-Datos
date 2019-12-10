@@ -275,17 +275,18 @@ using namespace std;
       for(receta::const_iterator it=cbegin(); it!=cend(); ++it)
           os << "\t" << (*it).first << " " << (*it).second << endl;
 
-
+      os << endl;
       os << UNDL(BOLD("Información Nutricional:")) << endl << endl;
       os << "\tCalorias: " << getCalorias() << endl;
       os << "\tHidratos de Carbono: " << getHc() << endl;
       os << "\tGrasas: " << getGrasas() << endl;
       os << "\tProteinas: " << getProteinas() << endl;
       os << "\tFibra: " << getFibra() << endl;
-
+      os << endl;
       os << UNDL(BOLD("Pasos a seguir:")) << endl << endl;
 
       getPasos().getArbol().RecorridoPostOrden(os);
       
+      os << endl;
     }
     

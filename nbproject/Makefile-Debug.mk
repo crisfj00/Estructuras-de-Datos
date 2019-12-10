@@ -75,57 +75,57 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ingrediente: ${OBJECTFILES}
 ${OBJECTDIR}/src/acciones.o: src/acciones.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/acciones.o src/acciones.cpp
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -include include/acciones.h -include include/instrucciones.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/acciones.o src/acciones.cpp
 
 ${OBJECTDIR}/src/cocinero_integral.o: src/cocinero_integral.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/cocinero_integral.o src/cocinero_integral.cpp
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -include include/acciones.h -include include/instrucciones.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/cocinero_integral.o src/cocinero_integral.cpp
 
 ${OBJECTDIR}/src/ingrediente.o: src/ingrediente.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ingrediente.o src/ingrediente.cpp
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -include include/acciones.h -include include/instrucciones.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ingrediente.o src/ingrediente.cpp
 
 ${OBJECTDIR}/src/ingredientes.o: src/ingredientes.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ingredientes.o src/ingredientes.cpp
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -include include/acciones.h -include include/instrucciones.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/ingredientes.o src/ingredientes.cpp
 
 ${OBJECTDIR}/src/instrucciones.o: src/instrucciones.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/instrucciones.o src/instrucciones.cpp
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -include include/acciones.h -include include/instrucciones.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/instrucciones.o src/instrucciones.cpp
 
 ${OBJECTDIR}/src/nutricion_receta.o: src/nutricion_receta.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/nutricion_receta.o src/nutricion_receta.cpp
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -include include/acciones.h -include include/instrucciones.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/nutricion_receta.o src/nutricion_receta.cpp
 
 ${OBJECTDIR}/src/receta.o: src/receta.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/receta.o src/receta.cpp
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -include include/acciones.h -include include/instrucciones.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/receta.o src/receta.cpp
 
 ${OBJECTDIR}/src/recetas.o: src/recetas.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recetas.o src/recetas.cpp
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -include include/acciones.h -include include/instrucciones.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/recetas.o src/recetas.cpp
 
 ${OBJECTDIR}/src/test_ingredientes.o: src/test_ingredientes.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/test_ingredientes.o src/test_ingredientes.cpp
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -include include/acciones.h -include include/instrucciones.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/test_ingredientes.o src/test_ingredientes.cpp
 
 ${OBJECTDIR}/src/test_receta.o: src/test_receta.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/test_receta.o src/test_receta.cpp
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -include include/acciones.h -include include/instrucciones.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/test_receta.o src/test_receta.cpp
 
 ${OBJECTDIR}/src/tipos_ingredientes.o: src/tipos_ingredientes.cpp
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tipos_ingredientes.o src/tipos_ingredientes.cpp
+	$(COMPILE.cc) -g -Iinclude -include include/ingrediente.h -include include/ingredientes.h -include include/receta.h -include include/recetas.h -include include/arbolbinario.h -include include/color.h -include include/acciones.h -include include/instrucciones.h -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/src/tipos_ingredientes.o src/tipos_ingredientes.cpp
 
 # Subprojects
 .build-subprojects:

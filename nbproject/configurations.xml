@@ -66,6 +66,8 @@
             <pElem>include/recetas.h</pElem>
             <pElem>include/arbolbinario.h</pElem>
             <pElem>include/color.h</pElem>
+            <pElem>include/acciones.h</pElem>
+            <pElem>include/instrucciones.h</pElem>
           </incFile>
         </ccTool>
       </compileType>

@@ -34,11 +34,11 @@ $(BIN)/test_receta: $(OBJ)/test_receta.o $(OBJ)/receta.o $(OBJ)/recetas.o $(OBJ)
 $(OBJ)/test_receta.o: $(SRC)/test_receta.cpp $(INC)/receta.h $(INC)/recetas.h $(INC)/ingredientes.h $(INC)/ingrediente.h $(INC)/instrucciones.h $(INC)/acciones.h
 	$(CXX) $(CPPFLAGS)  $(SRC)/test_receta.cpp -o  $(OBJ)/test_receta.o 	
 
-$(BIN)/nutricion_receta: $(OBJ)/nutricion_receta.o $(OBJ)/receta.o $(OBJ)/recetas.o $(OBJ)/ingredientes.o $(OBJ)/ingrediente.o		
-	$(CXX) -o $(BIN)/nutricion_receta $(OBJ)/nutricion_receta.o $(OBJ)/receta.o $(OBJ)/recetas.o $(OBJ)/ingredientes.o $(OBJ)/ingrediente.o 
+$(BIN)/nutricion_receta: $(OBJ)/nutricion_receta.o $(OBJ)/receta.o $(OBJ)/recetas.o $(OBJ)/ingredientes.o $(OBJ)/ingrediente.o	$(OBJ)/instrucciones.o $(OBJ)/acciones.o	
+	$(CXX) -o $(BIN)/nutricion_receta $(OBJ)/nutricion_receta.o $(OBJ)/receta.o $(OBJ)/recetas.o $(OBJ)/ingredientes.o $(OBJ)/ingrediente.o $(OBJ)/instrucciones.o $(OBJ)/acciones.o
 
 
-$(OBJ)/nutricion_receta.o: $(SRC)/nutricion_receta.cpp $(INC)/receta.h $(INC)/recetas.h $(INC)/ingredientes.h $(INC)/ingrediente.h
+$(OBJ)/nutricion_receta.o: $(SRC)/nutricion_receta.cpp $(INC)/receta.h $(INC)/recetas.h $(INC)/ingredientes.h $(INC)/ingrediente.h $(INC)/instrucciones.h $(INC)/arbolbinario.h $(INC)/acciones.h
 	$(CXX) $(CPPFLAGS)  $(SRC)/nutricion_receta.cpp -o  $(OBJ)/nutricion_receta.o
 
 $(BIN)/cocinero_integral: $(OBJ)/cocinero_integral.o $(OBJ)/receta.o $(OBJ)/recetas.o $(OBJ)/ingrediente.o $(OBJ)/ingredientes.o $(OBJ)/instrucciones.o $(OBJ)/acciones.o
